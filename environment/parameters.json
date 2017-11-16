@@ -1,0 +1,19 @@
+﻿{
+    "parameters":  {
+                       "SMTP":  {
+                                    "Enable":  "True",
+                                    "Server":  "mail.tjrs.gov.br",
+                                    "AdministrativeEmail":  "di_infracentral@tjrs.jus.br"
+                                },
+                       "Environment":  {
+                                          "Enable":  "True",
+                                          "DomainsInfoPath":  "FileSystem::\\\\cpoatj02.2g.tj.rs\\IIS$\\Infra\\Prod\\automation\\oracle\\weblogic\\info\\inventory.json",
+                                          "DomainsInfoPath":  "http://infra.tjrs.gov.br/automation/oracle/weblogic/info/inventory.json",
+                                          "DomainsInfoPathPublish": "FileSystem::\\\\nasfct2.tjrs.gov.br\\pjrs$\\services\\IIS\\Infra\\Prod\\automation\\oracle\\weblogic\\info\\inventory.json",
+                                          "WLST": "D:\\_work\\weblogic\\wls_12.2.1.1\\wlst.cmd",
+                                          "CacheEnable":  true,
+                                          "TTLCacheSeconds":  600,
+                                          "DebugEnable": false
+                                      }
+                   }
+}

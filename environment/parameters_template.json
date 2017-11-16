@@ -1,0 +1,17 @@
+﻿{
+    "parameters":  {
+                       "SMTP":  {
+                                    "Enable":  "True",
+                                    "Server":  "mx.mail.com"
+                                },
+                       "Environment":  {
+                                          "Enable":  "True",
+                                          "DomainsInfoPath":  "inventory.json",
+                                          "DomainsInfoPathPublish": "inventory.json",
+                                          "WLST": "wlst.cmd",
+                                          "CacheEnable":  true,
+                                          "TTLCacheSeconds":  600,
+                                          "DebugEnable": false
+                                      }
+                   }
+}

@@ -1,0 +1,103 @@
+﻿[
+    {
+        "management":  null,
+        "monitoring":  {
+                           "servers":  "/management/tenant-monitoring/servers?format=full",
+                           "clusters":  "/management/tenant-monitoring/clusters",
+                           "deployments":  "/management/tenant-monitoring/applications",
+                           "datasources":  "/management/tenant-monitoring/datasources"
+                       },
+        "update": null,
+        "operation": null,
+        "info":  {
+                     "version":  [
+                                     "12.1.1.0",
+                                     "12.1.2.0"
+                                 ]
+                 }
+    },
+    {
+        "management":  {
+                           "wls":  "/management/wls",
+                           "basic": "/management/wls/latest",
+                           "jobs":  "/management/wls/latest/jobs",
+                           "servers":  "/management/wls/latest/servers",
+                           "deployments":  "/management/wls/latest/deployments",
+                           "application":  "/management/wls/latest/deployments/application",
+                           "library":  "/management/wls/latest/deployments/library",
+                           "inspect":  "/management/wls/latest/deployments/inspect",
+                           "datasources":  "/management/wls/latest/datasources",
+                           "changeManager":  "/management/wls/latest/changeManager",
+                           "targets":  "/management/wls/latest/targets"
+                       },
+        "monitoring":  {
+                           "servers":  "/management/tenant-monitoring/servers?format=full",
+                           "clusters":  "/management/tenant-monitoring/clusters",
+                           "deployments":  "/management/tenant-monitoring/applications",
+                           "datasources":  "/management/tenant-monitoring/datasources"
+                       },
+        "operation":  {
+                       "domain":    {
+                                        "Lifecycle":
+                                                        [
+                                                            "startEdit",
+                                                            "cancelEdit",
+                                                            "activate",
+                                                            "safeResolve",
+                                                            "forceResolve"
+                                                        ]
+                                    },
+                       "server":    {
+                                        "Lifecycle":
+                                                  [
+                                                        "start",
+                                                        "shutdown",
+                                                        "restart",
+                                                        "suspend",
+                                                        "resume"
+                                                  ],
+                                         "Data": null
+                                  },
+                       "datasource":  {
+                       
+                                          "Lifecycle":
+                                                [
+                                                        "clearStatementCache",
+                                                        "reset",
+                                                        "resume",
+                                                        "shrink",
+                                                        "shutdown",
+                                                        "start",
+                                                        "suspend",
+                                                        "test"
+                                                  ],
+                                          "Data": null
+
+                                  },
+                       "application":  {
+                                          "Lifecycle":
+                                                [
+                                                        "redeploy",
+                                                        "update",
+                                                        "start",
+                                                        "stop",
+                                                        "bindables"
+                                                  ],
+                                          "Data": null
+                                  },
+                       "library":  {
+                                          "Lifecycle":
+                                                [
+                                                        "redeploy"
+                                                  ],
+                                          "Data": null
+                                  }
+                      },
+        "info":  {
+                     "version":  [
+                                     "12.1.3.0",
+                                     "12.2.1.2"
+                                 ]
+                 }
+    }
+]

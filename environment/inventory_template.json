@@ -1,0 +1,24 @@
+[
+    {
+        "AdminServer":  "domain-temp-01.psweblogic.com",
+        "Name":  "domain01",
+        "Environment":  "DEV",
+        "Version":  "12.1.3",
+        "AdminTcpPort":  7001,
+        "AdminTcpPortSec":  403,
+        "ServiceName":  "",
+        "MW_HOME":  "",
+        "Description":  ""
+    },
+    {
+        "AdminServer":  "domain02-temp-02.psweblogic.com",
+        "Name":  "domain02",
+        "Environment":  "HML",
+        "Version":  "12.2.1",
+        "AdminTcpPort":  7101,
+        "AdminTcpPortSec":  403,
+        "ServiceName":  "",
+        "MW_HOME":  "",
+        "Description":  ""
+    }
+]

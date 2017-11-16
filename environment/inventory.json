@@ -1,0 +1,186 @@
+[
+    {
+        "AdminServer":  "ttt",
+        "Name":  "",
+        "Environment":  "",
+        "Version":  "12.1.1.0",
+        "AdminTcpPort":  22,
+        "AdminTcpPortSec":  0
+    },
+    {
+        "Name":  "TJRS_Desenv",
+        "AdminServer":  "wls.desenv.tjrs.gov.br",
+        "AdminTcpPort":  7301,
+        "AdminTcpPortSec":  "443",
+        "Version":  "12.1.3.0",
+        "Environment":  "Desenv"
+    },
+    {
+        "Name":  "TJRS_Homolog",
+        "AdminServer":  "wls.homolog.tjrs.gov.br",
+        "AdminTcpPort":  7301,
+        "AdminTcpPortSec":  "443",
+        "Version":  "12.1.3.0",
+        "Environment":  "Homolog"
+    },
+    {
+        "Name":  "TJRS_Prod",
+        "AdminServer":  "wls.prod.tjrs.gov.br",
+        "AdminTcpPort":  7301,
+        "AdminTcpPortSec":  "443",
+        "Version":  "12.1.3.0",
+        "Environment":  "Prod"
+    },
+    {
+        "Name":  "TJRS_Treina",
+        "AdminServer":  "wls.treina.tjrs.gov.br",
+        "AdminTcpPort":  7301,
+        "AdminTcpPortSec":  "443",
+        "Version":  "12.1.3.0",
+        "Environment":  "Treina"
+    },
+    {
+        "Name":  "TJRS_Desenv",
+        "AdminServer":  "wlsadm.desenv.tjrs.gov.br",
+        "AdminTcpPort":  7201,
+        "AdminTcpPortSec":  "443",
+        "Version":  "12.1.1.0",
+        "Environment":  "Desenv"
+    },
+    {
+        "Name":  "DES-ADM",
+        "AdminServer":  "wls-adm.desenv.tjrs.gov.br",
+        "AdminTcpPort":  7306,
+        "AdminTcpPortSec":  443,
+        "Version":  "12.1.3.0.0",
+        "Environment":  "Desenv"
+    },
+    {
+        "Name":  "TJRS_Homolog",
+        "AdminServer":  "wlsadm.homolog.tjrs.gov.br",
+        "AdminTcpPort":  7201,
+        "AdminTcpPortSec":  "443",
+        "Version":  "12.1.1.0",
+        "Environment":  "Homolog"
+    },
+    {
+        "Name":  "TJRS_Prod",
+        "AdminServer":  "wlsadm.prod.tjrs.gov.br",
+        "AdminTcpPort":  7201,
+        "AdminTcpPortSec":  "443",
+        "Version":  "12.1.1.0",
+        "Environment":  "Prod"
+    },
+    {
+        "Name":  "TJRS_Open-Desenv",
+        "AdminServer":  "wlsadm-open.desenv.tjrs.gov.br",
+        "AdminTcpPort":  7101,
+        "AdminTcpPortSec":  "443",
+        "Version":  "12.1.1.0",
+        "Environment":  "Desenv"
+    },
+    {
+        "Name":  "TJRS_Open-Homolog",
+        "AdminServer":  "wlsadm-open.homolog.tjrs.gov.br",
+        "AdminTcpPort":  7101,
+        "AdminTcpPortSec":  "443",
+        "Version":  "12.1.1.0",
+        "Environment":  "Homolog"
+    },
+    {
+        "Name":  "TJRS_Open-Prod",
+        "AdminServer":  "wlsadm-open.prod.tjrs.gov.br",
+        "AdminTcpPort":  7101,
+        "AdminTcpPortSec":  "443",
+        "Version":  "12.1.1.0",
+        "Environment":  "Prod"
+    },
+    {
+        "Name":  "DES-INFRA",
+        "AdminServer":  "wls-infra.desenv.tjrs.gov.br",
+        "AdminTcpPort":  7330,
+        "AdminTcpPortSec":  "443",
+        "Version":  "12.1.3.0",
+        "Environment":  "Desenv"
+    },
+    {
+        "Name":  "DES-JC1G",
+        "AdminServer":  "wls-jc1g.desenv.tjrs.gov.br",
+        "AdminTcpPort":  7304,
+        "AdminTcpPortSec":  "443",
+        "Version":  "12.1.3.0",
+        "Environment":  "Desenv"
+    },
+    {
+        "Name":  "HML-JC1G",
+        "AdminServer":  "wls-jc1g.homolog.tjrs.gov.br",
+        "AdminTcpPort":  7304,
+        "AdminTcpPortSec":  "443",
+        "Version":  "12.1.3.0",
+        "Environment":  "Homolog"
+    },
+    {
+        "Name":  "PRD-JC1G",
+        "AdminServer":  "wls-jc1g.prod.tjrs.gov.br",
+        "AdminTcpPort":  7304,
+        "AdminTcpPortSec":  "443",
+        "Version":  "12.1.3.0",
+        "Environment":  "Prod"
+    },
+    {
+        "Name":  "TJRS_PE-Desenv",
+        "AdminServer":  "wls-pe.desenv.tjrs.gov.br",
+        "AdminTcpPort":  7302,
+        "AdminTcpPortSec":  "443",
+        "Version":  "12.1.3.0",
+        "Environment":  "Desenv"
+    },
+    {
+        "Name":  "TJRS_PE-Homolog",
+        "AdminServer":  "wls-pe.homolog.tjrs.gov.br",
+        "AdminTcpPort":  7302,
+        "AdminTcpPortSec":  "443",
+        "Version":  "12.1.3.0",
+        "Environment":  "Homolog"
+    },
+    {
+        "Name":  "TJRS_PE-Prod",
+        "AdminServer":  "wls-pe.prod.tjrs.gov.br",
+        "AdminTcpPort":  7302,
+        "AdminTcpPortSec":  "443",
+        "Version":  "12.1.3.0",
+        "Environment":  "Prod"
+    },
+    {
+        "Name":  "TMT-PE",
+        "AdminServer":  "wls-pe.treina.tjrs.gov.br",
+        "AdminTcpPort":  7302,
+        "AdminTcpPortSec":  "443",
+        "Version":  "12.1.3.0",
+        "Environment":  "Treina"
+    },
+    {
+        "Name":  "DES-PORTAL",
+        "AdminServer":  "wls-portal.desenv.tjrs.gov.br",
+        "AdminTcpPort":  7305,
+        "AdminTcpPortSec":  "443",
+        "Version":  "12.1.3.0",
+        "Environment":  "Desenv"
+    },
+    {
+        "Name":  "HML-PORTAL",
+        "AdminServer":  "wls-portal.homolog.tjrs.gov.br",
+        "AdminTcpPort":  7305,
+        "AdminTcpPortSec":  "443",
+        "Version":  "12.1.3.0",
+        "Environment":  "Homolog"
+    },
+    {
+        "Name":  "PRD-PORTAL",
+        "AdminServer":  "wls-portal.prod.tjrs.gov.br",
+        "AdminTcpPort":  7305,
+        "AdminTcpPortSec":  "443",
+        "Version":  "12.1.3.0",
+        "Environment":  "Prod"
+    }
+]
