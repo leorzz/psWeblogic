@@ -100,7 +100,7 @@ function Invoke-CreateModuleHelpFile {
   <body>
     <div class="navmenu navmenu-default navmenu-fixed-left offcanvas-sm hidden-print">
       <nav class="sidebar-nav" role="complementary">
-      <a class="navmenu-brand visible-md visible-lg" href="#" data-toggle="tooltip" title="$($ModuleName)">$($ModuleName)</a>
+      <a class="navmenu-brand visible-md visible-lg" href="$($moduleData.ProjectUri.AbsoluteUri)" target="_blank" data-toggle="tooltip" title="$($ModuleName)">$($ModuleName)</a>
       <ul class="nav navmenu-nav">
         <li><a href="#About">About</a></li>
 
@@ -164,7 +164,7 @@ function Invoke-CreateModuleHelpFile {
             $([System.Web.HttpUtility]::HtmlEncode($moduleData.DotNetFrameworkVersion))<br>
             $([System.Web.HttpUtility]::HtmlEncode($moduleData.Version))<br>
             $([System.Web.HttpUtility]::HtmlEncode($moduleData.Author))<br>
-            $([System.Web.HttpUtility]::HtmlEncode($moduleData.ProjectUri))<br>
+            <a href="$($moduleData.ProjectUri.AbsoluteUri)" target="_blank">$([System.Web.HttpUtility]::HtmlEncode($moduleData.ProjectUri.AbsoluteUri))</a><br>
             $([System.Web.HttpUtility]::HtmlEncode($moduleData.Copyright))
           </div>
         </div>
@@ -309,12 +309,12 @@ function Invoke-CreateModuleHelpFile {
 
         Write-Verbose 'Generated HTML OK'
 
-        $helpPath = Join-Path (Split-Path -Path $currentPath -Parent) help
+        $helpPath = Join-Path (Split-Path -Path $currentPath -Parent) docs
+        if (-not (Test-Path -Path $helpPath))
+        {
+            New-Item -Path $helpPath -ItemType Directory | Out-Null
+        }
         $dependencies | % {
-            if (-not (Test-Path -Path $helpPath))
-            {
-                New-Item -Path $helpPath | Out-Null
-            }
             Copy-Item -Path (Join-Path $currentPath $_) -Destination $helpPath -Force
         }
 
