@@ -1,5 +1,4 @@
 #.ExternalHelp ../psWeblogic.Help.xml
-#requires -Version 3 
 function Remove-WLDatasource
 {
     # http://technet.microsoft.com/en-us/library/hh847872.aspx

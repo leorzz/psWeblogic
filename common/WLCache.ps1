@@ -1,6 +1,6 @@
 ﻿#region WLResourceCache
     # Create new cache resource in temp file
-    #.ExternalHelp ../psWeblogic.psm1-help.xml
+    #.ExternalHelp ../psWeblogic.Help.xml
     function New-WLResourceCache
     {
         [CmdletBinding()]
@@ -55,7 +55,7 @@
         }
     }
 
-    #.ExternalHelp ../psWeblogic.psm1-help.xml
+    #.ExternalHelp ../psWeblogic.Help.xml
     function Get-WLResourceCache
     {
         [CmdletBinding()]
@@ -124,7 +124,7 @@
         } 
     }
 
-    #.ExternalHelp ../psWeblogic.psm1-help.xml
+    #.ExternalHelp ../psWeblogic.Help.xml
     function Remove-WLResourceCache
     {
         Param($UriMatch)
@@ -142,7 +142,7 @@
         }
     }
 
-    #.ExternalHelp ../psWeblogic.psm1-help.xml
+    #.ExternalHelp ../psWeblogic.Help.xml
     function Get-WLCacheIndex
     {
         try
@@ -163,7 +163,7 @@
         } 
     }
 
-    #.ExternalHelp ../psWeblogic.psm1-help.xml
+    #.ExternalHelp ../psWeblogic.Help.xml
     function Repair-WLCacheIndex
     {
         Write-Host "Repair cache index..." -ForegroundColor Cyan

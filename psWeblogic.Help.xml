@@ -379,7 +379,7 @@ Suggestions will be returned from the result of the Get-WLDomain Command.</maml:
 			<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="false" position="1">
 				<maml:name>Name</maml:name>
 				<maml:description>
-					<maml:para>Use the datasource name.</maml:para>
+					<maml:para>Filter datasource by name.</maml:para>
 				</maml:description>
 				<command:parameterValue required="true" variableLength="true">String[]</command:parameterValue>
 			</command:parameter>
@@ -429,7 +429,7 @@ With this parameter the result will be more informative objects and lifecycle me
 			<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="false" position="1">
 				<maml:name>Name</maml:name>
 				<maml:description>
-					<maml:para>Use the datasource name.</maml:para>
+					<maml:para>Filter datasource by name.</maml:para>
 				</maml:description>
 				<command:parameterValue required="true" variableLength="true">String[]</command:parameterValue>
 			</command:parameter>
@@ -522,7 +522,7 @@ To use Get-WLCredential you need run New-WLCredentials command to secure and sto
 				<maml:name>PSCredential</maml:name>
 				<maml:uri/>
 			</dev:type>
-			<dev:defaultValue></dev:defaultValue>
+			<dev:defaultValue>(Get-WLCredential -Alias Default)</dev:defaultValue>
 		</command:parameter>
 		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
 			<maml:name>SecureConnection</maml:name>
@@ -535,7 +535,7 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
 				<maml:name>SwitchParameter</maml:name>
 				<maml:uri/>
 			</dev:type>
-			<dev:defaultValue></dev:defaultValue>
+			<dev:defaultValue>True</dev:defaultValue>
 		</command:parameter>
 		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
 			<maml:name>Cache</maml:name>
@@ -547,7 +547,7 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
 				<maml:name>SwitchParameter</maml:name>
 				<maml:uri/>
 			</dev:type>
-			<dev:defaultValue></dev:defaultValue>
+			<dev:defaultValue>True</dev:defaultValue>
 		</command:parameter>
 		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
 			<maml:name>TimeoutSec</maml:name>
@@ -564,7 +564,7 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
 		<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="false" position="1">
 			<maml:name>Name</maml:name>
 			<maml:description>
-				<maml:para>Use the datasource name.</maml:para>
+				<maml:para>Filter datasource by name.</maml:para>
 			</maml:description>
 			<command:parameterValue required="true" variableLength="true">String[]</command:parameterValue>
 			<dev:type>
@@ -708,7 +708,7 @@ Suggestions will be returned from the result of the Get-WLDomain Command.</maml:
 			<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="false" position="1">
 				<maml:name>Name</maml:name>
 				<maml:description>
-					<maml:para>Get datasource by name</maml:para>
+					<maml:para>Filter deployment by name.</maml:para>
 				</maml:description>
 				<command:parameterValue required="true" variableLength="true">String[]</command:parameterValue>
 			</command:parameter>
@@ -765,7 +765,7 @@ With this parameter the result will be more informative objects and lifecycle me
 			<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="false" position="1">
 				<maml:name>Name</maml:name>
 				<maml:description>
-					<maml:para>Get datasource by name</maml:para>
+					<maml:para>Filter deployment by name.</maml:para>
 				</maml:description>
 				<command:parameterValue required="true" variableLength="true">String[]</command:parameterValue>
 			</command:parameter>
@@ -919,7 +919,7 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
 		<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="false" position="1">
 			<maml:name>Name</maml:name>
 			<maml:description>
-				<maml:para>Get datasource by name</maml:para>
+				<maml:para>Filter deployment by name.</maml:para>
 			</maml:description>
 			<command:parameterValue required="true" variableLength="true">String[]</command:parameterValue>
 			<dev:type>
@@ -4392,7 +4392,7 @@ This example use adminserver information from pipe and default credential previo
 	<command:details>
 		<command:name>Get-WLChangeManager</command:name>
 		<maml:description>
-			<maml:para />
+			<maml:para>Get information about Managing Configuration Changes</maml:para>
 		</maml:description>
 		<maml:copyright>
 			<maml:para />
@@ -4807,13 +4807,6 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
 				</maml:description>
 				<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
 			</command:parameter>
-			<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="false" position="named">
-				<maml:name>Arguments</maml:name>
-				<maml:description>
-					<maml:para>Arguments to be used in the python script.</maml:para>
-				</maml:description>
-				<command:parameterValue required="true" variableLength="true">String[]</command:parameterValue>
-			</command:parameter>
 			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
 				<maml:name>WhatIf</maml:name>
 				<maml:description>
@@ -4821,12 +4814,12 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
 				</maml:description>
 				<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
 			</command:parameter>
-			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
-				<maml:name>Confirm</maml:name>
+			<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="false" position="named">
+				<maml:name>Arguments</maml:name>
 				<maml:description>
-					<maml:para />
+					<maml:para>Arguments to be used in the python script.</maml:para>
 				</maml:description>
-				<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+				<command:parameterValue required="true" variableLength="true">String[]</command:parameterValue>
 			</command:parameter>
 		</command:syntaxItem>
 		<command:syntaxItem>
@@ -4884,13 +4877,6 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
 				</maml:description>
 				<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
 			</command:parameter>
-			<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="false" position="named">
-				<maml:name>Arguments</maml:name>
-				<maml:description>
-					<maml:para>Arguments to be used in the python script.</maml:para>
-				</maml:description>
-				<command:parameterValue required="true" variableLength="true">String[]</command:parameterValue>
-			</command:parameter>
 			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
 				<maml:name>WhatIf</maml:name>
 				<maml:description>
@@ -4898,12 +4884,12 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
 				</maml:description>
 				<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
 			</command:parameter>
-			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
-				<maml:name>Confirm</maml:name>
+			<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="false" position="named">
+				<maml:name>Arguments</maml:name>
 				<maml:description>
-					<maml:para />
+					<maml:para>Arguments to be used in the python script.</maml:para>
 				</maml:description>
-				<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+				<command:parameterValue required="true" variableLength="true">String[]</command:parameterValue>
 			</command:parameter>
 			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
 				<maml:name>BuiltInScript</maml:name>
@@ -5029,18 +5015,6 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
 		</command:parameter>
 		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
 			<maml:name>WhatIf</maml:name>
-			<maml:description>
-				<maml:para />
-			</maml:description>
-			<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
-			<dev:type>
-				<maml:name>SwitchParameter</maml:name>
-				<maml:uri/>
-			</dev:type>
-			<dev:defaultValue></dev:defaultValue>
-		</command:parameter>
-		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
-			<maml:name>Confirm</maml:name>
 			<maml:description>
 				<maml:para />
 			</maml:description>
@@ -5420,7 +5394,7 @@ item     : @{name=ADTR-1; id=1; type=deployment; description=[Deployer:149026]de
 	<command:details>
 		<command:name>New-WLDomain</command:name>
 		<maml:description>
-			<maml:para />
+			<maml:para>Create a new weblogic domain into inventory.</maml:para>
 		</maml:description>
 		<maml:copyright>
 			<maml:para />
@@ -5698,276 +5672,9 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
 <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
 <!--Generated by PS Cmdlet Help Editor-->
 	<command:details>
-		<command:name>Remove-WLDatasource</command:name>
-		<maml:description>
-			<maml:para />
-		</maml:description>
-		<maml:copyright>
-			<maml:para />
-		</maml:copyright>
-		<command:verb>Remove</command:verb>
-		<command:noun>WLDatasource</command:noun>
-		<dev:version />
-	</command:details>
-	<maml:description>
-		<maml:para />
-	</maml:description>
-	<command:syntax>
-		<command:syntaxItem>
-			<maml:name>Remove-WLDatasource</maml:name>
-			<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="false" position="named">
-				<maml:name>AdminServer</maml:name>
-				<maml:description>
-					<maml:para>Determine the AdminServer target.
-Suggestions will be returned from the result of the Get-WLDomain Command.</maml:para>
-				</maml:description>
-				<command:parameterValue required="true" variableLength="true">List`1[String]</command:parameterValue>
-			</command:parameter>
-			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
-				<maml:name>Credential</maml:name>
-				<maml:description>
-					<maml:para>Use credential to access the AdminServer. 
-You can use &quot;-Credential (Get-Credential)&quot; or &quot;-Credential (Get-WLCredential)&quot;
-To use Get-WLCredential you need run New-WLCredentials command to secure and store credentials in your profile.</maml:para>
-				</maml:description>
-				<command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
-			</command:parameter>
-			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
-				<maml:name>SecureConnection</maml:name>
-				<maml:description>
-					<maml:para>Use to connect securely (TLS/SSL).
-The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain command.</maml:para>
-				</maml:description>
-				<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
-			</command:parameter>
-			<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="false" position="named">
-				<maml:name>Name</maml:name>
-				<maml:description>
-					<maml:para />
-				</maml:description>
-				<command:parameterValue required="true" variableLength="true">String[]</command:parameterValue>
-			</command:parameter>
-			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
-				<maml:name>TimeoutSec</maml:name>
-				<maml:description>
-					<maml:para>Period of time in seconds that will be allowed to elapse in adminserver before the event is to take place.</maml:para>
-				</maml:description>
-				<command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
-			</command:parameter>
-			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
-				<maml:name>WhatIf</maml:name>
-				<maml:description>
-					<maml:para />
-				</maml:description>
-				<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
-			</command:parameter>
-			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
-				<maml:name>Confirm</maml:name>
-				<maml:description>
-					<maml:para />
-				</maml:description>
-				<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
-			</command:parameter>
-		</command:syntaxItem>
-		<command:syntaxItem>
-			<maml:name>Remove-WLDatasource</maml:name>
-			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="true (ByValue)" position="named">
-				<maml:name>InputObject</maml:name>
-				<maml:description>
-					<maml:para>Use to enter datasource objects. 
-The input from the pipe is the same as this parameter.</maml:para>
-				</maml:description>
-				<command:parameterValue required="true" variableLength="false">PSObject</command:parameterValue>
-			</command:parameter>
-			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
-				<maml:name>Credential</maml:name>
-				<maml:description>
-					<maml:para>Use credential to access the AdminServer. 
-You can use &quot;-Credential (Get-Credential)&quot; or &quot;-Credential (Get-WLCredential)&quot;
-To use Get-WLCredential you need run New-WLCredentials command to secure and store credentials in your profile.</maml:para>
-				</maml:description>
-				<command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
-			</command:parameter>
-			<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="false" position="named">
-				<maml:name>Name</maml:name>
-				<maml:description>
-					<maml:para />
-				</maml:description>
-				<command:parameterValue required="true" variableLength="true">String[]</command:parameterValue>
-			</command:parameter>
-			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
-				<maml:name>TimeoutSec</maml:name>
-				<maml:description>
-					<maml:para>Period of time in seconds that will be allowed to elapse in adminserver before the event is to take place.</maml:para>
-				</maml:description>
-				<command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
-			</command:parameter>
-			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
-				<maml:name>WhatIf</maml:name>
-				<maml:description>
-					<maml:para />
-				</maml:description>
-				<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
-			</command:parameter>
-			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
-				<maml:name>Confirm</maml:name>
-				<maml:description>
-					<maml:para />
-				</maml:description>
-				<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
-			</command:parameter>
-		</command:syntaxItem>
-	</command:syntax>
-	<command:parameters>
-		<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="false" position="named">
-			<maml:name>AdminServer</maml:name>
-			<maml:description>
-				<maml:para>Determine the AdminServer target.
-Suggestions will be returned from the result of the Get-WLDomain Command.</maml:para>
-			</maml:description>
-			<command:parameterValue required="true" variableLength="true">List`1[String]</command:parameterValue>
-			<dev:type>
-				<maml:name>List`1[String]</maml:name>
-				<maml:uri/>
-			</dev:type>
-			<dev:defaultValue></dev:defaultValue>
-		</command:parameter>
-		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
-			<maml:name>Credential</maml:name>
-			<maml:description>
-				<maml:para>Use credential to access the AdminServer. 
-You can use &quot;-Credential (Get-Credential)&quot; or &quot;-Credential (Get-WLCredential)&quot;
-To use Get-WLCredential you need run New-WLCredentials command to secure and store credentials in your profile.</maml:para>
-			</maml:description>
-			<command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
-			<dev:type>
-				<maml:name>PSCredential</maml:name>
-				<maml:uri/>
-			</dev:type>
-			<dev:defaultValue></dev:defaultValue>
-		</command:parameter>
-		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
-			<maml:name>SecureConnection</maml:name>
-			<maml:description>
-				<maml:para>Use to connect securely (TLS/SSL).
-The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain command.</maml:para>
-			</maml:description>
-			<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
-			<dev:type>
-				<maml:name>SwitchParameter</maml:name>
-				<maml:uri/>
-			</dev:type>
-			<dev:defaultValue></dev:defaultValue>
-		</command:parameter>
-		<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="false" position="named">
-			<maml:name>Name</maml:name>
-			<maml:description>
-				<maml:para />
-			</maml:description>
-			<command:parameterValue required="true" variableLength="true">String[]</command:parameterValue>
-			<dev:type>
-				<maml:name>String[]</maml:name>
-				<maml:uri/>
-			</dev:type>
-			<dev:defaultValue></dev:defaultValue>
-		</command:parameter>
-		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
-			<maml:name>TimeoutSec</maml:name>
-			<maml:description>
-				<maml:para>Period of time in seconds that will be allowed to elapse in adminserver before the event is to take place.</maml:para>
-			</maml:description>
-			<command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
-			<dev:type>
-				<maml:name>Int32</maml:name>
-				<maml:uri/>
-			</dev:type>
-			<dev:defaultValue></dev:defaultValue>
-		</command:parameter>
-		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
-			<maml:name>WhatIf</maml:name>
-			<maml:description>
-				<maml:para />
-			</maml:description>
-			<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
-			<dev:type>
-				<maml:name>SwitchParameter</maml:name>
-				<maml:uri/>
-			</dev:type>
-			<dev:defaultValue></dev:defaultValue>
-		</command:parameter>
-		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
-			<maml:name>Confirm</maml:name>
-			<maml:description>
-				<maml:para />
-			</maml:description>
-			<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
-			<dev:type>
-				<maml:name>SwitchParameter</maml:name>
-				<maml:uri/>
-			</dev:type>
-			<dev:defaultValue></dev:defaultValue>
-		</command:parameter>
-		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="true (ByValue)" position="named">
-			<maml:name>InputObject</maml:name>
-			<maml:description>
-				<maml:para>Use to enter datasource objects. 
-The input from the pipe is the same as this parameter.</maml:para>
-			</maml:description>
-			<command:parameterValue required="true" variableLength="false">PSObject</command:parameterValue>
-			<dev:type>
-				<maml:name>PSObject</maml:name>
-				<maml:uri/>
-			</dev:type>
-			<dev:defaultValue></dev:defaultValue>
-		</command:parameter>
-	</command:parameters>
-	<command:inputTypes>
-		<command:inputType>
-			<dev:type>
-				<maml:name></maml:name>
-				<maml:uri></maml:uri>
-				<maml:description/>
-			</dev:type>
-			<maml:description>
-<maml:para />
-			</maml:description>
-		</command:inputType>
-	</command:inputTypes>
-	<command:returnValues>
-		<command:returnValue>
-			<dev:type>
-				<maml:name></maml:name>
-				<maml:uri></maml:uri>
-				<maml:description/>
-			</dev:type>
-			<maml:description>
-<maml:para />
-			</maml:description>
-		</command:returnValue>
-	</command:returnValues>
-	<command:terminatingErrors></command:terminatingErrors>
-	<command:nonTerminatingErrors></command:nonTerminatingErrors>
-	<maml:alertSet>
-		<maml:title></maml:title>
-		<maml:alert>
-			<maml:para />
-		</maml:alert>
-	</maml:alertSet>
-	<command:examples>
-	</command:examples>
-	<maml:relatedLinks>
-		<maml:navigationLink>
-			<maml:linkText>Remove-WLDatasource</maml:linkText>
-			<maml:uri>https://leorzz.github.io/psWeblogic/#Remove-WLDatasource-Header</maml:uri>
-		</maml:navigationLink>
-	</maml:relatedLinks>
-</command:command>
-<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
-<!--Generated by PS Cmdlet Help Editor-->
-	<command:details>
 		<command:name>Remove-WLDeployment</command:name>
 		<maml:description>
-			<maml:para />
+			<maml:para>Removes an existing deployment.</maml:para>
 		</maml:description>
 		<maml:copyright>
 			<maml:para />
@@ -5993,7 +5700,7 @@ Suggestions will be returned from the result of the Get-WLDomain Command.</maml:
 			<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="false" position="1">
 				<maml:name>Name</maml:name>
 				<maml:description>
-					<maml:para />
+					<maml:para>Filter deployment by name.</maml:para>
 				</maml:description>
 				<command:parameterValue required="true" variableLength="true">String[]</command:parameterValue>
 			</command:parameter>
@@ -6041,7 +5748,7 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
 			<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="false" position="1">
 				<maml:name>Name</maml:name>
 				<maml:description>
-					<maml:para />
+					<maml:para>Filter deployment by name.</maml:para>
 				</maml:description>
 				<command:parameterValue required="true" variableLength="true">String[]</command:parameterValue>
 			</command:parameter>
@@ -6102,7 +5809,7 @@ Suggestions will be returned from the result of the Get-WLDomain Command.</maml:
 		<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="false" position="1">
 			<maml:name>Name</maml:name>
 			<maml:description>
-				<maml:para />
+				<maml:para>Filter deployment by name.</maml:para>
 			</maml:description>
 			<command:parameterValue required="true" variableLength="true">String[]</command:parameterValue>
 			<dev:type>
@@ -6234,7 +5941,7 @@ The input from the pipe is the same as this parameter.</maml:para>
 	<command:details>
 		<command:name>Remove-WLDomain</command:name>
 		<maml:description>
-			<maml:para />
+			<maml:para>Removes an existing weblogic domain from inventory.</maml:para>
 		</maml:description>
 		<maml:copyright>
 			<maml:para />
@@ -6436,6 +6143,269 @@ The input from the pipe is the same as this parameter.</maml:para>
 			<maml:linkText>Remove-WLDomain</maml:linkText>
 			<maml:uri>https://leorzz.github.io/psWeblogic/#Remove-WLDomain-Header</maml:uri>
 		</maml:navigationLink>
+	</maml:relatedLinks>
+</command:command>
+<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+<!--Generated by PS Cmdlet Help Editor-->
+	<command:details>
+		<command:name>Remove-WLDatasource</command:name>
+		<maml:description>
+			<maml:para>Removes an existing datasource.</maml:para>
+		</maml:description>
+		<maml:copyright>
+			<maml:para />
+		</maml:copyright>
+		<command:verb>Remove</command:verb>
+		<command:noun>WLDatasource</command:noun>
+		<dev:version />
+	</command:details>
+	<maml:description>
+		<maml:para />
+	</maml:description>
+	<command:syntax>
+		<command:syntaxItem>
+			<maml:name>Remove-WLDatasource</maml:name>
+			<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="false" position="named">
+				<maml:name>AdminServer</maml:name>
+				<maml:description>
+					<maml:para>Determine the AdminServer target.
+Suggestions will be returned from the result of the Get-WLDomain Command.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="true">List`1[String]</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>Credential</maml:name>
+				<maml:description>
+					<maml:para>Use credential to access the AdminServer. 
+You can use &quot;-Credential (Get-Credential)&quot; or &quot;-Credential (Get-WLCredential)&quot;
+To use Get-WLCredential you need run New-WLCredentials command to secure and store credentials in your profile.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>SecureConnection</maml:name>
+				<maml:description>
+					<maml:para>Use to connect securely (TLS/SSL).
+The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain command.</maml:para>
+				</maml:description>
+				<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="false" position="named">
+				<maml:name>Name</maml:name>
+				<maml:description>
+					<maml:para>Filter datasource by name.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="true">String[]</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>TimeoutSec</maml:name>
+				<maml:description>
+					<maml:para>Period of time in seconds that will be allowed to elapse in adminserver before the event is to take place.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>WhatIf</maml:name>
+				<maml:description>
+					<maml:para />
+				</maml:description>
+				<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>Confirm</maml:name>
+				<maml:description>
+					<maml:para />
+				</maml:description>
+				<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+			</command:parameter>
+		</command:syntaxItem>
+		<command:syntaxItem>
+			<maml:name>Remove-WLDatasource</maml:name>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="true (ByValue)" position="named">
+				<maml:name>InputObject</maml:name>
+				<maml:description>
+					<maml:para>Use to enter objects such as domain, server and target in case you do not use the pipe. 
+The input from the pipe is the same as this parameter.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">PSObject</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>Credential</maml:name>
+				<maml:description>
+					<maml:para>Use credential to access the AdminServer. 
+You can use &quot;-Credential (Get-Credential)&quot; or &quot;-Credential (Get-WLCredential)&quot;
+To use Get-WLCredential you need run New-WLCredentials command to secure and store credentials in your profile.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="false" position="named">
+				<maml:name>Name</maml:name>
+				<maml:description>
+					<maml:para>Filter datasource by name.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="true">String[]</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>TimeoutSec</maml:name>
+				<maml:description>
+					<maml:para>Period of time in seconds that will be allowed to elapse in adminserver before the event is to take place.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>WhatIf</maml:name>
+				<maml:description>
+					<maml:para />
+				</maml:description>
+				<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>Confirm</maml:name>
+				<maml:description>
+					<maml:para />
+				</maml:description>
+				<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+			</command:parameter>
+		</command:syntaxItem>
+	</command:syntax>
+	<command:parameters>
+		<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="false" position="named">
+			<maml:name>AdminServer</maml:name>
+			<maml:description>
+				<maml:para>Determine the AdminServer target.
+Suggestions will be returned from the result of the Get-WLDomain Command.</maml:para>
+			</maml:description>
+			<command:parameterValue required="true" variableLength="true">List`1[String]</command:parameterValue>
+			<dev:type>
+				<maml:name>List`1[String]</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>Credential</maml:name>
+			<maml:description>
+				<maml:para>Use credential to access the AdminServer. 
+You can use &quot;-Credential (Get-Credential)&quot; or &quot;-Credential (Get-WLCredential)&quot;
+To use Get-WLCredential you need run New-WLCredentials command to secure and store credentials in your profile.</maml:para>
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
+			<dev:type>
+				<maml:name>PSCredential</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue>(Get-WLCredential -Alias Default)</dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>SecureConnection</maml:name>
+			<maml:description>
+				<maml:para>Use to connect securely (TLS/SSL).
+The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain command.</maml:para>
+			</maml:description>
+			<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+			<dev:type>
+				<maml:name>SwitchParameter</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue>True</dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="false" position="named">
+			<maml:name>Name</maml:name>
+			<maml:description>
+				<maml:para>Filter datasource by name.</maml:para>
+			</maml:description>
+			<command:parameterValue required="true" variableLength="true">String[]</command:parameterValue>
+			<dev:type>
+				<maml:name>String[]</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>TimeoutSec</maml:name>
+			<maml:description>
+				<maml:para>Period of time in seconds that will be allowed to elapse in adminserver before the event is to take place.</maml:para>
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+			<dev:type>
+				<maml:name>Int32</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue>30</dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>WhatIf</maml:name>
+			<maml:description>
+				<maml:para />
+			</maml:description>
+			<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+			<dev:type>
+				<maml:name>SwitchParameter</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>Confirm</maml:name>
+			<maml:description>
+				<maml:para />
+			</maml:description>
+			<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+			<dev:type>
+				<maml:name>SwitchParameter</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="true (ByValue)" position="named">
+			<maml:name>InputObject</maml:name>
+			<maml:description>
+				<maml:para>Use to enter objects such as domain, server and target in case you do not use the pipe. 
+The input from the pipe is the same as this parameter.</maml:para>
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">PSObject</command:parameterValue>
+			<dev:type>
+				<maml:name>PSObject</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+	</command:parameters>
+	<command:inputTypes>
+		<command:inputType>
+			<dev:type>
+				<maml:name></maml:name>
+				<maml:uri></maml:uri>
+				<maml:description/>
+			</dev:type>
+			<maml:description>
+<maml:para />
+			</maml:description>
+		</command:inputType>
+	</command:inputTypes>
+	<command:returnValues>
+		<command:returnValue>
+			<dev:type>
+				<maml:name></maml:name>
+				<maml:uri></maml:uri>
+				<maml:description/>
+			</dev:type>
+			<maml:description>
+<maml:para />
+			</maml:description>
+		</command:returnValue>
+	</command:returnValues>
+	<command:terminatingErrors></command:terminatingErrors>
+	<command:nonTerminatingErrors></command:nonTerminatingErrors>
+	<maml:alertSet>
+		<maml:title></maml:title>
+		<maml:alert>
+			<maml:para />
+		</maml:alert>
+	</maml:alertSet>
+	<command:examples>
+	</command:examples>
+	<maml:relatedLinks>
 	</maml:relatedLinks>
 </command:command>
 </helpItems>

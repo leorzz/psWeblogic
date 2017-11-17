@@ -242,7 +242,7 @@ The input from the pipe is the same as this parameter.</Description>
           <Description>Use credential to access the AdminServer. 
 You can use "-Credential (Get-Credential)" or "-Credential (Get-WLCredential)"
 To use Get-WLCredential you need run New-WLCredentials command to secure and store credentials in your profile.</Description>
-          <DefaultValue />
+          <DefaultValue>(Get-WLCredential -Alias Default)</DefaultValue>
         </ParameterDescription>
         <ParameterDescription type="SwitchParameter" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="false" pos="named" globbing="false">
           <Name>SecureConnection</Name>
@@ -253,7 +253,7 @@ To use Get-WLCredential you need run New-WLCredentials command to secure and sto
           <Aliases />
           <Description>Use to connect securely (TLS/SSL).
 The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain command.</Description>
-          <DefaultValue />
+          <DefaultValue>True</DefaultValue>
         </ParameterDescription>
         <ParameterDescription type="SwitchParameter" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="false" pos="named" globbing="false">
           <Name>Cache</Name>
@@ -263,7 +263,7 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
           </Attributes>
           <Aliases />
           <Description>User to bypass cache results. Use -Cache:$False</Description>
-          <DefaultValue />
+          <DefaultValue>True</DefaultValue>
         </ParameterDescription>
         <ParameterDescription type="Int32" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="false" pos="named" globbing="false">
           <Name>TimeoutSec</Name>
@@ -282,7 +282,7 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
             <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
           </Attributes>
           <Aliases />
-          <Description>Use the datasource name.</Description>
+          <Description>Filter datasource by name.</Description>
           <DefaultValue />
         </ParameterDescription>
         <ParameterDescription type="SwitchParameter" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="false" pos="named" globbing="false">
@@ -437,7 +437,7 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
             <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
           </Attributes>
           <Aliases />
-          <Description>Get datasource by name</Description>
+          <Description>Filter deployment by name.</Description>
           <DefaultValue />
         </ParameterDescription>
         <ParameterDescription type="SwitchParameter" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="false" pos="named" globbing="false">
@@ -1981,7 +1981,7 @@ This example use adminserver information from pipe and default credential previo
         <string>Get-WLChangeManager [-AdminServer &lt;List`1[String]&gt;] [-Credential &lt;PSCredential&gt;] [-SecureConnection] [-Cache] [-TimeoutSec &lt;Int32&gt;] [-WhatIf] [-Confirm]</string>
       </Syntax>
       <GeneralHelp>
-        <Synopsis />
+        <Synopsis>Get information about Managing Configuration Changes</Synopsis>
         <Description />
         <Notes />
         <InputType />
@@ -2102,8 +2102,8 @@ The input from the pipe is the same as this parameter.</Description>
     <CmdletObject verb="Invoke" noun="WlstScript">
       <Name>Invoke-WlstScript</Name>
       <Syntax>
-        <string>Invoke-WlstScript [-InputObject &lt;PSObject&gt;] [-Credential &lt;PSCredential&gt;] [-SecureConnection] [-ScriptPath &lt;String&gt;] [-PrefixToObject &lt;String&gt;] [-DelimiterToObject &lt;Char&gt;] [-PassThru] [-CurrentBaseDir] [-Arguments &lt;String[]&gt;] [-WhatIf] [-Confirm]</string>
-        <string>Invoke-WlstScript [-InputObject &lt;PSObject&gt;] [-Credential &lt;PSCredential&gt;] [-SecureConnection] [-PrefixToObject &lt;String&gt;] [-DelimiterToObject &lt;Char&gt;] [-PassThru] [-CurrentBaseDir] [-Arguments &lt;String[]&gt;] [-WhatIf] [-Confirm] [-BuiltInScript &lt;String&gt; {Get-JavaVersion.py | Get-ServerStart.py | Get-UserMemberOf.py | New-Domain.py | Set-DatasourceTarget.py} ]</string>
+        <string>Invoke-WlstScript [-InputObject &lt;PSObject&gt;] [-Credential &lt;PSCredential&gt;] [-SecureConnection] [-ScriptPath &lt;String&gt;] [-PrefixToObject &lt;String&gt;] [-DelimiterToObject &lt;Char&gt;] [-PassThru] [-CurrentBaseDir] [-WhatIf] [-Arguments &lt;String[]&gt;]</string>
+        <string>Invoke-WlstScript [-InputObject &lt;PSObject&gt;] [-Credential &lt;PSCredential&gt;] [-SecureConnection] [-PrefixToObject &lt;String&gt;] [-DelimiterToObject &lt;Char&gt;] [-PassThru] [-CurrentBaseDir] [-WhatIf] [-Arguments &lt;String[]&gt;] [-BuiltInScript &lt;String&gt; {Get-JavaVersion.py | Get-ServerStart.py | Get-UserMemberOf.py | New-Domain.py | Set-DatasourceTarget.py} ]</string>
       </Syntax>
       <GeneralHelp>
         <Synopsis>Run python scripts </Synopsis>
@@ -2119,8 +2119,8 @@ CMDLET will use either the pipe or InputObjet domain informations and the creden
         <ReturnTypeDescription />
       </GeneralHelp>
       <ParamSets>
-        <CommandParameterSetInfo2 Name="ScriptPath" Params="InputObject Credential SecureConnection ScriptPath PrefixToObject DelimiterToObject PassThru CurrentBaseDir Arguments Verbose Debug ErrorAction WarningAction InformationAction ErrorVariable WarningVariable InformationVariable OutVariable OutBuffer PipelineVariable WhatIf Confirm" />
-        <CommandParameterSetInfo2 Name="BuildinScript" Params="InputObject Credential SecureConnection PrefixToObject DelimiterToObject PassThru CurrentBaseDir Arguments Verbose Debug ErrorAction WarningAction InformationAction ErrorVariable WarningVariable InformationVariable OutVariable OutBuffer PipelineVariable WhatIf Confirm BuiltInScript" />
+        <CommandParameterSetInfo2 Name="ScriptPath" Params="InputObject Credential SecureConnection ScriptPath PrefixToObject DelimiterToObject PassThru CurrentBaseDir WhatIf Arguments Verbose Debug ErrorAction WarningAction InformationAction ErrorVariable WarningVariable InformationVariable OutVariable OutBuffer PipelineVariable" />
+        <CommandParameterSetInfo2 Name="BuildinScript" Params="InputObject Credential SecureConnection PrefixToObject DelimiterToObject PassThru CurrentBaseDir WhatIf Arguments Verbose Debug ErrorAction WarningAction InformationAction ErrorVariable WarningVariable InformationVariable OutVariable OutBuffer PipelineVariable BuiltInScript" />
       </ParamSets>
       <Parameters>
         <ParameterDescription type="PSObject" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="true" pipeProp="false" isPos="false" pos="named" globbing="false">
@@ -2222,23 +2222,9 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
           <Name>WhatIf</Name>
           <Attributes>
             <string>System.Management.Automation.ParameterAttribute</string>
-            <string>System.Management.Automation.AliasAttribute</string>
+            <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
           </Attributes>
-          <Aliases>
-            <string>wi</string>
-          </Aliases>
-          <Description />
-          <DefaultValue />
-        </ParameterDescription>
-        <ParameterDescription type="SwitchParameter" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="false" pos="named" globbing="false">
-          <Name>Confirm</Name>
-          <Attributes>
-            <string>System.Management.Automation.AliasAttribute</string>
-            <string>System.Management.Automation.ParameterAttribute</string>
-          </Attributes>
-          <Aliases>
-            <string>cf</string>
-          </Aliases>
+          <Aliases />
           <Description />
           <DefaultValue />
         </ParameterDescription>
@@ -2424,7 +2410,7 @@ item     : @{name=ADTR-1; id=1; type=deployment; description=[Deployer:149026]de
         <string>New-WLDomain -AdminServer &lt;String&gt; [-Name &lt;String&gt;] -AdminTcpPort &lt;Int32&gt; [-AdminTcpPortSec &lt;Int32&gt;] [-SecureConnection] [-Environment &lt;String&gt;] [-ServiceName &lt;String&gt;] [-Version &lt;Version&gt;] [-MW_HOME &lt;String&gt;] [-Description &lt;String&gt;] [-TimeoutSec &lt;Int32&gt;]</string>
       </Syntax>
       <GeneralHelp>
-        <Synopsis />
+        <Synopsis>Create a new weblogic domain into inventory.</Synopsis>
         <Description />
         <Notes />
         <InputType />
@@ -2564,129 +2550,6 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
       <SupportInformation ad="false" rsat="false" ps2="false" ps3="false" ps4="false" ps5="false" wxp="false" wv="false" w7="false" w8="false" w81="false" w10="false" w2k3s="false" w2k3e="false" w2k3d="false" w2k8s="false" w2k8e="false" w2k8d="false" w2k8r2s="false" w2k8r2e="false" w2k8r2d="false" w2k12s="false" w2k12d="false" w2k12r2s="false" w2k12r2d="false" />
       <Publish>false</Publish>
     </CmdletObject>
-    <CmdletObject verb="Remove" noun="WLDatasource">
-      <Name>Remove-WLDatasource</Name>
-      <Syntax>
-        <string>Remove-WLDatasource [-AdminServer &lt;List`1[String]&gt;] [-Credential &lt;PSCredential&gt;] [-SecureConnection] [-Name &lt;String[]&gt;] [-TimeoutSec &lt;Int32&gt;] [-WhatIf] [-Confirm]</string>
-        <string>Remove-WLDatasource [-InputObject &lt;PSObject&gt;] [-Credential &lt;PSCredential&gt;] [-Name &lt;String[]&gt;] [-TimeoutSec &lt;Int32&gt;] [-WhatIf] [-Confirm]</string>
-      </Syntax>
-      <GeneralHelp>
-        <Synopsis />
-        <Description />
-        <Notes />
-        <InputType />
-        <InputUrl />
-        <InputTypeDescription />
-        <ReturnType />
-        <ReturnUrl />
-        <ReturnTypeDescription />
-      </GeneralHelp>
-      <ParamSets>
-        <CommandParameterSetInfo2 Name="AdminServer" Params="AdminServer Credential SecureConnection Name TimeoutSec Verbose Debug ErrorAction WarningAction InformationAction ErrorVariable WarningVariable InformationVariable OutVariable OutBuffer PipelineVariable WhatIf Confirm" />
-        <CommandParameterSetInfo2 Name="InputObject" Params="InputObject Credential Name TimeoutSec Verbose Debug ErrorAction WarningAction InformationAction ErrorVariable WarningVariable InformationVariable OutVariable OutBuffer PipelineVariable WhatIf Confirm" />
-      </ParamSets>
-      <Parameters>
-        <ParameterDescription type="List`1[String]" varLen="true" required="false" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="false" pos="named" globbing="false">
-          <Name>AdminServer</Name>
-          <Attributes>
-            <string>System.Management.Automation.ParameterAttribute</string>
-            <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
-          </Attributes>
-          <Aliases />
-          <Description>Determine the AdminServer target.
-Suggestions will be returned from the result of the Get-WLDomain Command.</Description>
-          <DefaultValue />
-        </ParameterDescription>
-        <ParameterDescription type="PSCredential" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="false" pos="named" globbing="false">
-          <Name>Credential</Name>
-          <Attributes>
-            <string>System.Management.Automation.ParameterAttribute</string>
-            <string>System.Management.Automation.CredentialAttribute</string>
-            <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
-          </Attributes>
-          <Aliases />
-          <Description>Use credential to access the AdminServer. 
-You can use "-Credential (Get-Credential)" or "-Credential (Get-WLCredential)"
-To use Get-WLCredential you need run New-WLCredentials command to secure and store credentials in your profile.</Description>
-          <DefaultValue />
-        </ParameterDescription>
-        <ParameterDescription type="SwitchParameter" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="false" pos="named" globbing="false">
-          <Name>SecureConnection</Name>
-          <Attributes>
-            <string>System.Management.Automation.ParameterAttribute</string>
-            <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
-          </Attributes>
-          <Aliases />
-          <Description>Use to connect securely (TLS/SSL).
-The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain command.</Description>
-          <DefaultValue />
-        </ParameterDescription>
-        <ParameterDescription type="String[]" varLen="true" required="false" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="false" pos="named" globbing="false">
-          <Name>Name</Name>
-          <Attributes>
-            <string>System.Management.Automation.ParameterAttribute</string>
-            <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
-          </Attributes>
-          <Aliases />
-          <Description />
-          <DefaultValue />
-        </ParameterDescription>
-        <ParameterDescription type="Int32" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="false" pos="named" globbing="false">
-          <Name>TimeoutSec</Name>
-          <Attributes>
-            <string>System.Management.Automation.ParameterAttribute</string>
-            <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
-          </Attributes>
-          <Aliases />
-          <Description>Period of time in seconds that will be allowed to elapse in adminserver before the event is to take place.</Description>
-          <DefaultValue />
-        </ParameterDescription>
-        <ParameterDescription type="SwitchParameter" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="false" pos="named" globbing="false">
-          <Name>WhatIf</Name>
-          <Attributes>
-            <string>System.Management.Automation.ParameterAttribute</string>
-            <string>System.Management.Automation.AliasAttribute</string>
-          </Attributes>
-          <Aliases>
-            <string>wi</string>
-          </Aliases>
-          <Description />
-          <DefaultValue />
-        </ParameterDescription>
-        <ParameterDescription type="SwitchParameter" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="false" pos="named" globbing="false">
-          <Name>Confirm</Name>
-          <Attributes>
-            <string>System.Management.Automation.AliasAttribute</string>
-            <string>System.Management.Automation.ParameterAttribute</string>
-          </Attributes>
-          <Aliases>
-            <string>cf</string>
-          </Aliases>
-          <Description />
-          <DefaultValue />
-        </ParameterDescription>
-        <ParameterDescription type="PSObject" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="true" pipeProp="false" isPos="false" pos="named" globbing="false">
-          <Name>InputObject</Name>
-          <Attributes>
-            <string>System.Management.Automation.ParameterAttribute</string>
-            <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
-          </Attributes>
-          <Aliases />
-          <Description>Use to enter datasource objects. 
-The input from the pipe is the same as this parameter.</Description>
-          <DefaultValue />
-        </ParameterDescription>
-      </Parameters>
-      <Examples />
-      <RelatedLinks>
-        <RelatedLink>
-          <LinkText>Remove-WLDatasource</LinkText>
-          <LinkUrl>https://leorzz.github.io/psWeblogic/#Remove-WLDatasource-Header</LinkUrl>
-        </RelatedLink>
-      </RelatedLinks>
-      <SupportInformation ad="false" rsat="false" ps2="false" ps3="false" ps4="false" ps5="false" wxp="false" wv="false" w7="false" w8="false" w81="false" w10="false" w2k3s="false" w2k3e="false" w2k3d="false" w2k8s="false" w2k8e="false" w2k8d="false" w2k8r2s="false" w2k8r2e="false" w2k8r2d="false" w2k12s="false" w2k12d="false" w2k12r2s="false" w2k12r2d="false" />
-      <Publish>false</Publish>
-    </CmdletObject>
     <CmdletObject verb="Remove" noun="WLDeployment">
       <Name>Remove-WLDeployment</Name>
       <Syntax>
@@ -2694,7 +2557,7 @@ The input from the pipe is the same as this parameter.</Description>
         <string>Remove-WLDeployment [[-Name] &lt;String[]&gt;] [-InputObject &lt;PSObject&gt;] [-Credential &lt;PSCredential&gt;] [-TimeoutSec &lt;Int32&gt;] [-WhatIf] [-Confirm]</string>
       </Syntax>
       <GeneralHelp>
-        <Synopsis />
+        <Synopsis>Removes an existing deployment.</Synopsis>
         <Description />
         <Notes />
         <InputType />
@@ -2727,7 +2590,7 @@ Suggestions will be returned from the result of the Get-WLDomain Command.</Descr
             <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
           </Attributes>
           <Aliases />
-          <Description />
+          <Description>Filter deployment by name.</Description>
           <DefaultValue />
         </ParameterDescription>
         <ParameterDescription type="PSCredential" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="false" pos="named" globbing="false">
@@ -2817,7 +2680,7 @@ The input from the pipe is the same as this parameter.</Description>
         <string>Remove-WLDomain [-InputObject &lt;PSObject&gt;] [-TimeoutSec &lt;Int32&gt;] [-WhatIf] [-Confirm]</string>
       </Syntax>
       <GeneralHelp>
-        <Synopsis />
+        <Synopsis>Removes an existing weblogic domain from inventory.</Synopsis>
         <Description />
         <Notes />
         <InputType />
@@ -2907,6 +2770,124 @@ The input from the pipe is the same as this parameter.</Description>
           <LinkUrl>https://leorzz.github.io/psWeblogic/#Remove-WLDomain-Header</LinkUrl>
         </RelatedLink>
       </RelatedLinks>
+      <SupportInformation ad="false" rsat="false" ps2="false" ps3="false" ps4="false" ps5="false" wxp="false" wv="false" w7="false" w8="false" w81="false" w10="false" w2k3s="false" w2k3e="false" w2k3d="false" w2k8s="false" w2k8e="false" w2k8d="false" w2k8r2s="false" w2k8r2e="false" w2k8r2d="false" w2k12s="false" w2k12d="false" w2k12r2s="false" w2k12r2d="false" />
+      <Publish>false</Publish>
+    </CmdletObject>
+    <CmdletObject verb="Remove" noun="WLDatasource">
+      <Name>Remove-WLDatasource</Name>
+      <Syntax>
+        <string>Remove-WLDatasource [-AdminServer &lt;List`1[String]&gt;] [-Credential &lt;PSCredential&gt;] [-SecureConnection] [-Name &lt;String[]&gt;] [-TimeoutSec &lt;Int32&gt;] [-WhatIf] [-Confirm]</string>
+        <string>Remove-WLDatasource [-InputObject &lt;PSObject&gt;] [-Credential &lt;PSCredential&gt;] [-Name &lt;String[]&gt;] [-TimeoutSec &lt;Int32&gt;] [-WhatIf] [-Confirm]</string>
+      </Syntax>
+      <GeneralHelp>
+        <Synopsis>Removes an existing datasource.</Synopsis>
+        <Description />
+        <Notes />
+        <InputType />
+        <InputUrl />
+        <InputTypeDescription />
+        <ReturnType />
+        <ReturnUrl />
+        <ReturnTypeDescription />
+      </GeneralHelp>
+      <ParamSets>
+        <CommandParameterSetInfo2 Name="AdminServer" Params="AdminServer Credential SecureConnection Name TimeoutSec Verbose Debug ErrorAction WarningAction InformationAction ErrorVariable WarningVariable InformationVariable OutVariable OutBuffer PipelineVariable WhatIf Confirm" />
+        <CommandParameterSetInfo2 Name="InputObject" Params="InputObject Credential Name TimeoutSec Verbose Debug ErrorAction WarningAction InformationAction ErrorVariable WarningVariable InformationVariable OutVariable OutBuffer PipelineVariable WhatIf Confirm" />
+      </ParamSets>
+      <Parameters>
+        <ParameterDescription type="List`1[String]" varLen="true" required="false" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="false" pos="named" globbing="false">
+          <Name>AdminServer</Name>
+          <Attributes>
+            <string>System.Management.Automation.ParameterAttribute</string>
+            <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
+          </Attributes>
+          <Aliases />
+          <Description>Determine the AdminServer target.
+Suggestions will be returned from the result of the Get-WLDomain Command.</Description>
+          <DefaultValue />
+        </ParameterDescription>
+        <ParameterDescription type="PSCredential" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="false" pos="named" globbing="false">
+          <Name>Credential</Name>
+          <Attributes>
+            <string>System.Management.Automation.ParameterAttribute</string>
+            <string>System.Management.Automation.CredentialAttribute</string>
+            <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
+          </Attributes>
+          <Aliases />
+          <Description>Use credential to access the AdminServer. 
+You can use "-Credential (Get-Credential)" or "-Credential (Get-WLCredential)"
+To use Get-WLCredential you need run New-WLCredentials command to secure and store credentials in your profile.</Description>
+          <DefaultValue>(Get-WLCredential -Alias Default)</DefaultValue>
+        </ParameterDescription>
+        <ParameterDescription type="SwitchParameter" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="false" pos="named" globbing="false">
+          <Name>SecureConnection</Name>
+          <Attributes>
+            <string>System.Management.Automation.ParameterAttribute</string>
+            <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
+          </Attributes>
+          <Aliases />
+          <Description>Use to connect securely (TLS/SSL).
+The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain command.</Description>
+          <DefaultValue>True</DefaultValue>
+        </ParameterDescription>
+        <ParameterDescription type="String[]" varLen="true" required="false" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="false" pos="named" globbing="false">
+          <Name>Name</Name>
+          <Attributes>
+            <string>System.Management.Automation.ParameterAttribute</string>
+            <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
+          </Attributes>
+          <Aliases />
+          <Description>Filter datasource by name.</Description>
+          <DefaultValue />
+        </ParameterDescription>
+        <ParameterDescription type="Int32" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="false" pos="named" globbing="false">
+          <Name>TimeoutSec</Name>
+          <Attributes>
+            <string>System.Management.Automation.ParameterAttribute</string>
+            <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
+          </Attributes>
+          <Aliases />
+          <Description>Period of time in seconds that will be allowed to elapse in adminserver before the event is to take place.</Description>
+          <DefaultValue>30</DefaultValue>
+        </ParameterDescription>
+        <ParameterDescription type="SwitchParameter" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="false" pos="named" globbing="false">
+          <Name>WhatIf</Name>
+          <Attributes>
+            <string>System.Management.Automation.ParameterAttribute</string>
+            <string>System.Management.Automation.AliasAttribute</string>
+          </Attributes>
+          <Aliases>
+            <string>wi</string>
+          </Aliases>
+          <Description />
+          <DefaultValue />
+        </ParameterDescription>
+        <ParameterDescription type="SwitchParameter" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="false" pos="named" globbing="false">
+          <Name>Confirm</Name>
+          <Attributes>
+            <string>System.Management.Automation.AliasAttribute</string>
+            <string>System.Management.Automation.ParameterAttribute</string>
+          </Attributes>
+          <Aliases>
+            <string>cf</string>
+          </Aliases>
+          <Description />
+          <DefaultValue />
+        </ParameterDescription>
+        <ParameterDescription type="PSObject" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="true" pipeProp="false" isPos="false" pos="named" globbing="false">
+          <Name>InputObject</Name>
+          <Attributes>
+            <string>System.Management.Automation.ParameterAttribute</string>
+            <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
+          </Attributes>
+          <Aliases />
+          <Description>Use to enter objects such as domain, server and target in case you do not use the pipe. 
+The input from the pipe is the same as this parameter.</Description>
+          <DefaultValue />
+        </ParameterDescription>
+      </Parameters>
+      <Examples />
+      <RelatedLinks />
       <SupportInformation ad="false" rsat="false" ps2="false" ps3="false" ps4="false" ps5="false" wxp="false" wv="false" w7="false" w8="false" w81="false" w10="false" w2k3s="false" w2k3e="false" w2k3d="false" w2k8s="false" w2k8e="false" w2k8d="false" w2k8r2s="false" w2k8r2e="false" w2k8r2d="false" w2k12s="false" w2k12d="false" w2k12r2s="false" w2k12r2d="false" />
       <Publish>false</Publish>
     </CmdletObject>
