@@ -14,6 +14,10 @@ PS> Install-Module -Name psWeblogic
 #### Update
 PS> Update-Module -Name psWeblogic
 
+Repo: 
+[https://www.powershellgallery.com/packages/psWeblogic](https://www.powershellgallery.com/packages/psWeblogic)
+
+
 ### or ...
 
 Allow PowerShell to import or use scripts including modules by running the following command:
@@ -24,7 +28,6 @@ Install PsGet by executing the following commands:(Skip this if you get WMF 5)
 
     (new-object Net.WebClient).DownloadString("http://psget.net/GetPsGet.ps1") | iex
     import-module PsGet
-
 
 ### CMDLETs
 
@@ -56,6 +59,7 @@ Install PsGet by executing the following commands:(Skip this if you get WMF 5)
 | Stop-WLServer | Changes the lifecycle of the server object to shutdown. |
 
 Full documentation at [https://leorzz.github.io/psWeblogic/](https://leorzz.github.io/psWeblogic/).
+
 
 ### Todos
  - Improve features
