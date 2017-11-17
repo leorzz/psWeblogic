@@ -1,5 +1,6 @@
 #region Log File Management 
-$logLocalAppDir = Join-Path $Script:mInfo.ModuleBase logs
+#$logLocalAppDir = Join-Path $Script:mInfo.ModuleBase logs
+$logLocalAppDir = Join-Path -Path $Script:appdata -ChildPath log
 $logName = "$($Script:mInfo.Name).log" 
 $logFullName = Join-Path $logLocalAppDir $logName
 $MaxLogFileSizeMB = 5 # After a log file reaches this size it will archive the existing and create a new one 

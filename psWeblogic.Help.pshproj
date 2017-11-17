@@ -2887,7 +2887,140 @@ The input from the pipe is the same as this parameter.</Description>
         </ParameterDescription>
       </Parameters>
       <Examples />
-      <RelatedLinks />
+      <RelatedLinks>
+        <RelatedLink>
+          <LinkText>Remove-WLDatasource</LinkText>
+          <LinkUrl>https://leorzz.github.io/psWeblogic/#Remove-WLDatasource-Header</LinkUrl>
+        </RelatedLink>
+      </RelatedLinks>
+      <SupportInformation ad="false" rsat="false" ps2="false" ps3="false" ps4="false" ps5="false" wxp="false" wv="false" w7="false" w8="false" w81="false" w10="false" w2k3s="false" w2k3e="false" w2k3d="false" w2k8s="false" w2k8e="false" w2k8d="false" w2k8r2s="false" w2k8r2e="false" w2k8r2d="false" w2k12s="false" w2k12d="false" w2k12r2s="false" w2k12r2d="false" />
+      <Publish>false</Publish>
+    </CmdletObject>
+    <CmdletObject verb="Get" noun="WLEnvironment">
+      <Name>Get-WLEnvironment</Name>
+      <Syntax>
+        <string>Get-WLEnvironment</string>
+      </Syntax>
+      <GeneralHelp>
+        <Synopsis>Get all environment options.</Synopsis>
+        <Description />
+        <Notes />
+        <InputType />
+        <InputUrl />
+        <InputTypeDescription />
+        <ReturnType />
+        <ReturnUrl />
+        <ReturnTypeDescription />
+      </GeneralHelp>
+      <ParamSets>
+        <CommandParameterSetInfo2 Name="__AllParameterSets" Params="Verbose Debug ErrorAction WarningAction InformationAction ErrorVariable WarningVariable InformationVariable OutVariable OutBuffer PipelineVariable" />
+      </ParamSets>
+      <Parameters />
+      <Examples />
+      <RelatedLinks>
+        <RelatedLink>
+          <LinkText>Get-WLEnvironment</LinkText>
+          <LinkUrl>https://leorzz.github.io/psWeblogic/#Get-WLEnvironment-Header</LinkUrl>
+        </RelatedLink>
+      </RelatedLinks>
+      <SupportInformation ad="false" rsat="false" ps2="false" ps3="false" ps4="false" ps5="false" wxp="false" wv="false" w7="false" w8="false" w81="false" w10="false" w2k3s="false" w2k3e="false" w2k3d="false" w2k8s="false" w2k8e="false" w2k8d="false" w2k8r2s="false" w2k8r2e="false" w2k8r2d="false" w2k12s="false" w2k12d="false" w2k12r2s="false" w2k12r2d="false" />
+      <Publish>false</Publish>
+    </CmdletObject>
+    <CmdletObject verb="Set" noun="WLEnvironment">
+      <Name>Set-WLEnvironment</Name>
+      <Syntax>
+        <string>Set-WLEnvironment [[-DomainsInfoPath] &lt;String&gt;] [[-DomainsInfoPathPublish] &lt;String&gt;] [[-WLST] &lt;String&gt;] [[-CacheEnable] &lt;Object&gt; {True | False} ] [[-TTLCacheSeconds] &lt;Int32&gt;] [[-DebugEnable] &lt;Object&gt; {True | False} ]</string>
+      </Syntax>
+      <GeneralHelp>
+        <Synopsis>Set environment options.</Synopsis>
+        <Description />
+        <Notes />
+        <InputType />
+        <InputUrl />
+        <InputTypeDescription />
+        <ReturnType />
+        <ReturnUrl />
+        <ReturnTypeDescription />
+      </GeneralHelp>
+      <ParamSets>
+        <CommandParameterSetInfo2 Name="__AllParameterSets" Params="DomainsInfoPath DomainsInfoPathPublish WLST CacheEnable TTLCacheSeconds DebugEnable Verbose Debug ErrorAction WarningAction InformationAction ErrorVariable WarningVariable InformationVariable OutVariable OutBuffer PipelineVariable" />
+      </ParamSets>
+      <Parameters>
+        <ParameterDescription type="String" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="true" pos="0" globbing="false">
+          <Name>DomainsInfoPath</Name>
+          <Attributes>
+            <string>System.Management.Automation.ParameterAttribute</string>
+            <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
+          </Attributes>
+          <Aliases />
+          <Description>Path for reading the inventory of the weblogic environment where the information of each domain is stored.
+It can be HTTP, local file systems or network.
+It should also be the same target of the DomainsInfoPathPublish parameter.</Description>
+          <DefaultValue />
+        </ParameterDescription>
+        <ParameterDescription type="String" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="true" pos="1" globbing="false">
+          <Name>DomainsInfoPathPublish</Name>
+          <Attributes>
+            <string>System.Management.Automation.ParameterAttribute</string>
+            <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
+          </Attributes>
+          <Aliases />
+          <Description>Path for inventory writing, to be used by the 'New-Domain' Cmdlet. 
+They are the same location as DomainsInfoPath, however, it can be used with another protocol, such as SMB or NFS.</Description>
+          <DefaultValue />
+        </ParameterDescription>
+        <ParameterDescription type="String" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="true" pos="2" globbing="false">
+          <Name>WLST</Name>
+          <Attributes>
+            <string>System.Management.Automation.ParameterAttribute</string>
+            <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
+          </Attributes>
+          <Aliases />
+          <Description>Full path of the wlst.sh or wlst.cmd file.
+The WebLogic Scripting Tool (WLST) is a command-line scripting interface that system administrators and operators use to monitor and manage WebLogic Server instances and domains.
+https://docs.oracle.com/cd/E13222_01/wls/docs90/config_scripting/using_WLST.html</Description>
+          <DefaultValue />
+        </ParameterDescription>
+        <ParameterDescription type="Object" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="true" pos="3" globbing="false">
+          <Name>CacheEnable</Name>
+          <Attributes>
+            <string>System.Management.Automation.ValidateSetAttribute</string>
+            <string>System.Management.Automation.ParameterAttribute</string>
+          </Attributes>
+          <Aliases />
+          <Description>Enables or disables the cache feature. 
+This option allows the module to maintain a cache of queries in the weblogic domains.</Description>
+          <DefaultValue />
+        </ParameterDescription>
+        <ParameterDescription type="Int32" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="true" pos="4" globbing="false">
+          <Name>TTLCacheSeconds</Name>
+          <Attributes>
+            <string>System.Management.Automation.ParameterAttribute</string>
+            <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
+          </Attributes>
+          <Aliases />
+          <Description>Time, in seconds, that the cache will be considered valid.</Description>
+          <DefaultValue />
+        </ParameterDescription>
+        <ParameterDescription type="Object" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="true" pos="5" globbing="false">
+          <Name>DebugEnable</Name>
+          <Attributes>
+            <string>System.Management.Automation.ValidateSetAttribute</string>
+            <string>System.Management.Automation.ParameterAttribute</string>
+          </Attributes>
+          <Aliases />
+          <Description>The debug option writes additional information to the log file.
+Path $env:APPDATA\psWeblogic\log\</Description>
+          <DefaultValue />
+        </ParameterDescription>
+      </Parameters>
+      <Examples />
+      <RelatedLinks>
+        <RelatedLink>
+          <LinkText>Set-WLEnvironment</LinkText>
+          <LinkUrl>https://leorzz.github.io/psWeblogic/#Set-WLEnvironment-Header</LinkUrl>
+        </RelatedLink>
+      </RelatedLinks>
       <SupportInformation ad="false" rsat="false" ps2="false" ps3="false" ps4="false" ps5="false" wxp="false" wv="false" w7="false" w8="false" w81="false" w10="false" w2k3s="false" w2k3e="false" w2k3d="false" w2k8s="false" w2k8e="false" w2k8d="false" w2k8r2s="false" w2k8r2e="false" w2k8r2d="false" w2k12s="false" w2k12d="false" w2k12r2s="false" w2k12r2d="false" />
       <Publish>false</Publish>
     </CmdletObject>

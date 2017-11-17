@@ -133,6 +133,22 @@
           </ul>
         </li>
         <!-- End Get-WLDomain Menu -->
+          <!-- Get-WLEnvironment Menu -->
+          <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Get-WLEnvironment <b class="caret"></b></a>
+          <ul class="dropdown-menu navmenu-nav">
+            <li><a href="#Get-WLEnvironment-Synopsis">Synopsis</a></li>
+            <li><a href="#Get-WLEnvironment-Syntax">Syntax</a></li>
+            <li><a href="#Get-WLEnvironment-Description">Description</a></li>
+            <li><a href="#Get-WLEnvironment-Parameters">Parameters</a></li>
+            <li><a href="#Get-WLEnvironment-Inputs">Inputs</a></li>
+            <li><a href="#Get-WLEnvironment-Outputs">Outputs</a></li>
+            <li><a href="#Get-WLEnvironment-Examples">Examples</a></li>
+            <li><a href="#Get-WLEnvironment-RelatedLinks">RelatedLinks</a></li>
+            <li><a href="#Get-WLEnvironment-Notes">Notes</a></li>
+          </ul>
+        </li>
+        <!-- End Get-WLEnvironment Menu -->
           <!-- Get-WLjob Menu -->
           <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Get-WLjob <b class="caret"></b></a>
@@ -357,6 +373,22 @@
           </ul>
         </li>
         <!-- End Restart-WLServer Menu -->
+          <!-- Set-WLEnvironment Menu -->
+          <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Set-WLEnvironment <b class="caret"></b></a>
+          <ul class="dropdown-menu navmenu-nav">
+            <li><a href="#Set-WLEnvironment-Synopsis">Synopsis</a></li>
+            <li><a href="#Set-WLEnvironment-Syntax">Syntax</a></li>
+            <li><a href="#Set-WLEnvironment-Description">Description</a></li>
+            <li><a href="#Set-WLEnvironment-Parameters">Parameters</a></li>
+            <li><a href="#Set-WLEnvironment-Inputs">Inputs</a></li>
+            <li><a href="#Set-WLEnvironment-Outputs">Outputs</a></li>
+            <li><a href="#Set-WLEnvironment-Examples">Examples</a></li>
+            <li><a href="#Set-WLEnvironment-RelatedLinks">RelatedLinks</a></li>
+            <li><a href="#Set-WLEnvironment-Notes">Notes</a></li>
+          </ul>
+        </li>
+        <!-- End Set-WLEnvironment Menu -->
           <!-- Start-WLServer Menu -->
           <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Start-WLServer <b class="caret"></b></a>
@@ -452,9 +484,7 @@ THE SOFTWARE.
           </div>
           <div class="panel-body">
             <h3 id="Get-WLCacheIndex-Synopsis">Synopsis</h3>
-            <p>
-Get-WLCacheIndex 
-</p>
+            <p>Show current cache index.</p>
             <h3 id="Get-WLCacheIndex-Syntax">Syntax</h3>
             <pre>Get-WLCacheIndex</pre>
             <h3 id="Get-WLCacheIndex-Description">Description</h3>
@@ -463,14 +493,21 @@ Get-WLCacheIndex
             <dl class="dl-horizontal">
             </dl>
             <h3 id="Get-WLCacheIndex-Inputs">Inputs</h3>
-            <p>None
-</p>
+            <p></p>
             <h3 id="Get-WLCacheIndex-Outputs">Outputs</h3>
             <p></p>
             <h3 id="Get-WLCacheIndex-Examples">Examples</h3>
 
+            <b>Example 1</b>
+            <pre>Get-WLCacheIndex | Format-Table</pre>
+            <p>Output<pre>   Uri                                                                        ValidTo             FullName                                  
+---                                                                        -------             --------                                  
+https://wls-infra.tjrs.gov.br:443/management/wls/latest/servers     02/03/2016 10:03:54 C:\Users\user01\AppData\Local\Temp\w...
+https://wls-infra.tjrs.gov.br:443/management/wls/latest/datasources 02/03/2016 10:04:12 C:\Users\user01\AppData\Local\Temp\w...
+</pre></p>
+            <br>
             <h3 id="Get-WLCacheIndex-RelatedLinks">RelatedLinks</h3>
-            <p><a href=""></a></p>
+            <p><a href="https://leorzz.github.io/psWeblogic/#Get-WLCacheIndex-Header">https://leorzz.github.io/psWeblogic/#Get-WLCacheIndex-Header</a></p>
             <h3 id="Get-WLCacheIndex-Notes">Notes</h3>
             <p></p>
             <br>
@@ -484,7 +521,7 @@ Get-WLCacheIndex
           </div>
           <div class="panel-body">
             <h3 id="Get-WLChangeManager-Synopsis">Synopsis</h3>
-            <p></p>
+            <p>Get information about Managing Configuration Changes</p>
             <h3 id="Get-WLChangeManager-Syntax">Syntax</h3>
             <pre>Get-WLChangeManager [-AdminServer &lt;List`1[String]&gt;] [-Credential &lt;PSCredential&gt;] [-SecureConnection &lt;SwitchParameter&gt;] [-Cache &lt;SwitchParameter&gt;] [-TimeoutSec &lt;Int32&gt;] [-WhatIf &lt;SwitchParameter&gt;] [-Confirm &lt;SwitchParameter&gt;]</pre>
             <pre>Get-WLChangeManager [-InputObject &lt;PSObject&gt;] [-AdminServer &lt;List`1[String]&gt;] [-Credential &lt;PSCredential&gt;] [-SecureConnection &lt;SwitchParameter&gt;] [-Cache &lt;SwitchParameter&gt;] [-TimeoutSec &lt;Int32&gt;] [-WhatIf &lt;SwitchParameter&gt;] [-Confirm &lt;SwitchParameter&gt;]</pre>
@@ -1038,7 +1075,7 @@ To use Get-WLCredential you need run New-WLCredentials command to secure and sto
                   <div class="col-md-6 col-xs-6">
                     false<br>
                     named<br>
-                    <br>
+                    (Get-WLCredential -Alias Default)<br>
                     false<br>
                     false
                   </div>
@@ -1060,7 +1097,7 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
                   <div class="col-md-6 col-xs-6">
                     false<br>
                     named<br>
-                    <br>
+                    True<br>
                     false<br>
                     false
                   </div>
@@ -1081,7 +1118,7 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
                   <div class="col-md-6 col-xs-6">
                     false<br>
                     named<br>
-                    <br>
+                    True<br>
                     false<br>
                     false
                   </div>
@@ -1111,7 +1148,7 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
               </dd>
               <dt data-toggle="tooltip" title="Name">-Name</dt>
               <dd>&lt;String[]&gt;<br>
-                Use the datasource name.<br><br>
+                Filter datasource by name.<br><br>
                 <div class="row">
                   <div class="col-md-4 col-xs-4">
                     Required?<br>
@@ -1356,7 +1393,7 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
               </dd>
               <dt data-toggle="tooltip" title="Name">-Name</dt>
               <dd>&lt;String[]&gt;<br>
-                Get datasource by name<br><br>
+                Filter deployment by name.<br><br>
                 <div class="row">
                   <div class="col-md-4 col-xs-4">
                     Required?<br>
@@ -1615,6 +1652,35 @@ wls02         wls02.desenv.tjrs.gov.br           7304 443             12.1.3  De
             <h3 id="Get-WLDomain-RelatedLinks">RelatedLinks</h3>
             <p><a href="https://leorzz.github.io/psWeblogic/#Get-WLDomain-Header">https://leorzz.github.io/psWeblogic/#Get-WLDomain-Header</a></p>
             <h3 id="Get-WLDomain-Notes">Notes</h3>
+            <p></p>
+            <br>
+          </div>
+        </div>
+        <!-- End ConvertFrom-HexIP -->
+        <!-- Get-WLEnvironment -->
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2 id="Get-WLEnvironment-Header">Get-WLEnvironment</h1>
+          </div>
+          <div class="panel-body">
+            <h3 id="Get-WLEnvironment-Synopsis">Synopsis</h3>
+            <p>Get all environment options.</p>
+            <h3 id="Get-WLEnvironment-Syntax">Syntax</h3>
+            <pre>Get-WLEnvironment</pre>
+            <h3 id="Get-WLEnvironment-Description">Description</h3>
+            <p></p>
+            <h3 id="Get-WLEnvironment-Parameters">Parameters</h3>
+            <dl class="dl-horizontal">
+            </dl>
+            <h3 id="Get-WLEnvironment-Inputs">Inputs</h3>
+            <p></p>
+            <h3 id="Get-WLEnvironment-Outputs">Outputs</h3>
+            <p></p>
+            <h3 id="Get-WLEnvironment-Examples">Examples</h3>
+
+            <h3 id="Get-WLEnvironment-RelatedLinks">RelatedLinks</h3>
+            <p><a href="https://leorzz.github.io/psWeblogic/#Get-WLEnvironment-Header">https://leorzz.github.io/psWeblogic/#Get-WLEnvironment-Header</a></p>
+            <h3 id="Get-WLEnvironment-Notes">Notes</h3>
             <p></p>
             <br>
           </div>
@@ -2283,8 +2349,8 @@ With this parameter the result will be more informative objects and lifecycle me
             <h3 id="Invoke-WlstScript-Synopsis">Synopsis</h3>
             <p>Run python scripts</p>
             <h3 id="Invoke-WlstScript-Syntax">Syntax</h3>
-            <pre>Invoke-WlstScript [-InputObject &lt;PSObject&gt;] [-Credential &lt;PSCredential&gt;] [-SecureConnection &lt;SwitchParameter&gt;] [-ScriptPath &lt;String&gt;] [-PrefixToObject &lt;String&gt;] [-DelimiterToObject &lt;Char&gt;] [-PassThru &lt;SwitchParameter&gt;] [-CurrentBaseDir &lt;SwitchParameter&gt;] [-Arguments &lt;String[]&gt;] [-WhatIf &lt;SwitchParameter&gt;] [-Confirm &lt;SwitchParameter&gt;]</pre>
-            <pre>Invoke-WlstScript [-InputObject &lt;PSObject&gt;] [-Credential &lt;PSCredential&gt;] [-SecureConnection &lt;SwitchParameter&gt;] [-PrefixToObject &lt;String&gt;] [-DelimiterToObject &lt;Char&gt;] [-PassThru &lt;SwitchParameter&gt;] [-CurrentBaseDir &lt;SwitchParameter&gt;] [-Arguments &lt;String[]&gt;] [-WhatIf &lt;SwitchParameter&gt;] [-Confirm &lt;SwitchParameter&gt;] [-BuiltInScript &lt;String&gt;]</pre>
+            <pre>Invoke-WlstScript [-InputObject &lt;PSObject&gt;] [-Credential &lt;PSCredential&gt;] [-SecureConnection &lt;SwitchParameter&gt;] [-ScriptPath &lt;String&gt;] [-PrefixToObject &lt;String&gt;] [-DelimiterToObject &lt;Char&gt;] [-PassThru &lt;SwitchParameter&gt;] [-CurrentBaseDir &lt;SwitchParameter&gt;] [-WhatIf &lt;SwitchParameter&gt;] [-Arguments &lt;String[]&gt;]</pre>
+            <pre>Invoke-WlstScript [-InputObject &lt;PSObject&gt;] [-Credential &lt;PSCredential&gt;] [-SecureConnection &lt;SwitchParameter&gt;] [-PrefixToObject &lt;String&gt;] [-DelimiterToObject &lt;Char&gt;] [-PassThru &lt;SwitchParameter&gt;] [-CurrentBaseDir &lt;SwitchParameter&gt;] [-WhatIf &lt;SwitchParameter&gt;] [-Arguments &lt;String[]&gt;] [-BuiltInScript &lt;String&gt;]</pre>
             <h3 id="Invoke-WlstScript-Description">Description</h3>
             <p>Create your scripts normally and, if you use the connect method, use it empty in the original position - &quot;connect ()&quot; - without quotes. Enter the path of the python script in the ScriptPath parameter.<br><br>CMDLET will use either the pipe or InputObjet domain informations and the credentials of the Credential parameter.</p>
             <h3 id="Invoke-WlstScript-Parameters">Parameters</h3>
@@ -2483,27 +2549,6 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
                 <br>
               </dd>
               <dt data-toggle="tooltip" title="WhatIf">-WhatIf</dt>
-              <dd>&lt;SwitchParameter&gt;<br>
-                <br><br>
-                <div class="row">
-                  <div class="col-md-4 col-xs-4">
-                    Required?<br>
-                    Position?<br>
-                    Default value<br>
-                    Accept pipeline input?<br>
-                    Accept wildchard characters?
-                  </div>
-                  <div class="col-md-6 col-xs-6">
-                    false<br>
-                    named<br>
-                    <br>
-                    false<br>
-                    false
-                  </div>
-                </div>
-                <br>
-              </dd>
-              <dt data-toggle="tooltip" title="Confirm">-Confirm</dt>
               <dd>&lt;SwitchParameter&gt;<br>
                 <br><br>
                 <div class="row">
@@ -3464,7 +3509,7 @@ item     : @{name=ADTR-1; id=1; type=deployment; description=[Deployer:149026]de
           </div>
           <div class="panel-body">
             <h3 id="New-WLDomain-Synopsis">Synopsis</h3>
-            <p></p>
+            <p>Create a new weblogic domain into inventory.</p>
             <h3 id="New-WLDomain-Syntax">Syntax</h3>
             <pre>New-WLDomain -AdminServer &lt;String&gt; [-Name &lt;String&gt;] -AdminTcpPort &lt;Int32&gt; [-AdminTcpPortSec &lt;Int32&gt;] [-SecureConnection &lt;SwitchParameter&gt;] [-Environment &lt;String&gt;] [-ServiceName &lt;String&gt;] [-Version &lt;Version&gt;] [-MW_HOME &lt;String&gt;] [-Description &lt;String&gt;] [-TimeoutSec &lt;Int32&gt;]</pre>
             <h3 id="New-WLDomain-Description">Description</h3>
@@ -3801,21 +3846,18 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
           </div>
           <div class="panel-body">
             <h3 id="Remove-WLDatasource-Synopsis">Synopsis</h3>
-            <p>
-Remove-WLDatasource [-AdminServer &lt;List[string]&gt;] [-Credential &lt;pscredential&gt;] [-SecureConnection] [-Name &lt;string[]&gt;] [-TimeoutSec &lt;int&gt;] [-WhatIf] [-Confirm] [&lt;CommonParameters&gt;]
-
-Remove-WLDatasource [-InputObject &lt;psobject&gt;] [-Credential &lt;pscredential&gt;] [-Name &lt;string[]&gt;] [-TimeoutSec &lt;int&gt;] [-WhatIf] [-Confirm] [&lt;CommonParameters&gt;]
-</p>
+            <p>Removes an existing datasource.</p>
             <h3 id="Remove-WLDatasource-Syntax">Syntax</h3>
-            <pre>Remove-WLDatasource [-AdminServer &lt;List[string]&gt;] [-Credential &lt;pscredential&gt;] [-SecureConnection] [-Name &lt;string[]&gt;] [-TimeoutSec &lt;int&gt;] [-WhatIf] [-Confirm]</pre>
-            <pre>Remove-WLDatasource [-InputObject &lt;psobject&gt;] [-Credential &lt;pscredential&gt;] [-Name &lt;string[]&gt;] [-TimeoutSec &lt;int&gt;] [-WhatIf] [-Confirm]</pre>
+            <pre>Remove-WLDatasource [-AdminServer &lt;List`1[String]&gt;] [-Credential &lt;PSCredential&gt;] [-SecureConnection &lt;SwitchParameter&gt;] [-Name &lt;String[]&gt;] [-TimeoutSec &lt;Int32&gt;] [-WhatIf &lt;SwitchParameter&gt;] [-Confirm &lt;SwitchParameter&gt;]</pre>
+            <pre>Remove-WLDatasource [-InputObject &lt;PSObject&gt;] [-Credential &lt;PSCredential&gt;] [-Name &lt;String[]&gt;] [-TimeoutSec &lt;Int32&gt;] [-WhatIf &lt;SwitchParameter&gt;] [-Confirm &lt;SwitchParameter&gt;]</pre>
             <h3 id="Remove-WLDatasource-Description">Description</h3>
             <p></p>
             <h3 id="Remove-WLDatasource-Parameters">Parameters</h3>
             <dl class="dl-horizontal">
               <dt data-toggle="tooltip" title="AdminServer">-AdminServer</dt>
-              <dd>&lt;List[string]&gt;<br>
-                <br><br>
+              <dd>&lt;List`1[String]&gt;<br>
+                Determine the AdminServer target.
+Suggestions will be returned from the result of the Get-WLDomain Command.<br><br>
                 <div class="row">
                   <div class="col-md-4 col-xs-4">
                     Required?<br>
@@ -3826,38 +3868,19 @@ Remove-WLDatasource [-InputObject &lt;psobject&gt;] [-Credential &lt;pscredentia
                   </div>
                   <div class="col-md-6 col-xs-6">
                     false<br>
-                    Named<br>
+                    named<br>
                     <br>
                     false<br>
-                    
-                  </div>
-                </div>
-                <br>
-              </dd>
-              <dt data-toggle="tooltip" title="Confirm">-Confirm</dt>
-              <dd>&lt;&gt;<br>
-                <br><br>
-                <div class="row">
-                  <div class="col-md-4 col-xs-4">
-                    Required?<br>
-                    Position?<br>
-                    Default value<br>
-                    Accept pipeline input?<br>
-                    Accept wildchard characters?
-                  </div>
-                  <div class="col-md-6 col-xs-6">
-                    false<br>
-                    Named<br>
-                    <br>
-                    false<br>
-                    
+                    false
                   </div>
                 </div>
                 <br>
               </dd>
               <dt data-toggle="tooltip" title="Credential">-Credential</dt>
-              <dd>&lt;pscredential&gt;<br>
-                <br><br>
+              <dd>&lt;PSCredential&gt;<br>
+                Use credential to access the AdminServer. 
+You can use "-Credential (Get-Credential)" or "-Credential (Get-WLCredential)"
+To use Get-WLCredential you need run New-WLCredentials command to secure and store credentials in your profile.<br><br>
                 <div class="row">
                   <div class="col-md-4 col-xs-4">
                     Required?<br>
@@ -3868,59 +3891,18 @@ Remove-WLDatasource [-InputObject &lt;psobject&gt;] [-Credential &lt;pscredentia
                   </div>
                   <div class="col-md-6 col-xs-6">
                     false<br>
-                    Named<br>
-                    <br>
+                    named<br>
+                    (Get-WLCredential -Alias Default)<br>
                     false<br>
-                    
-                  </div>
-                </div>
-                <br>
-              </dd>
-              <dt data-toggle="tooltip" title="InputObject">-InputObject</dt>
-              <dd>&lt;psobject&gt;<br>
-                <br><br>
-                <div class="row">
-                  <div class="col-md-4 col-xs-4">
-                    Required?<br>
-                    Position?<br>
-                    Default value<br>
-                    Accept pipeline input?<br>
-                    Accept wildchard characters?
-                  </div>
-                  <div class="col-md-6 col-xs-6">
-                    false<br>
-                    Named<br>
-                    <br>
-                    true (ByValue)<br>
-                    
-                  </div>
-                </div>
-                <br>
-              </dd>
-              <dt data-toggle="tooltip" title="Name">-Name</dt>
-              <dd>&lt;string[]&gt;<br>
-                <br><br>
-                <div class="row">
-                  <div class="col-md-4 col-xs-4">
-                    Required?<br>
-                    Position?<br>
-                    Default value<br>
-                    Accept pipeline input?<br>
-                    Accept wildchard characters?
-                  </div>
-                  <div class="col-md-6 col-xs-6">
-                    false<br>
-                    Named<br>
-                    <br>
-                    false<br>
-                    
+                    false
                   </div>
                 </div>
                 <br>
               </dd>
               <dt data-toggle="tooltip" title="SecureConnection">-SecureConnection</dt>
-              <dd>&lt;&gt;<br>
-                <br><br>
+              <dd>&lt;SwitchParameter&gt;<br>
+                Use to connect securely (TLS/SSL).
+The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain command.<br><br>
                 <div class="row">
                   <div class="col-md-4 col-xs-4">
                     Required?<br>
@@ -3931,17 +3913,38 @@ Remove-WLDatasource [-InputObject &lt;psobject&gt;] [-Credential &lt;pscredentia
                   </div>
                   <div class="col-md-6 col-xs-6">
                     false<br>
-                    Named<br>
+                    named<br>
+                    True<br>
+                    false<br>
+                    false
+                  </div>
+                </div>
+                <br>
+              </dd>
+              <dt data-toggle="tooltip" title="Name">-Name</dt>
+              <dd>&lt;String[]&gt;<br>
+                Filter datasource by name.<br><br>
+                <div class="row">
+                  <div class="col-md-4 col-xs-4">
+                    Required?<br>
+                    Position?<br>
+                    Default value<br>
+                    Accept pipeline input?<br>
+                    Accept wildchard characters?
+                  </div>
+                  <div class="col-md-6 col-xs-6">
+                    false<br>
+                    named<br>
                     <br>
                     false<br>
-                    
+                    false
                   </div>
                 </div>
                 <br>
               </dd>
               <dt data-toggle="tooltip" title="TimeoutSec">-TimeoutSec</dt>
-              <dd>&lt;int&gt;<br>
-                <br><br>
+              <dd>&lt;Int32&gt;<br>
+                Period of time in seconds that will be allowed to elapse in adminserver before the event is to take place.<br><br>
                 <div class="row">
                   <div class="col-md-4 col-xs-4">
                     Required?<br>
@@ -3952,16 +3955,16 @@ Remove-WLDatasource [-InputObject &lt;psobject&gt;] [-Credential &lt;pscredentia
                   </div>
                   <div class="col-md-6 col-xs-6">
                     false<br>
-                    Named<br>
-                    <br>
+                    named<br>
+                    30<br>
                     false<br>
-                    
+                    false
                   </div>
                 </div>
                 <br>
               </dd>
               <dt data-toggle="tooltip" title="WhatIf">-WhatIf</dt>
-              <dd>&lt;&gt;<br>
+              <dd>&lt;SwitchParameter&gt;<br>
                 <br><br>
                 <div class="row">
                   <div class="col-md-4 col-xs-4">
@@ -3973,24 +3976,66 @@ Remove-WLDatasource [-InputObject &lt;psobject&gt;] [-Credential &lt;pscredentia
                   </div>
                   <div class="col-md-6 col-xs-6">
                     false<br>
-                    Named<br>
+                    named<br>
                     <br>
                     false<br>
-                    
+                    false
+                  </div>
+                </div>
+                <br>
+              </dd>
+              <dt data-toggle="tooltip" title="Confirm">-Confirm</dt>
+              <dd>&lt;SwitchParameter&gt;<br>
+                <br><br>
+                <div class="row">
+                  <div class="col-md-4 col-xs-4">
+                    Required?<br>
+                    Position?<br>
+                    Default value<br>
+                    Accept pipeline input?<br>
+                    Accept wildchard characters?
+                  </div>
+                  <div class="col-md-6 col-xs-6">
+                    false<br>
+                    named<br>
+                    <br>
+                    false<br>
+                    false
+                  </div>
+                </div>
+                <br>
+              </dd>
+              <dt data-toggle="tooltip" title="InputObject">-InputObject</dt>
+              <dd>&lt;PSObject&gt;<br>
+                Use to enter objects such as domain, server and target in case you do not use the pipe. 
+The input from the pipe is the same as this parameter.<br><br>
+                <div class="row">
+                  <div class="col-md-4 col-xs-4">
+                    Required?<br>
+                    Position?<br>
+                    Default value<br>
+                    Accept pipeline input?<br>
+                    Accept wildchard characters?
+                  </div>
+                  <div class="col-md-6 col-xs-6">
+                    false<br>
+                    named<br>
+                    <br>
+                    true (ByValue)<br>
+                    false
                   </div>
                 </div>
                 <br>
               </dd>
             </dl>
             <h3 id="Remove-WLDatasource-Inputs">Inputs</h3>
-            <p>System.Management.Automation.PSObject
-</p>
+            <p></p>
             <h3 id="Remove-WLDatasource-Outputs">Outputs</h3>
             <p></p>
             <h3 id="Remove-WLDatasource-Examples">Examples</h3>
 
             <h3 id="Remove-WLDatasource-RelatedLinks">RelatedLinks</h3>
-            <p><a href=""></a></p>
+            <p><a href="https://leorzz.github.io/psWeblogic/#Remove-WLDatasource-Header">https://leorzz.github.io/psWeblogic/#Remove-WLDatasource-Header</a></p>
             <h3 id="Remove-WLDatasource-Notes">Notes</h3>
             <p></p>
             <br>
@@ -4004,7 +4049,7 @@ Remove-WLDatasource [-InputObject &lt;psobject&gt;] [-Credential &lt;pscredentia
           </div>
           <div class="panel-body">
             <h3 id="Remove-WLDeployment-Synopsis">Synopsis</h3>
-            <p></p>
+            <p>Removes an existing deployment.</p>
             <h3 id="Remove-WLDeployment-Syntax">Syntax</h3>
             <pre>Remove-WLDeployment [-AdminServer &lt;List`1[String]&gt;] [-Name &lt;String[]&gt;] [-Credential &lt;PSCredential&gt;] [-SecureConnection &lt;SwitchParameter&gt;] [-TimeoutSec &lt;Int32&gt;] [-WhatIf &lt;SwitchParameter&gt;] [-Confirm &lt;SwitchParameter&gt;]</pre>
             <pre>Remove-WLDeployment [-Name &lt;String[]&gt;] [-InputObject &lt;PSObject&gt;] [-Credential &lt;PSCredential&gt;] [-TimeoutSec &lt;Int32&gt;] [-WhatIf &lt;SwitchParameter&gt;] [-Confirm &lt;SwitchParameter&gt;]</pre>
@@ -4036,7 +4081,7 @@ Suggestions will be returned from the result of the Get-WLDomain Command.<br><br
               </dd>
               <dt data-toggle="tooltip" title="Name">-Name</dt>
               <dd>&lt;String[]&gt;<br>
-                <br><br>
+                Filter deployment by name.<br><br>
                 <div class="row">
                   <div class="col-md-4 col-xs-4">
                     Required?<br>
@@ -4207,7 +4252,7 @@ The input from the pipe is the same as this parameter.<br><br>
           </div>
           <div class="panel-body">
             <h3 id="Remove-WLDomain-Synopsis">Synopsis</h3>
-            <p></p>
+            <p>Removes an existing weblogic domain from inventory.</p>
             <h3 id="Remove-WLDomain-Syntax">Syntax</h3>
             <pre>Remove-WLDomain [-AdminServer &lt;List`1[String]&gt;] [-SecureConnection &lt;SwitchParameter&gt;] [-TimeoutSec &lt;Int32&gt;] [-WhatIf &lt;SwitchParameter&gt;] [-Confirm &lt;SwitchParameter&gt;]</pre>
             <pre>Remove-WLDomain [-InputObject &lt;PSObject&gt;] [-TimeoutSec &lt;Int32&gt;] [-WhatIf &lt;SwitchParameter&gt;] [-Confirm &lt;SwitchParameter&gt;]</pre>
@@ -4366,9 +4411,7 @@ The input from the pipe is the same as this parameter.<br><br>
           </div>
           <div class="panel-body">
             <h3 id="Repair-WLCacheIndex-Synopsis">Synopsis</h3>
-            <p>
-Repair-WLCacheIndex 
-</p>
+            <p>Rebuild the index cache to current powershell session.</p>
             <h3 id="Repair-WLCacheIndex-Syntax">Syntax</h3>
             <pre>Repair-WLCacheIndex</pre>
             <h3 id="Repair-WLCacheIndex-Description">Description</h3>
@@ -4377,14 +4420,13 @@ Repair-WLCacheIndex
             <dl class="dl-horizontal">
             </dl>
             <h3 id="Repair-WLCacheIndex-Inputs">Inputs</h3>
-            <p>None
-</p>
+            <p></p>
             <h3 id="Repair-WLCacheIndex-Outputs">Outputs</h3>
             <p></p>
             <h3 id="Repair-WLCacheIndex-Examples">Examples</h3>
 
             <h3 id="Repair-WLCacheIndex-RelatedLinks">RelatedLinks</h3>
-            <p><a href=""></a></p>
+            <p><a href="https://leorzz.github.io/psWeblogic/#Repair-WLCacheIndex-Header">https://leorzz.github.io/psWeblogic/#Repair-WLCacheIndex-Header</a></p>
             <h3 id="Repair-WLCacheIndex-Notes">Notes</h3>
             <p></p>
             <br>
@@ -4643,6 +4685,168 @@ This example use adminserver information from pipe and default credential previo
             <h3 id="Restart-WLServer-RelatedLinks">RelatedLinks</h3>
             <p><a href="https://leorzz.github.io/psWeblogic/#Restart-WLServer-Header">https://leorzz.github.io/psWeblogic/#Restart-WLServer-Header</a></p>
             <h3 id="Restart-WLServer-Notes">Notes</h3>
+            <p></p>
+            <br>
+          </div>
+        </div>
+        <!-- End ConvertFrom-HexIP -->
+        <!-- Set-WLEnvironment -->
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2 id="Set-WLEnvironment-Header">Set-WLEnvironment</h1>
+          </div>
+          <div class="panel-body">
+            <h3 id="Set-WLEnvironment-Synopsis">Synopsis</h3>
+            <p>Set environment options.</p>
+            <h3 id="Set-WLEnvironment-Syntax">Syntax</h3>
+            <pre>Set-WLEnvironment [-DomainsInfoPath &lt;String&gt;] [-DomainsInfoPathPublish &lt;String&gt;] [-WLST &lt;String&gt;] [-CacheEnable &lt;Object&gt;] [-TTLCacheSeconds &lt;Int32&gt;] [-DebugEnable &lt;Object&gt;]</pre>
+            <h3 id="Set-WLEnvironment-Description">Description</h3>
+            <p></p>
+            <h3 id="Set-WLEnvironment-Parameters">Parameters</h3>
+            <dl class="dl-horizontal">
+              <dt data-toggle="tooltip" title="DomainsInfoPath">-DomainsInfoPath</dt>
+              <dd>&lt;String&gt;<br>
+                Path for reading the inventory of the weblogic environment where the information of each domain is stored.
+It can be HTTP, local file systems or network.
+It should also be the same target of the DomainsInfoPathPublish parameter.<br><br>
+                <div class="row">
+                  <div class="col-md-4 col-xs-4">
+                    Required?<br>
+                    Position?<br>
+                    Default value<br>
+                    Accept pipeline input?<br>
+                    Accept wildchard characters?
+                  </div>
+                  <div class="col-md-6 col-xs-6">
+                    false<br>
+                    0<br>
+                    <br>
+                    false<br>
+                    false
+                  </div>
+                </div>
+                <br>
+              </dd>
+              <dt data-toggle="tooltip" title="DomainsInfoPathPublish">-DomainsInfoPathPublish</dt>
+              <dd>&lt;String&gt;<br>
+                Path for inventory writing, to be used by the 'New-Domain' Cmdlet. 
+They are the same location as DomainsInfoPath, however, it can be used with another protocol, such as SMB or NFS.<br><br>
+                <div class="row">
+                  <div class="col-md-4 col-xs-4">
+                    Required?<br>
+                    Position?<br>
+                    Default value<br>
+                    Accept pipeline input?<br>
+                    Accept wildchard characters?
+                  </div>
+                  <div class="col-md-6 col-xs-6">
+                    false<br>
+                    1<br>
+                    <br>
+                    false<br>
+                    false
+                  </div>
+                </div>
+                <br>
+              </dd>
+              <dt data-toggle="tooltip" title="WLST">-WLST</dt>
+              <dd>&lt;String&gt;<br>
+                Full path of the wlst.sh or wlst.cmd file.
+The WebLogic Scripting Tool (WLST) is a command-line scripting interface that system administrators and operators use to monitor and manage WebLogic Server instances and domains.
+https://docs.oracle.com/cd/E13222_01/wls/docs90/config_scripting/using_WLST.html<br><br>
+                <div class="row">
+                  <div class="col-md-4 col-xs-4">
+                    Required?<br>
+                    Position?<br>
+                    Default value<br>
+                    Accept pipeline input?<br>
+                    Accept wildchard characters?
+                  </div>
+                  <div class="col-md-6 col-xs-6">
+                    false<br>
+                    2<br>
+                    <br>
+                    false<br>
+                    false
+                  </div>
+                </div>
+                <br>
+              </dd>
+              <dt data-toggle="tooltip" title="CacheEnable">-CacheEnable</dt>
+              <dd>&lt;Object&gt;<br>
+                Enables or disables the cache feature. 
+This option allows the module to maintain a cache of queries in the weblogic domains.<br><br>
+                <div class="row">
+                  <div class="col-md-4 col-xs-4">
+                    Required?<br>
+                    Position?<br>
+                    Default value<br>
+                    Accept pipeline input?<br>
+                    Accept wildchard characters?
+                  </div>
+                  <div class="col-md-6 col-xs-6">
+                    false<br>
+                    3<br>
+                    <br>
+                    false<br>
+                    false
+                  </div>
+                </div>
+                <br>
+              </dd>
+              <dt data-toggle="tooltip" title="TTLCacheSeconds">-TTLCacheSeconds</dt>
+              <dd>&lt;Int32&gt;<br>
+                Time, in seconds, that the cache will be considered valid.<br><br>
+                <div class="row">
+                  <div class="col-md-4 col-xs-4">
+                    Required?<br>
+                    Position?<br>
+                    Default value<br>
+                    Accept pipeline input?<br>
+                    Accept wildchard characters?
+                  </div>
+                  <div class="col-md-6 col-xs-6">
+                    false<br>
+                    4<br>
+                    <br>
+                    false<br>
+                    false
+                  </div>
+                </div>
+                <br>
+              </dd>
+              <dt data-toggle="tooltip" title="DebugEnable">-DebugEnable</dt>
+              <dd>&lt;Object&gt;<br>
+                The debug option writes additional information to the log file.
+Path $env:APPDATA\psWeblogic\log\<br><br>
+                <div class="row">
+                  <div class="col-md-4 col-xs-4">
+                    Required?<br>
+                    Position?<br>
+                    Default value<br>
+                    Accept pipeline input?<br>
+                    Accept wildchard characters?
+                  </div>
+                  <div class="col-md-6 col-xs-6">
+                    false<br>
+                    5<br>
+                    <br>
+                    false<br>
+                    false
+                  </div>
+                </div>
+                <br>
+              </dd>
+            </dl>
+            <h3 id="Set-WLEnvironment-Inputs">Inputs</h3>
+            <p></p>
+            <h3 id="Set-WLEnvironment-Outputs">Outputs</h3>
+            <p></p>
+            <h3 id="Set-WLEnvironment-Examples">Examples</h3>
+
+            <h3 id="Set-WLEnvironment-RelatedLinks">RelatedLinks</h3>
+            <p><a href="https://leorzz.github.io/psWeblogic/#Set-WLEnvironment-Header">https://leorzz.github.io/psWeblogic/#Set-WLEnvironment-Header</a></p>
+            <h3 id="Set-WLEnvironment-Notes">Notes</h3>
             <p></p>
             <br>
           </div>
