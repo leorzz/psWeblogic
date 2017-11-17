@@ -82,7 +82,7 @@ https://wls-infra.tjrs.gov.br:443/management/wls/latest/datasources 02/03/2016 1
 	<maml:relatedLinks>
 		<maml:navigationLink>
 			<maml:linkText>Get-WLCacheIndex</maml:linkText>
-			<maml:uri>https://wlsutil.codeplex.com/wikipage?title=Get-WLCacheIndex</maml:uri>
+			<maml:uri>https://leorzz.github.io/psWeblogic/#Get-WLCacheIndex-Header</maml:uri>
 		</maml:navigationLink>
 		<maml:navigationLink>
 			<maml:linkText></maml:linkText>
@@ -344,7 +344,7 @@ infra-desenv-02 {@{name=infra-des-32.tjrs.gov.br; state=RUNNING; health=HEALTH_O
 	<maml:relatedLinks>
 		<maml:navigationLink>
 			<maml:linkText>Get-WLCluster</maml:linkText>
-			<maml:uri>https://wlsutil.codeplex.com/wikipage?title=Get-WLCluster</maml:uri>
+			<maml:uri>https://leorzz.github.io/psWeblogic/#Get-WLCluster-Header</maml:uri>
 		</maml:navigationLink>
 	</maml:relatedLinks>
 </command:command>
@@ -672,8 +672,8 @@ jdbc/ds2   Generic</maml:para>
 	</command:examples>
 	<maml:relatedLinks>
 		<maml:navigationLink>
-			<maml:linkText></maml:linkText>
-			<maml:uri>https://wlsutil.codeplex.com/wikipage?title=Get-WLDatasource</maml:uri>
+			<maml:linkText>Get-WLDatasource</maml:linkText>
+			<maml:uri>https://leorzz.github.io/psWeblogic/#Get-WLDatasource-Header</maml:uri>
 		</maml:navigationLink>
 	</maml:relatedLinks>
 </command:command>
@@ -1046,6 +1046,10 @@ Data Source &apos;jdbc/ds02&apos; was successfully reset.          SUCCESS </mam
 		</command:example>
 	</command:examples>
 	<maml:relatedLinks>
+		<maml:navigationLink>
+			<maml:linkText>Get-WLDeployment</maml:linkText>
+			<maml:uri>https://leorzz.github.io/psWeblogic/#Get-WLDeployment-Header</maml:uri>
+		</maml:navigationLink>
 	</maml:relatedLinks>
 </command:command>
 <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
@@ -1281,6 +1285,10 @@ wls02         wls02.desenv.tjrs.gov.br           7304 443             12.1.3  De
 		</command:example>
 	</command:examples>
 	<maml:relatedLinks>
+		<maml:navigationLink>
+			<maml:linkText>Get-WLDomain</maml:linkText>
+			<maml:uri>https://leorzz.github.io/psWeblogic/#Get-WLDomain-Header</maml:uri>
+		</maml:navigationLink>
 	</maml:relatedLinks>
 </command:command>
 <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
@@ -1466,6 +1474,10 @@ To use Get-WLCredential you need run New-WLCredentials command to secure and sto
 	<command:examples>
 	</command:examples>
 	<maml:relatedLinks>
+		<maml:navigationLink>
+			<maml:linkText>Get-WLjob</maml:linkText>
+			<maml:uri>https://leorzz.github.io/psWeblogic/#Get-WLjob-Header</maml:uri>
+		</maml:navigationLink>
 	</maml:relatedLinks>
 </command:command>
 <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
@@ -1908,6 +1920,10 @@ With this parameter the result will be more informative objects and lifecycle me
 	<command:examples>
 	</command:examples>
 	<maml:relatedLinks>
+		<maml:navigationLink>
+			<maml:linkText>Get-WLServer</maml:linkText>
+			<maml:uri>https://leorzz.github.io/psWeblogic/#Get-WLServer-Header</maml:uri>
+		</maml:navigationLink>
 	</maml:relatedLinks>
 </command:command>
 <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
@@ -2154,6 +2170,10 @@ With this parameter the result will be more informative objects and lifecycle me
 	<command:examples>
 	</command:examples>
 	<maml:relatedLinks>
+		<maml:navigationLink>
+			<maml:linkText>Get-WLTarget</maml:linkText>
+			<maml:uri>https://leorzz.github.io/psWeblogic/#Get-WLTarget-Header</maml:uri>
+		</maml:navigationLink>
 	</maml:relatedLinks>
 </command:command>
 <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
@@ -2357,6 +2377,10 @@ user01 08/03/2016 12:16:08 user01   System.Security.SecureString</maml:para>
 		</command:example>
 	</command:examples>
 	<maml:relatedLinks>
+		<maml:navigationLink>
+			<maml:linkText>New-WLCredential</maml:linkText>
+			<maml:uri>https://leorzz.github.io/psWeblogic/#New-WLCredential-Header</maml:uri>
+		</maml:navigationLink>
 	</maml:relatedLinks>
 </command:command>
 <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
@@ -2476,6 +2500,10 @@ user01 08/03/2016 12:16:08 user01   System.Security.SecureString</maml:para>
 		</command:example>
 	</command:examples>
 	<maml:relatedLinks>
+		<maml:navigationLink>
+			<maml:linkText>Remove-WLCredential</maml:linkText>
+			<maml:uri>https://leorzz.github.io/psWeblogic/#Remove-WLCredential-Header</maml:uri>
+		</maml:navigationLink>
 	</maml:relatedLinks>
 </command:command>
 <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
@@ -2536,6 +2564,10 @@ user01 08/03/2016 12:16:08 user01   System.Security.SecureString</maml:para>
 	<command:examples>
 	</command:examples>
 	<maml:relatedLinks>
+		<maml:navigationLink>
+			<maml:linkText>Repair-WLCacheIndex</maml:linkText>
+			<maml:uri>https://leorzz.github.io/psWeblogic/#Repair-WLCacheIndex-Header</maml:uri>
+		</maml:navigationLink>
 	</maml:relatedLinks>
 </command:command>
 <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
@@ -2780,6 +2812,10 @@ This example use adminserver information from pipe and default credential previo
 		</command:example>
 	</command:examples>
 	<maml:relatedLinks>
+		<maml:navigationLink>
+			<maml:linkText>Start-WLServer</maml:linkText>
+			<maml:uri>https://leorzz.github.io/psWeblogic/#Start-WLServer-Header</maml:uri>
+		</maml:navigationLink>
 	</maml:relatedLinks>
 </command:command>
 <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
@@ -3045,6 +3081,10 @@ This example use adminserver information from pipe and default credential previo
 		</command:example>
 	</command:examples>
 	<maml:relatedLinks>
+		<maml:navigationLink>
+			<maml:linkText>Stop-WLServer</maml:linkText>
+			<maml:uri>https://leorzz.github.io/psWeblogic/#Stop-WLServer-Header</maml:uri>
+		</maml:navigationLink>
 	</maml:relatedLinks>
 </command:command>
 <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
@@ -3169,6 +3209,10 @@ user01  08/03/2016 12:16:08 user01     System.Security.SecureString
 		</command:example>
 	</command:examples>
 	<maml:relatedLinks>
+		<maml:navigationLink>
+			<maml:linkText>Get-WLCredential</maml:linkText>
+			<maml:uri>https://leorzz.github.io/psWeblogic/#Get-WLCredential-Header</maml:uri>
+		</maml:navigationLink>
 	</maml:relatedLinks>
 </command:command>
 <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
@@ -3951,7 +3995,7 @@ Messages : {@{message=Successfully created &apos;jdbc/ds01&apos;.; severity=SUCC
 	<maml:relatedLinks>
 		<maml:navigationLink>
 			<maml:linkText>New-WLDatasource</maml:linkText>
-			<maml:uri>https://wlsutil.codeplex.com/wikipage?title=New-WLDatasource</maml:uri>
+			<maml:uri>https://leorzz.github.io/psWeblogic/#New-WLDatasource-Header</maml:uri>
 		</maml:navigationLink>
 	</maml:relatedLinks>
 </command:command>
@@ -4337,6 +4381,10 @@ This example use adminserver information from pipe and default credential previo
 		</command:example>
 	</command:examples>
 	<maml:relatedLinks>
+		<maml:navigationLink>
+			<maml:linkText>Restart-WLServer</maml:linkText>
+			<maml:uri>https://leorzz.github.io/psWeblogic/#Restart-WLServer-Header</maml:uri>
+		</maml:navigationLink>
 	</maml:relatedLinks>
 </command:command>
 <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
@@ -4672,6 +4720,10 @@ The input from the pipe is the same as this parameter.</maml:para>
 	<command:examples>
 	</command:examples>
 	<maml:relatedLinks>
+		<maml:navigationLink>
+			<maml:linkText>Get-WLChangeManager</maml:linkText>
+			<maml:uri>https://leorzz.github.io/psWeblogic/#Get-WLChangeManager-Header</maml:uri>
+		</maml:navigationLink>
 	</maml:relatedLinks>
 </command:command>
 <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
@@ -5047,6 +5099,10 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
 	<command:examples>
 	</command:examples>
 	<maml:relatedLinks>
+		<maml:navigationLink>
+			<maml:linkText>Invoke-WlstScript</maml:linkText>
+			<maml:uri>https://leorzz.github.io/psWeblogic/#Invoke-WlstScript-Header</maml:uri>
+		</maml:navigationLink>
 	</maml:relatedLinks>
 </command:command>
 <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
@@ -5353,6 +5409,10 @@ item     : @{name=ADTR-1; id=1; type=deployment; description=[Deployer:149026]de
 		</command:example>
 	</command:examples>
 	<maml:relatedLinks>
+		<maml:navigationLink>
+			<maml:linkText>New-WLDeployment</maml:linkText>
+			<maml:uri>https://leorzz.github.io/psWeblogic/#New-WLDeployment-Header</maml:uri>
+		</maml:navigationLink>
 	</maml:relatedLinks>
 </command:command>
 <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
@@ -5629,6 +5689,10 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
 	<command:examples>
 	</command:examples>
 	<maml:relatedLinks>
+		<maml:navigationLink>
+			<maml:linkText>New-WLDomain</maml:linkText>
+			<maml:uri>https://leorzz.github.io/psWeblogic/#New-WLDomain-Header</maml:uri>
+		</maml:navigationLink>
 	</maml:relatedLinks>
 </command:command>
 <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
@@ -5892,6 +5956,10 @@ The input from the pipe is the same as this parameter.</maml:para>
 	<command:examples>
 	</command:examples>
 	<maml:relatedLinks>
+		<maml:navigationLink>
+			<maml:linkText>Remove-WLDatasource</maml:linkText>
+			<maml:uri>https://leorzz.github.io/psWeblogic/#Remove-WLDatasource-Header</maml:uri>
+		</maml:navigationLink>
 	</maml:relatedLinks>
 </command:command>
 <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
@@ -6155,6 +6223,10 @@ The input from the pipe is the same as this parameter.</maml:para>
 	<command:examples>
 	</command:examples>
 	<maml:relatedLinks>
+		<maml:navigationLink>
+			<maml:linkText>Remove-WLDeployment</maml:linkText>
+			<maml:uri>https://leorzz.github.io/psWeblogic/#Remove-WLDeployment-Header</maml:uri>
+		</maml:navigationLink>
 	</maml:relatedLinks>
 </command:command>
 <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
@@ -6360,6 +6432,10 @@ The input from the pipe is the same as this parameter.</maml:para>
 	<command:examples>
 	</command:examples>
 	<maml:relatedLinks>
+		<maml:navigationLink>
+			<maml:linkText>Remove-WLDomain</maml:linkText>
+			<maml:uri>https://leorzz.github.io/psWeblogic/#Remove-WLDomain-Header</maml:uri>
+		</maml:navigationLink>
 	</maml:relatedLinks>
 </command:command>
 </helpItems>

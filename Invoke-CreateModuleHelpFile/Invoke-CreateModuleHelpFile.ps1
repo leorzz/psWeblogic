@@ -100,7 +100,7 @@ function Invoke-CreateModuleHelpFile {
   <body>
     <div class="navmenu navmenu-default navmenu-fixed-left offcanvas-sm hidden-print">
       <nav class="sidebar-nav" role="complementary">
-      <a class="navmenu-brand visible-md visible-lg" href="$($moduleData.ProjectUri.AbsoluteUri)" target="_blank" data-toggle="tooltip" title="$($ModuleName)">$($ModuleName)</a>
+      <a class="navmenu-brand visible-md visible-lg" href="#" data-toggle="tooltip" title="$($ModuleName)">$($ModuleName)</a>
       <ul class="nav navmenu-nav">
         <li><a href="#About">About</a></li>
 
