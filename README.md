@@ -14,7 +14,7 @@ PS> Install-Module -Name psWeblogic
 #### Update
 PS> Update-Module -Name psWeblogic
 
-Repo: [https://www.powershellgallery.com/packages/psWeblogic](https://www.powershellgallery.com/packages/psWeblogic)
+Repo: [https://www.powershellgallery.com/packages/psWeblogic](https://www.powershellgallery.com/packages/psWeblogic){:target="_blank"}
 
 
 ### or ...
