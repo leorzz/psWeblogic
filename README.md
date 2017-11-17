@@ -41,6 +41,7 @@ Install PsGet by executing the following commands:(Skip this if you get WMF 5)
 | Get-WLDatasource | Get datasource object from a domain. |
 | Get-WLDeployment | Get deployment object from a domain. |
 | Get-WLDomain | Get domain object. |
+| Get-WLEnvironment | Get all environment options. |
 | Get-WLjob | Get job object from a domain. |
 | Get-WLServer | Get server object from a domain. |
 | Get-WLTarget | Get target object from a domain. |
@@ -55,6 +56,7 @@ Install PsGet by executing the following commands:(Skip this if you get WMF 5)
 | Remove-WLDomain | Removes an existing weblogic domain from inventory. |
 | Repair-WLCacheIndex | Rebuild the index cache to current powershell session. |
 | Restart-WLServer | Changes the life cycle of the server object to shutdown and then to running. |
+| Set-WLEnvironment | Set environment options. |
 | Start-WLServer | Changes the lifecycle of the server object to running. |
 | Stop-WLServer | Changes the lifecycle of the server object to shutdown. |
 
