@@ -13,7 +13,7 @@ ModuleToProcess = 'psWeblogic.psm1'
 ModuleVersion = '0.0.0.1'
 
 # ID used to uniquely identify this module
-GUID = ''
+GUID = '309013ee-8fb0-4464-ae1e-634581bd3422'
 
 # Author of this module
 Author = 'Leonardo Rizzi'

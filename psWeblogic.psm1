@@ -12,7 +12,8 @@ $Script:ResourceCacheIndex = New-Object System.Collections.ArrayList
 
 
 #region OsPlatform
-    if ($env:PATH -match "^/")
+    #if ($env:PATH -match "^/")
+    if ($IsLinux)
     {
         $Script:platform = "Unix"
         $Script:appdata = Join-Path -Path $env:HOME -ChildPath ".$($Script:mInfo.Name)"
