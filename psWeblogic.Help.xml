@@ -67,8 +67,8 @@
 				<maml:para />
 				<maml:para>Uri                                                                        ValidTo             FullName                                  
 ---                                                                        -------             --------                                  
-https://wls-infra.tjrs.local.com:443/management/wls/latest/servers     02/03/2016 10:03:54 C:\Users\user01\AppData\Local\Temp\w...
-https://wls-infra.tjrs.local.com:443/management/wls/latest/datasources 02/03/2016 10:04:12 C:\Users\user01\AppData\Local\Temp\w...</maml:para>
+https://wls-infra.local.com:443/management/wls/latest/servers     02/03/2016 10:03:54 C:\Users\user01\AppData\Local\Temp\w...
+https://wls-infra.local.com:443/management/wls/latest/datasources 02/03/2016 10:04:12 C:\Users\user01\AppData\Local\Temp\w...</maml:para>
 			</dev:remarks>
 			<command:commandLines>
 				<command:commandLine>
@@ -295,7 +295,7 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
 			<maml:introduction>
 				<maml:paragraph>PS C:\&gt;</maml:paragraph>
 			</maml:introduction>
-			<dev:code>Get-WLCluster -AdminServer wls.desenv.tjrs.local.com -Credential (Get-WLCredential -Alias myCred)
+			<dev:code>Get-WLCluster -AdminServer wls.desenv.local.com -Credential (Get-WLCredential -Alias myCred)
 
 </dev:code>
 			<dev:remarks>
@@ -305,8 +305,8 @@ This example use alternative stored credential.</maml:para>
 				<maml:para />
 				<maml:para>Name            Servers                                                             AdminServer                 
 ----            -------                                                             -----------                 
-infra-desenv-01 {@{name=infra-des-31.tjrs.local.com; state=RUNNING; health=HEALTH_OK}} wls-infra.desenv.tjrs.local.com
-infra-desenv-02 {@{name=infra-des-32.tjrs.local.com; state=RUNNING; health=HEALTH_OK}} wls-infra.desenv.tjrs.local.com</maml:para>
+infra-desenv-01 {@{name=infra-des-31.local.com; state=RUNNING; health=HEALTH_OK}} wls-infra.desenv.local.com
+infra-desenv-02 {@{name=infra-des-32.local.com; state=RUNNING; health=HEALTH_OK}} wls-infra.desenv.local.com</maml:para>
 			</dev:remarks>
 			<command:commandLines>
 				<command:commandLine>
@@ -329,8 +329,8 @@ This example use adminserver information from pipe and default credential previo
 				<maml:para />
 				<maml:para>Name            Servers                                                             AdminServer                 
 ----            -------                                                             -----------                 
-infra-desenv-01 {@{name=infra-des-31.tjrs.local.com; state=RUNNING; health=HEALTH_OK}} wls-infra.desenv.tjrs.local.com
-infra-desenv-02 {@{name=infra-des-32.tjrs.local.com; state=RUNNING; health=HEALTH_OK}} wls-infra.desenv.tjrs.local.com</maml:para>
+infra-desenv-01 {@{name=infra-des-31.local.com; state=RUNNING; health=HEALTH_OK}} wls-infra.desenv.local.com
+infra-desenv-02 {@{name=infra-des-32.local.com; state=RUNNING; health=HEALTH_OK}} wls-infra.desenv.local.com</maml:para>
 			</dev:remarks>
 			<command:commandLines>
 				<command:commandLine>
@@ -626,7 +626,7 @@ With this parameter the result will be more informative objects and lifecycle me
 			<maml:introduction>
 				<maml:paragraph>PS C:\&gt;</maml:paragraph>
 			</maml:introduction>
-			<dev:code>Get-WLDatasource -AdminServer wls01.desenv.tjrs.local.com -Management</dev:code>
+			<dev:code>Get-WLDatasource -AdminServer wls01.desenv.local.com -Management</dev:code>
 			<dev:remarks>
 				<maml:para>Get management objects of all datasources from a domain.
 This example use default credential previously stored with &#39;default&#39; alias name.</maml:para>
@@ -650,7 +650,7 @@ jdbc/ds2   {infra-desenv-01}</maml:para>
 			<maml:introduction>
 				<maml:paragraph>PS C:\&gt;</maml:paragraph>
 			</maml:introduction>
-			<dev:code>Get-WLDomain -AdminServer wls01.desenv.tjrs.local.com | Get-WLDatasource
+			<dev:code>Get-WLDomain -AdminServer wls01.desenv.local.com | Get-WLDatasource
 This example use adminserver information from pipe and default credential previously stored with &apos;default&apos; alias name.</dev:code>
 			<dev:remarks>
 				<maml:para />
@@ -981,7 +981,7 @@ With this parameter the result will be more informative objects and lifecycle me
 			<maml:introduction>
 				<maml:paragraph>PS C:\&gt;</maml:paragraph>
 			</maml:introduction>
-			<dev:code>Get-WLDeployment -AdminServer wls01.desenv.tjrs.local.com -Management</dev:code>
+			<dev:code>Get-WLDeployment -AdminServer wls01.desenv.local.com -Management</dev:code>
 			<dev:remarks>
 				<maml:para>Get management objects of all deployments from a domain.
 This example use default credential previously stored with &#39;default&#39; alias name.</maml:para>
@@ -1002,7 +1002,7 @@ This example use default credential previously stored with &#39;default&#39; ali
 			<maml:introduction>
 				<maml:paragraph>PS C:\&gt;</maml:paragraph>
 			</maml:introduction>
-			<dev:code>Get-WLDatasource -AdminServer wls01.prod.tjrs.local.com -Management | % {$_.test()} | select -ExpandProperty messages</dev:code>
+			<dev:code>Get-WLDatasource -AdminServer wls01.prod.local.com -Management | % {$_.test()} | select -ExpandProperty messages</dev:code>
 			<dev:remarks>
 				<maml:para>Rua a test of all datasoucers in a domain.</maml:para>
 				<maml:para />
@@ -1026,7 +1026,7 @@ Data Source &apos;jdbc/ds03&apos;. The remote server returned an error: (400) Ba
 			<maml:introduction>
 				<maml:paragraph>PS C:\&gt;</maml:paragraph>
 			</maml:introduction>
-			<dev:code>Get-WLDatasource -AdminServer wls01.tjrs.local.com -Management | % {$_.Reset()} | select -ExpandProperty messages</dev:code>
+			<dev:code>Get-WLDatasource -AdminServer wls01.local.com -Management | % {$_.Reset()} | select -ExpandProperty messages</dev:code>
 			<dev:remarks>
 				<maml:para>Restarts all datasouces a domain.</maml:para>
 				<maml:para />
@@ -1236,7 +1236,7 @@ This parameter is the environment field registered in the inventory.</maml:para>
 				<maml:para />
 				<maml:para />
 				<maml:para>Name            : wls01
-AdminServer     : wls01.desenv.tjrs.local.com
+AdminServer     : wls01.desenv.local.com
 AdminTcpPort    : 7304
 AdminTcpPortSec : 443
 Version         : 12.1.3
@@ -1244,7 +1244,7 @@ Environment      : Desenv
 ResourceType    : domain
 
 Name            : wls01
-AdminServer     : wls01.desenv.tjrs.local.com
+AdminServer     : wls01.desenv.local.com
 AdminTcpPort    : 7304
 AdminTcpPortSec : 443
 Version         : 12.1.3
@@ -1272,8 +1272,8 @@ ResourceType    : domain</maml:para>
 				<maml:para />
 				<maml:para>Name             AdminServer                    AdminTcpPort AdminTcpPortSec Version Environment ResourceType
 ----             -----------                    ------------ --------------- ------- ---------- ------------
-wls01         wls01.desenv.tjrs.local.com           7304 443             12.1.3  Desenv     domain      
-wls02         wls02.desenv.tjrs.local.com           7304 443             12.1.3  Desenv     domain      </maml:para>
+wls01         wls01.desenv.local.com           7304 443             12.1.3  Desenv     domain      
+wls02         wls02.desenv.local.com           7304 443             12.1.3  Desenv     domain      </maml:para>
 			</dev:remarks>
 			<command:commandLines>
 				<command:commandLine>
@@ -2773,9 +2773,9 @@ To use Get-WLCredential you need run New-WLCredentials command to secure and sto
 			<maml:introduction>
 				<maml:paragraph>PS C:\&gt;</maml:paragraph>
 			</maml:introduction>
-			<dev:code>Get-WLServer -AdminServer wls01.tjrs.local.com | Start-WLServer -Throttling 2</dev:code>
+			<dev:code>Get-WLServer -AdminServer wls01.local.com | Start-WLServer -Throttling 2</dev:code>
 			<dev:remarks>
-				<maml:para>Start  managed servers on wls01.tjrs.local.com domain. Two at a time.
+				<maml:para>Start  managed servers on wls01.local.com domain. Two at a time.
 This example use adminserver information from pipe and default credential previously stored with &#39;default&#39; alias name.</maml:para>
 				<maml:para />
 				<maml:para />
@@ -2794,7 +2794,7 @@ This example use adminserver information from pipe and default credential previo
 			<maml:introduction>
 				<maml:paragraph>PS C:\&gt;</maml:paragraph>
 			</maml:introduction>
-			<dev:code>Get-WLCluster -AdminServer wls01.tjrs.local.com -Name cluster01 | Start-WLServer</dev:code>
+			<dev:code>Get-WLCluster -AdminServer wls01.local.com -Name cluster01 | Start-WLServer</dev:code>
 			<dev:remarks>
 				<maml:para>Start all managed servers on weblogic cluster &#39;cluster01&#39;.
 This example use adminserver information from pipe and default credential previously stored with &#39;default&#39; alias name.</maml:para>
@@ -3042,9 +3042,9 @@ If using this parameter the server will wait for the closing of all the active s
 			<maml:introduction>
 				<maml:paragraph>PS C:\&gt;</maml:paragraph>
 			</maml:introduction>
-			<dev:code>Get-WLServer -AdminServer wls01.tjrs.local.com | Stop-WLServer -Throttling 2</dev:code>
+			<dev:code>Get-WLServer -AdminServer wls01.local.com | Stop-WLServer -Throttling 2</dev:code>
 			<dev:remarks>
-				<maml:para>Stop  managed servers on wls01.tjrs.local.com domain. Two at a time.
+				<maml:para>Stop  managed servers on wls01.local.com domain. Two at a time.
 This example use adminserver information from pipe and default credential previously stored with &#39;default&#39; alias name.</maml:para>
 				<maml:para />
 				<maml:para />
@@ -3063,7 +3063,7 @@ This example use adminserver information from pipe and default credential previo
 			<maml:introduction>
 				<maml:paragraph>PS C:\&gt;</maml:paragraph>
 			</maml:introduction>
-			<dev:code>Get-WLCluster -AdminServer wls01.tjrs.local.com -Name cluster01 | Stop-WLServer</dev:code>
+			<dev:code>Get-WLCluster -AdminServer wls01.local.com -Name cluster01 | Stop-WLServer</dev:code>
 			<dev:remarks>
 				<maml:para>Stop all managed servers on weblogic cluster &#39;cluster01&#39;.
 This example use adminserver information from pipe and default credential previously stored with &#39;default&#39; alias name.</maml:para>
@@ -3970,9 +3970,9 @@ That is, at a minimum the attributes name=&lt;datasource name&gt; and password=&
 			<maml:introduction>
 				<maml:paragraph>PS C:\&gt;</maml:paragraph>
 			</maml:introduction>
-			<dev:code>$dsTemplate = Get-WLDatasource -AdminServer wls01.desenv.tjrs.local.com -Management -Name jdbc/ds01
+			<dev:code>$dsTemplate = Get-WLDatasource -AdminServer wls01.desenv.local.com -Management -Name jdbc/ds01
 $dsTemplate.targets = @(&quot;server01&quot;,&quot;cluster02&quot;)
-$dsTemplate | New-WLDatasource -AdminServer wls02.desenv.tjrs.local.com</dev:code>
+$dsTemplate | New-WLDatasource -AdminServer wls02.desenv.local.com</dev:code>
 			<dev:remarks>
 				<maml:para>Takes a datasource as a model.
 Changes targets property. 
@@ -4341,9 +4341,9 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
 			<maml:introduction>
 				<maml:paragraph>PS C:\&gt;</maml:paragraph>
 			</maml:introduction>
-			<dev:code>Get-WLServer -AdminServer wls01.tjrs.local.com | Restart-WLServer -Throttling 2</dev:code>
+			<dev:code>Get-WLServer -AdminServer wls01.local.com | Restart-WLServer -Throttling 2</dev:code>
 			<dev:remarks>
-				<maml:para>Restart  managed servers on wls01.tjrs.local.com domain. Two at a time.
+				<maml:para>Restart  managed servers on wls01.local.com domain. Two at a time.
 This example use adminserver information from pipe and default credential previously stored with &#39;default&#39; alias name.</maml:para>
 				<maml:para />
 				<maml:para />
@@ -4362,7 +4362,7 @@ This example use adminserver information from pipe and default credential previo
 			<maml:introduction>
 				<maml:paragraph>PS C:\&gt;</maml:paragraph>
 			</maml:introduction>
-			<dev:code>Get-WLCluster -AdminServer wls01.tjrs.local.com -Name cluster01 | Restart-WLServer</dev:code>
+			<dev:code>Get-WLCluster -AdminServer wls01.local.com -Name cluster01 | Restart-WLServer</dev:code>
 			<dev:remarks>
 				<maml:para>Restart all managed servers on weblogic cluster &#39;cluster01&#39;
 This example use adminserver information from pipe and default credential previously stored with &#39;default&#39; alias name.
@@ -5102,7 +5102,7 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
 			<maml:introduction>
 				<maml:paragraph>PS C:\&gt;</maml:paragraph>
 			</maml:introduction>
-			<dev:code>Get-WLDomain -AdminServer wls-infra.tjrs.local.com | Invoke-WlstScript -BuiltInScript Get-JavaVersion.py -ShowScriptOnly
+			<dev:code>Get-WLDomain -AdminServer wls-infra.local.com | Invoke-WlstScript -BuiltInScript Get-JavaVersion.py -ShowScriptOnly
 </dev:code>
 			<dev:remarks>
 				<maml:para>The -ShowScriptOnly NOT run the script but only print the result source code on the screen.
@@ -5110,7 +5110,7 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
 				<maml:para />
 				<maml:para />
 				<maml:para>whatif = False
-domain_hashtable={&quot;Name&quot;:&quot;WLDomain01&quot;,&quot;AdminServer&quot;:&quot;wls-infra.tjrs.local.com&quot;,&quot;AdminTcpPort&quot;:7340,&quot;AdminTcpPortSec&quot;:&quot;443&quot;,&quot;Version&quot;:&quot;12.2.1.2&quot;,&quot;En
+domain_hashtable={&quot;Name&quot;:&quot;WLDomain01&quot;,&quot;AdminServer&quot;:&quot;wls-infra.local.com&quot;,&quot;AdminTcpPort&quot;:7340,&quot;AdminTcpPortSec&quot;:&quot;443&quot;,&quot;Version&quot;:&quot;12.2.1.2&quot;,&quot;En
 vironment&quot;:&quot;DEV&quot;,&quot;ServiceName&quot;:&quot;AdminServer_DEV-INFRA&quot;,&quot;MW_HOME&quot;:&quot;O:\\Oracle\\WLS_12.2.1\\DEV-INFRA\\MW_HOME&quot;,&quot;Description&quot;:&quot;DEV JEE Equipe de Infr
 aestrutura.&quot;,&quot;ResourceType&quot;:&quot;Domain&quot;}
 def getServerInfo():
@@ -5133,7 +5133,7 @@ def getServerInfo():
             pass
 
 try:
-    connect(&apos;user01&apos;,&apos;**********&apos;,&apos;t3://wls-infra.dev.tjrs.local.com:7340&apos;)
+    connect(&apos;user01&apos;,&apos;**********&apos;,&apos;t3://wls-infra.dev.local.com:7340&apos;)
     getServerInfo()
 finally:
     disconnect()
@@ -5152,16 +5152,16 @@ finally:
 			<maml:introduction>
 				<maml:paragraph>PS C:\&gt;</maml:paragraph>
 			</maml:introduction>
-			<dev:code>Get-WLDomain -AdminServer wls-infra.tjrs.local.com | Invoke-WlstScript -BuiltInScript Get-JavaVersion.py | Select-Object -ExpandProperty Result</dev:code>
+			<dev:code>Get-WLDomain -AdminServer wls-infra.local.com | Invoke-WlstScript -BuiltInScript Get-JavaVersion.py | Select-Object -ExpandProperty Result</dev:code>
 			<dev:remarks>
 				<maml:para />
 				<maml:para />
 				<maml:para />
 				<maml:para>AdminServer                         Name                               JavaVersion
 -----------                              ----                                   -----------
-wls-infra.dev.tjrs.local.com       AdminServer                     1.8.0_121  
-wls-infra.dev.tjrs.local.com      infra-core-01.infra.tj.rs       1.7.0_67
-wls-infra.dev.tjrs.local.com      infra-dev-21.tjrs.local.com      1.8.0_112  
+wls-infra.dev.local.com       AdminServer                     1.8.0_121  
+wls-infra.dev.local.com      infra-core-01.infra.tj.rs       1.7.0_67
+wls-infra.dev.local.com      infra-dev-21.local.com      1.8.0_112  
 </maml:para>
 			</dev:remarks>
 			<command:commandLines>
@@ -5183,7 +5183,7 @@ wls-infra.dev.tjrs.local.com      infra-dev-21.tjrs.local.com      1.8.0_112
 The -Arguments parameter passes the arguments to the python script in the order they were entered.</maml:para>
 				<maml:para />
 				<maml:para />
-				<maml:para>AdminServer : wls-domain01.tjrs.local.com
+				<maml:para>AdminServer : wls-domain01.local.com
 Result      : 
               Initializing WebLogic Scripting Tool (WLST) ...
               
@@ -5504,14 +5504,14 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
 			<maml:introduction>
 				<maml:paragraph>PS C:\&gt;</maml:paragraph>
 			</maml:introduction>
-			<dev:code>New-WLDeployment -AdminServer wls01.tjrs.local.com  -Targets cluster01 -InFile D:\_work\temp\jax-rs-2.0.war
+			<dev:code>New-WLDeployment -AdminServer wls01.local.com  -Targets cluster01 -InFile D:\_work\temp\jax-rs-2.0.war
 </dev:code>
 			<dev:remarks>
 				<maml:para />
 				<maml:para />
 				<maml:para />
 				<maml:para>messages : {@{message=Deployed the application &apos;jax-rs-2.0&apos;.; severity=SUCCESS}}
-item     : @{name=ADTR-1; id=1; type=deployment; description=[Deployer:149026]deploy application jax-rs-2.0 on infra-dev-21.tjrs.local.com.; 
+item     : @{name=ADTR-1; id=1; type=deployment; description=[Deployer:149026]deploy application jax-rs-2.0 on infra-dev-21.local.com.; 
            operation=deploy; targets=System.Object[]; beginTime=1510854853119; endTime=1510854856119; status=completed; deploymentName=jax-rs-2.0}</maml:para>
 			</dev:remarks>
 			<command:commandLines>

@@ -2,7 +2,7 @@
 <ModuleObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" fVersion="1.1" type="Script" mclass="External" useSupports="true">
   <Name>psWeblogic</Name>
   <Version>0.0</Version>
-  <Description>Author: Leonardo Rizzi - TJRS|DTIC|DPROD</Description>
+  <Description>Author: Leonardo Rizzi - rizzi.leo@gmail.com</Description>
   <HasManifest>false</HasManifest>
   <OverridePostCount>false</OverridePostCount>
   <FetchPostCount xsi:nil="true" />
@@ -34,8 +34,8 @@
           <Description />
           <Output>Uri                                                                        ValidTo             FullName                                  
 ---                                                                        -------             --------                                  
-https://wls-infra.tjrs.local.com:443/management/wls/latest/servers     02/03/2016 10:03:54 C:\Users\user01\AppData\Local\Temp\w...
-https://wls-infra.tjrs.local.com:443/management/wls/latest/datasources 02/03/2016 10:04:12 C:\Users\user01\AppData\Local\Temp\w...</Output>
+https://wls-infra.local.com:443/management/wls/latest/servers     02/03/2016 10:03:54 C:\Users\user01\AppData\Local\Temp\w...
+https://wls-infra.local.com:443/management/wls/latest/datasources 02/03/2016 10:04:12 C:\Users\user01\AppData\Local\Temp\w...</Output>
         </Example>
       </Examples>
       <RelatedLinks>
@@ -154,15 +154,15 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
       <Examples>
         <Example>
           <Name>Example 1</Name>
-          <Cmd>Get-WLCluster -AdminServer wls.desenv.tjrs.local.com -Credential (Get-WLCredential -Alias myCred)
+          <Cmd>Get-WLCluster -AdminServer wls.desenv.local.com -Credential (Get-WLCredential -Alias myCred)
 
 </Cmd>
           <Description>Return monitoring data.
 This example use alternative stored credential.</Description>
           <Output>Name            Servers                                                             AdminServer                 
 ----            -------                                                             -----------                 
-infra-desenv-01 {@{name=infra-des-31.tjrs.local.com; state=RUNNING; health=HEALTH_OK}} wls-infra.desenv.tjrs.local.com
-infra-desenv-02 {@{name=infra-des-32.tjrs.local.com; state=RUNNING; health=HEALTH_OK}} wls-infra.desenv.tjrs.local.com</Output>
+infra-desenv-01 {@{name=infra-des-31.local.com; state=RUNNING; health=HEALTH_OK}} wls-infra.desenv.local.com
+infra-desenv-02 {@{name=infra-des-32.local.com; state=RUNNING; health=HEALTH_OK}} wls-infra.desenv.local.com</Output>
         </Example>
         <Example>
           <Name>Example 2</Name>
@@ -171,8 +171,8 @@ infra-desenv-02 {@{name=infra-des-32.tjrs.local.com; state=RUNNING; health=HEALT
 This example use adminserver information from pipe and default credential previously stored with 'default' alias name.</Description>
           <Output>Name            Servers                                                             AdminServer                 
 ----            -------                                                             -----------                 
-infra-desenv-01 {@{name=infra-des-31.tjrs.local.com; state=RUNNING; health=HEALTH_OK}} wls-infra.desenv.tjrs.local.com
-infra-desenv-02 {@{name=infra-des-32.tjrs.local.com; state=RUNNING; health=HEALTH_OK}} wls-infra.desenv.tjrs.local.com</Output>
+infra-desenv-01 {@{name=infra-des-31.local.com; state=RUNNING; health=HEALTH_OK}} wls-infra.desenv.local.com
+infra-desenv-02 {@{name=infra-des-32.local.com; state=RUNNING; health=HEALTH_OK}} wls-infra.desenv.local.com</Output>
         </Example>
       </Examples>
       <RelatedLinks>
@@ -301,7 +301,7 @@ With this parameter the result will be more informative objects and lifecycle me
       <Examples>
         <Example>
           <Name>Example 1</Name>
-          <Cmd>Get-WLDatasource -AdminServer wls01.desenv.tjrs.local.com -Management</Cmd>
+          <Cmd>Get-WLDatasource -AdminServer wls01.desenv.local.com -Management</Cmd>
           <Description>Get management objects of all datasources from a domain.
 This example use default credential previously stored with 'default' alias name.</Description>
           <Output>Name        Targets                           
@@ -311,7 +311,7 @@ jdbc/ds2   {infra-desenv-01}</Output>
         </Example>
         <Example>
           <Name>Example 2</Name>
-          <Cmd>Get-WLDomain -AdminServer wls01.desenv.tjrs.local.com | Get-WLDatasource
+          <Cmd>Get-WLDomain -AdminServer wls01.desenv.local.com | Get-WLDatasource
 This example use adminserver information from pipe and default credential previously stored with 'default' alias name.</Cmd>
           <Description />
           <Output>Name        Type   
@@ -456,14 +456,14 @@ With this parameter the result will be more informative objects and lifecycle me
       <Examples>
         <Example>
           <Name>Example 1</Name>
-          <Cmd>Get-WLDeployment -AdminServer wls01.desenv.tjrs.local.com -Management</Cmd>
+          <Cmd>Get-WLDeployment -AdminServer wls01.desenv.local.com -Management</Cmd>
           <Description>Get management objects of all deployments from a domain.
 This example use default credential previously stored with 'default' alias name.</Description>
           <Output />
         </Example>
         <Example>
           <Name>Example 2</Name>
-          <Cmd>Get-WLDatasource -AdminServer wls01.prod.tjrs.local.com -Management | % {$_.test()} | select -ExpandProperty messages</Cmd>
+          <Cmd>Get-WLDatasource -AdminServer wls01.prod.local.com -Management | % {$_.test()} | select -ExpandProperty messages</Cmd>
           <Description>Rua a test of all datasoucers in a domain.</Description>
           <Output>message                                                                                    severity
 -------                                                                                    --------
@@ -473,7 +473,7 @@ Data Source 'jdbc/ds03'. The remote server returned an error: (400) Bad Request.
         </Example>
         <Example>
           <Name>Example 3</Name>
-          <Cmd>Get-WLDatasource -AdminServer wls01.tjrs.local.com -Management | % {$_.Reset()} | select -ExpandProperty messages</Cmd>
+          <Cmd>Get-WLDatasource -AdminServer wls01.local.com -Management | % {$_.Reset()} | select -ExpandProperty messages</Cmd>
           <Description>Restarts all datasouces a domain.</Description>
           <Output>message                                                  severity
 -------                                                  --------
@@ -580,7 +580,7 @@ This parameter is the environment field registered in the inventory.</Descriptio
           <Cmd>Get-WLDomain | select -First 2</Cmd>
           <Description />
           <Output>Name            : wls01
-AdminServer     : wls01.desenv.tjrs.local.com
+AdminServer     : wls01.desenv.local.com
 AdminTcpPort    : 7304
 AdminTcpPortSec : 443
 Version         : 12.1.3
@@ -588,7 +588,7 @@ Environment      : Desenv
 ResourceType    : domain
 
 Name            : wls01
-AdminServer     : wls01.desenv.tjrs.local.com
+AdminServer     : wls01.desenv.local.com
 AdminTcpPort    : 7304
 AdminTcpPortSec : 443
 Version         : 12.1.3
@@ -602,8 +602,8 @@ ResourceType    : domain</Output>
           <Description />
           <Output>Name             AdminServer                    AdminTcpPort AdminTcpPortSec Version Environment ResourceType
 ----             -----------                    ------------ --------------- ------- ---------- ------------
-wls01         wls01.desenv.tjrs.local.com           7304 443             12.1.3  Desenv     domain      
-wls02         wls02.desenv.tjrs.local.com           7304 443             12.1.3  Desenv     domain      </Output>
+wls01         wls01.desenv.local.com           7304 443             12.1.3  Desenv     domain      
+wls02         wls02.desenv.local.com           7304 443             12.1.3  Desenv     domain      </Output>
         </Example>
       </Examples>
       <RelatedLinks>
@@ -1309,14 +1309,14 @@ To use Get-WLCredential you need run New-WLCredentials command to secure and sto
       <Examples>
         <Example>
           <Name>Example 1</Name>
-          <Cmd>Get-WLServer -AdminServer wls01.tjrs.local.com | Start-WLServer -Throttling 2</Cmd>
-          <Description>Start  managed servers on wls01.tjrs.local.com domain. Two at a time.
+          <Cmd>Get-WLServer -AdminServer wls01.local.com | Start-WLServer -Throttling 2</Cmd>
+          <Description>Start  managed servers on wls01.local.com domain. Two at a time.
 This example use adminserver information from pipe and default credential previously stored with 'default' alias name.</Description>
           <Output />
         </Example>
         <Example>
           <Name>Example 2</Name>
-          <Cmd>Get-WLCluster -AdminServer wls01.tjrs.local.com -Name cluster01 | Start-WLServer</Cmd>
+          <Cmd>Get-WLCluster -AdminServer wls01.local.com -Name cluster01 | Start-WLServer</Cmd>
           <Description>Start all managed servers on weblogic cluster 'cluster01'.
 This example use adminserver information from pipe and default credential previously stored with 'default' alias name.</Description>
           <Output />
@@ -1444,14 +1444,14 @@ If using this parameter the server will wait for the closing of all the active s
       <Examples>
         <Example>
           <Name>Example 1</Name>
-          <Cmd>Get-WLServer -AdminServer wls01.tjrs.local.com | Stop-WLServer -Throttling 2</Cmd>
-          <Description>Stop  managed servers on wls01.tjrs.local.com domain. Two at a time.
+          <Cmd>Get-WLServer -AdminServer wls01.local.com | Stop-WLServer -Throttling 2</Cmd>
+          <Description>Stop  managed servers on wls01.local.com domain. Two at a time.
 This example use adminserver information from pipe and default credential previously stored with 'default' alias name.</Description>
           <Output />
         </Example>
         <Example>
           <Name>Example 2</Name>
-          <Cmd>Get-WLCluster -AdminServer wls01.tjrs.local.com -Name cluster01 | Stop-WLServer</Cmd>
+          <Cmd>Get-WLCluster -AdminServer wls01.local.com -Name cluster01 | Stop-WLServer</Cmd>
           <Description>Stop all managed servers on weblogic cluster 'cluster01'.
 This example use adminserver information from pipe and default credential previously stored with 'default' alias name.</Description>
           <Output />
@@ -1787,9 +1787,9 @@ That is, at a minimum the attributes name=&lt;datasource name&gt; and password=&
       <Examples>
         <Example>
           <Name>Example 1</Name>
-          <Cmd>$dsTemplate = Get-WLDatasource -AdminServer wls01.desenv.tjrs.local.com -Management -Name jdbc/ds01
+          <Cmd>$dsTemplate = Get-WLDatasource -AdminServer wls01.desenv.local.com -Management -Name jdbc/ds01
 $dsTemplate.targets = @("server01","cluster02")
-$dsTemplate | New-WLDatasource -AdminServer wls02.desenv.tjrs.local.com</Cmd>
+$dsTemplate | New-WLDatasource -AdminServer wls02.desenv.local.com</Cmd>
           <Description>Takes a datasource as a model.
 Changes targets property. 
 </Description>
@@ -1948,14 +1948,14 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
       <Examples>
         <Example>
           <Name>Example 1</Name>
-          <Cmd>Get-WLServer -AdminServer wls01.tjrs.local.com | Restart-WLServer -Throttling 2</Cmd>
-          <Description>Restart  managed servers on wls01.tjrs.local.com domain. Two at a time.
+          <Cmd>Get-WLServer -AdminServer wls01.local.com | Restart-WLServer -Throttling 2</Cmd>
+          <Description>Restart  managed servers on wls01.local.com domain. Two at a time.
 This example use adminserver information from pipe and default credential previously stored with 'default' alias name.</Description>
           <Output />
         </Example>
         <Example>
           <Name>Example 2</Name>
-          <Cmd>Get-WLCluster -AdminServer wls01.tjrs.local.com -Name cluster01 | Restart-WLServer</Cmd>
+          <Cmd>Get-WLCluster -AdminServer wls01.local.com -Name cluster01 | Restart-WLServer</Cmd>
           <Description>Restart all managed servers on weblogic cluster 'cluster01'
 This example use adminserver information from pipe and default credential previously stored with 'default' alias name.
 </Description>
@@ -2251,12 +2251,12 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
       <Examples>
         <Example>
           <Name>Example 1</Name>
-          <Cmd>Get-WLDomain -AdminServer wls-infra.tjrs.local.com | Invoke-WlstScript -BuiltInScript Get-JavaVersion.py -ShowScriptOnly
+          <Cmd>Get-WLDomain -AdminServer wls-infra.local.com | Invoke-WlstScript -BuiltInScript Get-JavaVersion.py -ShowScriptOnly
 </Cmd>
           <Description>The -ShowScriptOnly NOT run the script but only print the result source code on the screen.
 </Description>
           <Output>whatif = False
-domain_hashtable={"Name":"WLDomain01","AdminServer":"wls-infra.tjrs.local.com","AdminTcpPort":7340,"AdminTcpPortSec":"443","Version":"12.2.1.2","En
+domain_hashtable={"Name":"WLDomain01","AdminServer":"wls-infra.local.com","AdminTcpPort":7340,"AdminTcpPortSec":"443","Version":"12.2.1.2","En
 vironment":"DEV","ServiceName":"AdminServer_DEV-INFRA","MW_HOME":"O:\\Oracle\\WLS_12.2.1\\DEV-INFRA\\MW_HOME","Description":"DEV JEE Equipe de Infr
 aestrutura.","ResourceType":"Domain"}
 def getServerInfo():
@@ -2279,7 +2279,7 @@ def getServerInfo():
             pass
 
 try:
-    connect('user01','**********','t3://wls-infra.dev.tjrs.local.com:7340')
+    connect('user01','**********','t3://wls-infra.dev.local.com:7340')
     getServerInfo()
 finally:
     disconnect()
@@ -2287,13 +2287,13 @@ finally:
         </Example>
         <Example>
           <Name>Example 2</Name>
-          <Cmd>Get-WLDomain -AdminServer wls-infra.tjrs.local.com | Invoke-WlstScript -BuiltInScript Get-JavaVersion.py | Select-Object -ExpandProperty Result</Cmd>
+          <Cmd>Get-WLDomain -AdminServer wls-infra.local.com | Invoke-WlstScript -BuiltInScript Get-JavaVersion.py | Select-Object -ExpandProperty Result</Cmd>
           <Description />
           <Output>AdminServer                         Name                               JavaVersion
 -----------                              ----                                   -----------
-wls-infra.dev.tjrs.local.com       AdminServer                     1.8.0_121  
-wls-infra.dev.tjrs.local.com      infra-core-01.infra.tj.rs       1.7.0_67
-wls-infra.dev.tjrs.local.com      infra-dev-21.tjrs.local.com      1.8.0_112  
+wls-infra.dev.local.com       AdminServer                     1.8.0_121  
+wls-infra.dev.local.com      infra-core-01.infra.tj.rs       1.7.0_67
+wls-infra.dev.local.com      infra-dev-21.local.com      1.8.0_112  
 </Output>
         </Example>
         <Example>
@@ -2301,7 +2301,7 @@ wls-infra.dev.tjrs.local.com      infra-dev-21.tjrs.local.com      1.8.0_112
           <Cmd>Get-WLDomain -AdminServer wls-domain01.local.com | Invoke-WlstScript -ScriptPath c:\WebLogic\InvokeByPowershell\Set-DsProperties.py -WhatIf -Arguments 'jdbc/d' | fl</Cmd>
           <Description>The -whatIf parameter inserts a variable into the python code that can be used to simulate execution.
 The -Arguments parameter passes the arguments to the python script in the order they were entered.</Description>
-          <Output>AdminServer : wls-domain01.tjrs.local.com
+          <Output>AdminServer : wls-domain01.local.com
 Result      : 
               Initializing WebLogic Scripting Tool (WLST) ...
               
@@ -2484,11 +2484,11 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
       <Examples>
         <Example>
           <Name>Example 1</Name>
-          <Cmd>New-WLDeployment -AdminServer wls01.tjrs.local.com  -Targets cluster01 -InFile D:\_work\temp\jax-rs-2.0.war
+          <Cmd>New-WLDeployment -AdminServer wls01.local.com  -Targets cluster01 -InFile D:\_work\temp\jax-rs-2.0.war
 </Cmd>
           <Description />
           <Output>messages : {@{message=Deployed the application 'jax-rs-2.0'.; severity=SUCCESS}}
-item     : @{name=ADTR-1; id=1; type=deployment; description=[Deployer:149026]deploy application jax-rs-2.0 on infra-dev-21.tjrs.local.com.; 
+item     : @{name=ADTR-1; id=1; type=deployment; description=[Deployer:149026]deploy application jax-rs-2.0 on infra-dev-21.local.com.; 
            operation=deploy; targets=System.Object[]; beginTime=1510854853119; endTime=1510854856119; status=completed; deploymentName=jax-rs-2.0}</Output>
         </Example>
       </Examples>
