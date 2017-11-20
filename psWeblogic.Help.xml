@@ -5110,7 +5110,7 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
 				<maml:para />
 				<maml:para />
 				<maml:para>whatif = False
-domain_hashtable={&quot;Name&quot;:&quot;DEV-INFRA&quot;,&quot;AdminServer&quot;:&quot;wls-infra.dev.tjrs.local.com&quot;,&quot;AdminTcpPort&quot;:7340,&quot;AdminTcpPortSec&quot;:&quot;443&quot;,&quot;Version&quot;:&quot;12.2.1.2&quot;,&quot;En
+domain_hashtable={&quot;Name&quot;:&quot;WLDomain01&quot;,&quot;AdminServer&quot;:&quot;wls-infra.tjrs.local.com&quot;,&quot;AdminTcpPort&quot;:7340,&quot;AdminTcpPortSec&quot;:&quot;443&quot;,&quot;Version&quot;:&quot;12.2.1.2&quot;,&quot;En
 vironment&quot;:&quot;DEV&quot;,&quot;ServiceName&quot;:&quot;AdminServer_DEV-INFRA&quot;,&quot;MW_HOME&quot;:&quot;O:\\Oracle\\WLS_12.2.1\\DEV-INFRA\\MW_HOME&quot;,&quot;Description&quot;:&quot;DEV JEE Equipe de Infr
 aestrutura.&quot;,&quot;ResourceType&quot;:&quot;Domain&quot;}
 def getServerInfo():
@@ -5191,8 +5191,8 @@ Result      :
               
               Type help() for help on available commands
               
-              Connecting to t3://wls-fin.desenv.tjrs.local.com:7307 with userid leonardorz ...
-              Successfully connected to Admin Server &quot;AdminServer&quot; that belongs to domain &quot;DES-FIN&quot;.
+              Connecting to t3://wls-domain01.local.com:7307 with userid user01...
+              Successfully connected to Admin Server &quot;AdminServer&quot; that belongs to domain &quot;WLDomain01&quot;.
               
               Warning: An insecure protocol was used to connect to the server. 
               To ensure on-the-wire security, the SSL port or Admin port should be used instead.

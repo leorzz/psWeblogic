@@ -2256,7 +2256,7 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
           <Description>The -ShowScriptOnly NOT run the script but only print the result source code on the screen.
 </Description>
           <Output>whatif = False
-domain_hashtable={"Name":"DEV-INFRA","AdminServer":"wls-infra.dev.tjrs.local.com","AdminTcpPort":7340,"AdminTcpPortSec":"443","Version":"12.2.1.2","En
+domain_hashtable={"Name":"WLDomain01","AdminServer":"wls-infra.tjrs.local.com","AdminTcpPort":7340,"AdminTcpPortSec":"443","Version":"12.2.1.2","En
 vironment":"DEV","ServiceName":"AdminServer_DEV-INFRA","MW_HOME":"O:\\Oracle\\WLS_12.2.1\\DEV-INFRA\\MW_HOME","Description":"DEV JEE Equipe de Infr
 aestrutura.","ResourceType":"Domain"}
 def getServerInfo():
@@ -2309,8 +2309,8 @@ Result      :
               
               Type help() for help on available commands
               
-              Connecting to t3://wls-fin.desenv.tjrs.local.com:7307 with userid leonardorz ...
-              Successfully connected to Admin Server "AdminServer" that belongs to domain "DES-FIN".
+              Connecting to t3://wls-domain01.local.com:7307 with userid user01...
+              Successfully connected to Admin Server "AdminServer" that belongs to domain "WLDomain01".
               
               Warning: An insecure protocol was used to connect to the server. 
               To ensure on-the-wire security, the SSL port or Admin port should be used instead.
