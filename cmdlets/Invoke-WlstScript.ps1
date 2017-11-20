@@ -34,6 +34,8 @@ function Invoke-WlstScript
         [Parameter(Mandatory=$false)]
             [Switch]$WhatIf,
 
+        [Parameter(Mandatory=$false)]
+            [Switch]$ShowScriptOnly,
 
         [Parameter(Mandatory=$false)]
             [string[]]$Arguments
@@ -161,12 +163,10 @@ function Invoke-WlstScript
                             if ($WhatIf.IsPresent)
                             {
                                 $scriptContentNew.Add("whatif = True") | Out-Null
-                                #$scriptContent[$scriptContent.indexOf($line)] = "whatif = True`r`n" + $line
                             }
                             else
                             {
                                 $scriptContentNew.Add("whatif = False") | Out-Null
-                                #$scriptContent[$scriptContent.indexOf($line)] = "`nwhatif = False`r`n" + $line
                             }
                         }
                         
@@ -175,7 +175,6 @@ function Invoke-WlstScript
                             $obj_tmp = $obj | select *
                             $obj_tmp.Version = $obj.Version.ToString()
                             $domain_hashtable = $obj_tmp | ConvertTo-Json -Depth 2 -Compress
-                            #$scriptContent[$scriptContent.indexOf($line)] = "domain_hashtable=$($domain_hashtable)"
                             $scriptContentNew.Add("domain_hashtable=$($domain_hashtable)") | Out-Null
                         }
                         elseif ($line -match "(^|\s)connect\(\)")
@@ -191,7 +190,14 @@ function Invoke-WlstScript
                             }
 
                             $user = $Credential.UserName
-                            $pass = ConvertTo-PlainText -secure $Credential.Password
+                            if ($ShowScriptOnly.IsPresent)
+                            {
+                                $pass = "**********"
+                            }
+                            else
+                            {
+                                $pass = ConvertTo-PlainText -secure $Credential.Password
+                            }
 
                             if ($user -and $pass)
                             {
@@ -207,7 +213,6 @@ function Invoke-WlstScript
                                 $indexOf = $line.IndexOf('c')
                                 $connect = $connect.PadLeft(($connect.Length + $indexOf), ' ')
 
-                                #$scriptContent[$scriptContent.indexOf($line)] = $connect
                                 $scriptContentNew.Add($connect) | Out-Null
                                 $connEnable = $true
                             }
@@ -222,6 +227,13 @@ function Invoke-WlstScript
                             $scriptContentNew.Add($line) | Out-Null
                         }
                     }# foreach ($line in $scriptContent)
+
+                    if ($ShowScriptOnly.IsPresent)
+                    {
+                          Write-Output $scriptContentNew
+                          return
+                    }
+
 
                     if ($CurrentBaseDir.IsPresent)
                     {

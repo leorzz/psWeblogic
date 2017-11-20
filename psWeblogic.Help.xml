@@ -67,8 +67,8 @@
 				<maml:para />
 				<maml:para>Uri                                                                        ValidTo             FullName                                  
 ---                                                                        -------             --------                                  
-https://wls-infra.tjrs.gov.br:443/management/wls/latest/servers     02/03/2016 10:03:54 C:\Users\user01\AppData\Local\Temp\w...
-https://wls-infra.tjrs.gov.br:443/management/wls/latest/datasources 02/03/2016 10:04:12 C:\Users\user01\AppData\Local\Temp\w...</maml:para>
+https://wls-infra.tjrs.local.com:443/management/wls/latest/servers     02/03/2016 10:03:54 C:\Users\user01\AppData\Local\Temp\w...
+https://wls-infra.tjrs.local.com:443/management/wls/latest/datasources 02/03/2016 10:04:12 C:\Users\user01\AppData\Local\Temp\w...</maml:para>
 			</dev:remarks>
 			<command:commandLines>
 				<command:commandLine>
@@ -295,7 +295,7 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
 			<maml:introduction>
 				<maml:paragraph>PS C:\&gt;</maml:paragraph>
 			</maml:introduction>
-			<dev:code>Get-WLCluster -AdminServer wls.desenv.tjrs.gov.br -Credential (Get-WLCredential -Alias myCred)
+			<dev:code>Get-WLCluster -AdminServer wls.desenv.tjrs.local.com -Credential (Get-WLCredential -Alias myCred)
 
 </dev:code>
 			<dev:remarks>
@@ -305,8 +305,8 @@ This example use alternative stored credential.</maml:para>
 				<maml:para />
 				<maml:para>Name            Servers                                                             AdminServer                 
 ----            -------                                                             -----------                 
-infra-desenv-01 {@{name=infra-des-31.tjrs.gov.br; state=RUNNING; health=HEALTH_OK}} wls-infra.desenv.tjrs.gov.br
-infra-desenv-02 {@{name=infra-des-32.tjrs.gov.br; state=RUNNING; health=HEALTH_OK}} wls-infra.desenv.tjrs.gov.br</maml:para>
+infra-desenv-01 {@{name=infra-des-31.tjrs.local.com; state=RUNNING; health=HEALTH_OK}} wls-infra.desenv.tjrs.local.com
+infra-desenv-02 {@{name=infra-des-32.tjrs.local.com; state=RUNNING; health=HEALTH_OK}} wls-infra.desenv.tjrs.local.com</maml:para>
 			</dev:remarks>
 			<command:commandLines>
 				<command:commandLine>
@@ -329,8 +329,8 @@ This example use adminserver information from pipe and default credential previo
 				<maml:para />
 				<maml:para>Name            Servers                                                             AdminServer                 
 ----            -------                                                             -----------                 
-infra-desenv-01 {@{name=infra-des-31.tjrs.gov.br; state=RUNNING; health=HEALTH_OK}} wls-infra.desenv.tjrs.gov.br
-infra-desenv-02 {@{name=infra-des-32.tjrs.gov.br; state=RUNNING; health=HEALTH_OK}} wls-infra.desenv.tjrs.gov.br</maml:para>
+infra-desenv-01 {@{name=infra-des-31.tjrs.local.com; state=RUNNING; health=HEALTH_OK}} wls-infra.desenv.tjrs.local.com
+infra-desenv-02 {@{name=infra-des-32.tjrs.local.com; state=RUNNING; health=HEALTH_OK}} wls-infra.desenv.tjrs.local.com</maml:para>
 			</dev:remarks>
 			<command:commandLines>
 				<command:commandLine>
@@ -626,7 +626,7 @@ With this parameter the result will be more informative objects and lifecycle me
 			<maml:introduction>
 				<maml:paragraph>PS C:\&gt;</maml:paragraph>
 			</maml:introduction>
-			<dev:code>Get-WLDatasource -AdminServer wls01.desenv.tjrs.gov.br -Management</dev:code>
+			<dev:code>Get-WLDatasource -AdminServer wls01.desenv.tjrs.local.com -Management</dev:code>
 			<dev:remarks>
 				<maml:para>Get management objects of all datasources from a domain.
 This example use default credential previously stored with &#39;default&#39; alias name.</maml:para>
@@ -650,7 +650,7 @@ jdbc/ds2   {infra-desenv-01}</maml:para>
 			<maml:introduction>
 				<maml:paragraph>PS C:\&gt;</maml:paragraph>
 			</maml:introduction>
-			<dev:code>Get-WLDomain -AdminServer wls01.desenv.tjrs.gov.br | Get-WLDatasource
+			<dev:code>Get-WLDomain -AdminServer wls01.desenv.tjrs.local.com | Get-WLDatasource
 This example use adminserver information from pipe and default credential previously stored with &apos;default&apos; alias name.</dev:code>
 			<dev:remarks>
 				<maml:para />
@@ -981,7 +981,7 @@ With this parameter the result will be more informative objects and lifecycle me
 			<maml:introduction>
 				<maml:paragraph>PS C:\&gt;</maml:paragraph>
 			</maml:introduction>
-			<dev:code>Get-WLDeployment -AdminServer wls01.desenv.tjrs.gov.br -Management</dev:code>
+			<dev:code>Get-WLDeployment -AdminServer wls01.desenv.tjrs.local.com -Management</dev:code>
 			<dev:remarks>
 				<maml:para>Get management objects of all deployments from a domain.
 This example use default credential previously stored with &#39;default&#39; alias name.</maml:para>
@@ -1002,7 +1002,7 @@ This example use default credential previously stored with &#39;default&#39; ali
 			<maml:introduction>
 				<maml:paragraph>PS C:\&gt;</maml:paragraph>
 			</maml:introduction>
-			<dev:code>Get-WLDatasource -AdminServer wls01.prod.tjrs.gov.br -Management | % {$_.test()} | select -ExpandProperty messages</dev:code>
+			<dev:code>Get-WLDatasource -AdminServer wls01.prod.tjrs.local.com -Management | % {$_.test()} | select -ExpandProperty messages</dev:code>
 			<dev:remarks>
 				<maml:para>Rua a test of all datasoucers in a domain.</maml:para>
 				<maml:para />
@@ -1026,7 +1026,7 @@ Data Source &apos;jdbc/ds03&apos;. The remote server returned an error: (400) Ba
 			<maml:introduction>
 				<maml:paragraph>PS C:\&gt;</maml:paragraph>
 			</maml:introduction>
-			<dev:code>Get-WLDatasource -AdminServer wls01.tjrs.gov.br -Management | % {$_.Reset()} | select -ExpandProperty messages</dev:code>
+			<dev:code>Get-WLDatasource -AdminServer wls01.tjrs.local.com -Management | % {$_.Reset()} | select -ExpandProperty messages</dev:code>
 			<dev:remarks>
 				<maml:para>Restarts all datasouces a domain.</maml:para>
 				<maml:para />
@@ -1236,7 +1236,7 @@ This parameter is the environment field registered in the inventory.</maml:para>
 				<maml:para />
 				<maml:para />
 				<maml:para>Name            : wls01
-AdminServer     : wls01.desenv.tjrs.gov.br
+AdminServer     : wls01.desenv.tjrs.local.com
 AdminTcpPort    : 7304
 AdminTcpPortSec : 443
 Version         : 12.1.3
@@ -1244,7 +1244,7 @@ Environment      : Desenv
 ResourceType    : domain
 
 Name            : wls01
-AdminServer     : wls01.desenv.tjrs.gov.br
+AdminServer     : wls01.desenv.tjrs.local.com
 AdminTcpPort    : 7304
 AdminTcpPortSec : 443
 Version         : 12.1.3
@@ -1272,8 +1272,8 @@ ResourceType    : domain</maml:para>
 				<maml:para />
 				<maml:para>Name             AdminServer                    AdminTcpPort AdminTcpPortSec Version Environment ResourceType
 ----             -----------                    ------------ --------------- ------- ---------- ------------
-wls01         wls01.desenv.tjrs.gov.br           7304 443             12.1.3  Desenv     domain      
-wls02         wls02.desenv.tjrs.gov.br           7304 443             12.1.3  Desenv     domain      </maml:para>
+wls01         wls01.desenv.tjrs.local.com           7304 443             12.1.3  Desenv     domain      
+wls02         wls02.desenv.tjrs.local.com           7304 443             12.1.3  Desenv     domain      </maml:para>
 			</dev:remarks>
 			<command:commandLines>
 				<command:commandLine>
@@ -2773,9 +2773,9 @@ To use Get-WLCredential you need run New-WLCredentials command to secure and sto
 			<maml:introduction>
 				<maml:paragraph>PS C:\&gt;</maml:paragraph>
 			</maml:introduction>
-			<dev:code>Get-WLServer -AdminServer wls01.tjrs.gov.br | Start-WLServer -Throttling 2</dev:code>
+			<dev:code>Get-WLServer -AdminServer wls01.tjrs.local.com | Start-WLServer -Throttling 2</dev:code>
 			<dev:remarks>
-				<maml:para>Start  managed servers on wls01.tjrs.gov.br domain. Two at a time.
+				<maml:para>Start  managed servers on wls01.tjrs.local.com domain. Two at a time.
 This example use adminserver information from pipe and default credential previously stored with &#39;default&#39; alias name.</maml:para>
 				<maml:para />
 				<maml:para />
@@ -2794,7 +2794,7 @@ This example use adminserver information from pipe and default credential previo
 			<maml:introduction>
 				<maml:paragraph>PS C:\&gt;</maml:paragraph>
 			</maml:introduction>
-			<dev:code>Get-WLCluster -AdminServer wls01.tjrs.gov.br -Name cluster01 | Start-WLServer</dev:code>
+			<dev:code>Get-WLCluster -AdminServer wls01.tjrs.local.com -Name cluster01 | Start-WLServer</dev:code>
 			<dev:remarks>
 				<maml:para>Start all managed servers on weblogic cluster &#39;cluster01&#39;.
 This example use adminserver information from pipe and default credential previously stored with &#39;default&#39; alias name.</maml:para>
@@ -3042,9 +3042,9 @@ If using this parameter the server will wait for the closing of all the active s
 			<maml:introduction>
 				<maml:paragraph>PS C:\&gt;</maml:paragraph>
 			</maml:introduction>
-			<dev:code>Get-WLServer -AdminServer wls01.tjrs.gov.br | Stop-WLServer -Throttling 2</dev:code>
+			<dev:code>Get-WLServer -AdminServer wls01.tjrs.local.com | Stop-WLServer -Throttling 2</dev:code>
 			<dev:remarks>
-				<maml:para>Stop  managed servers on wls01.tjrs.gov.br domain. Two at a time.
+				<maml:para>Stop  managed servers on wls01.tjrs.local.com domain. Two at a time.
 This example use adminserver information from pipe and default credential previously stored with &#39;default&#39; alias name.</maml:para>
 				<maml:para />
 				<maml:para />
@@ -3063,7 +3063,7 @@ This example use adminserver information from pipe and default credential previo
 			<maml:introduction>
 				<maml:paragraph>PS C:\&gt;</maml:paragraph>
 			</maml:introduction>
-			<dev:code>Get-WLCluster -AdminServer wls01.tjrs.gov.br -Name cluster01 | Stop-WLServer</dev:code>
+			<dev:code>Get-WLCluster -AdminServer wls01.tjrs.local.com -Name cluster01 | Stop-WLServer</dev:code>
 			<dev:remarks>
 				<maml:para>Stop all managed servers on weblogic cluster &#39;cluster01&#39;.
 This example use adminserver information from pipe and default credential previously stored with &#39;default&#39; alias name.</maml:para>
@@ -3970,9 +3970,9 @@ That is, at a minimum the attributes name=&lt;datasource name&gt; and password=&
 			<maml:introduction>
 				<maml:paragraph>PS C:\&gt;</maml:paragraph>
 			</maml:introduction>
-			<dev:code>$dsTemplate = Get-WLDatasource -AdminServer wls01.desenv.tjrs.gov.br -Management -Name jdbc/ds01
+			<dev:code>$dsTemplate = Get-WLDatasource -AdminServer wls01.desenv.tjrs.local.com -Management -Name jdbc/ds01
 $dsTemplate.targets = @(&quot;server01&quot;,&quot;cluster02&quot;)
-$dsTemplate | New-WLDatasource -AdminServer wls02.desenv.tjrs.gov.br</dev:code>
+$dsTemplate | New-WLDatasource -AdminServer wls02.desenv.tjrs.local.com</dev:code>
 			<dev:remarks>
 				<maml:para>Takes a datasource as a model.
 Changes targets property. 
@@ -4341,9 +4341,9 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
 			<maml:introduction>
 				<maml:paragraph>PS C:\&gt;</maml:paragraph>
 			</maml:introduction>
-			<dev:code>Get-WLServer -AdminServer wls01.tjrs.gov.br | Restart-WLServer -Throttling 2</dev:code>
+			<dev:code>Get-WLServer -AdminServer wls01.tjrs.local.com | Restart-WLServer -Throttling 2</dev:code>
 			<dev:remarks>
-				<maml:para>Restart  managed servers on wls01.tjrs.gov.br domain. Two at a time.
+				<maml:para>Restart  managed servers on wls01.tjrs.local.com domain. Two at a time.
 This example use adminserver information from pipe and default credential previously stored with &#39;default&#39; alias name.</maml:para>
 				<maml:para />
 				<maml:para />
@@ -4362,7 +4362,7 @@ This example use adminserver information from pipe and default credential previo
 			<maml:introduction>
 				<maml:paragraph>PS C:\&gt;</maml:paragraph>
 			</maml:introduction>
-			<dev:code>Get-WLCluster -AdminServer wls01.tjrs.gov.br -Name cluster01 | Restart-WLServer</dev:code>
+			<dev:code>Get-WLCluster -AdminServer wls01.tjrs.local.com -Name cluster01 | Restart-WLServer</dev:code>
 			<dev:remarks>
 				<maml:para>Restart all managed servers on weblogic cluster &#39;cluster01&#39;
 This example use adminserver information from pipe and default credential previously stored with &#39;default&#39; alias name.
@@ -4731,7 +4731,7 @@ The input from the pipe is the same as this parameter.</maml:para>
 	<command:details>
 		<command:name>Invoke-WlstScript</command:name>
 		<maml:description>
-			<maml:para>Run python scripts </maml:para>
+			<maml:para>Run jython scripts </maml:para>
 		</maml:description>
 		<maml:copyright>
 			<maml:para />
@@ -4741,8 +4741,8 @@ The input from the pipe is the same as this parameter.</maml:para>
 		<dev:version />
 	</command:details>
 	<maml:description>
-		<maml:para>Create your scripts normally and, if you use the connect method, use it empty in the original position - &quot;connect ()&quot; - without quotes. Enter the path of the python script in the ScriptPath parameter.</maml:para>
-		<maml:para>CMDLET will use either the pipe or InputObjet domain informations and the credentials of the Credential parameter.</maml:para>
+		<maml:para>Create your scripts normally and, if you use the connect method, use it empty in the original position - &quot;connect ()&quot; - without quotes. Enter the path of the python script in the ScriptPath parameter.
+CMDLET will use either the pipe or InputObjet domain informations and the credentials of the Credential parameter.</maml:para>
 	</maml:description>
 	<command:syntax>
 		<command:syntaxItem>
@@ -4780,37 +4780,44 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
 				<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
 			</command:parameter>
 			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
-				<maml:name>PrefixToObject</maml:name>
+				<maml:name>ObjectPrefix</maml:name>
 				<maml:description>
-					<maml:para />
+					<maml:para>Defines which prefix will be used to filter the output that will be converted from the CSV format to psCustomObject.</maml:para>
 				</maml:description>
 				<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
 			</command:parameter>
 			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
-				<maml:name>DelimiterToObject</maml:name>
+				<maml:name>ObjectDelimiter</maml:name>
 				<maml:description>
-					<maml:para />
+					<maml:para>Defines the delimiter for the results of the filter performed with the ObjectPrefix parameter. Outputs will be converted from a CSV format to Object.</maml:para>
 				</maml:description>
 				<command:parameterValue required="true" variableLength="false">Char</command:parameterValue>
 			</command:parameter>
 			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
 				<maml:name>PassThru</maml:name>
 				<maml:description>
-					<maml:para />
+					<maml:para>Ignores any attempt to format the output. Shows the raw output in the Result attribute.</maml:para>
 				</maml:description>
 				<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
 			</command:parameter>
 			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
 				<maml:name>CurrentBaseDir</maml:name>
 				<maml:description>
-					<maml:para />
+					<maml:para>Forces the script to run in the current directory it is in. This is required when there are dependencies that depend on the execution path.</maml:para>
 				</maml:description>
 				<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
 			</command:parameter>
 			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
 				<maml:name>WhatIf</maml:name>
 				<maml:description>
-					<maml:para />
+					<maml:para>A variable &#39;whatif = True&#39; will be inserted at the start of the python script which can be used programmatically in the .py script</maml:para>
+				</maml:description>
+				<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>ShowScriptOnly</maml:name>
+				<maml:description>
+					<maml:para>If present the script will NOT run the script but only print the result source code on the screen.</maml:para>
 				</maml:description>
 				<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
 			</command:parameter>
@@ -4850,37 +4857,44 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
 				<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
 			</command:parameter>
 			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
-				<maml:name>PrefixToObject</maml:name>
+				<maml:name>ObjectPrefix</maml:name>
 				<maml:description>
-					<maml:para />
+					<maml:para>Defines which prefix will be used to filter the output that will be converted from the CSV format to psCustomObject.</maml:para>
 				</maml:description>
 				<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
 			</command:parameter>
 			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
-				<maml:name>DelimiterToObject</maml:name>
+				<maml:name>ObjectDelimiter</maml:name>
 				<maml:description>
-					<maml:para />
+					<maml:para>Defines the delimiter for the results of the filter performed with the ObjectPrefix parameter. Outputs will be converted from a CSV format to Object.</maml:para>
 				</maml:description>
 				<command:parameterValue required="true" variableLength="false">Char</command:parameterValue>
 			</command:parameter>
 			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
 				<maml:name>PassThru</maml:name>
 				<maml:description>
-					<maml:para />
+					<maml:para>Ignores any attempt to format the output. Shows the raw output in the Result attribute.</maml:para>
 				</maml:description>
 				<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
 			</command:parameter>
 			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
 				<maml:name>CurrentBaseDir</maml:name>
 				<maml:description>
-					<maml:para />
+					<maml:para>Forces the script to run in the current directory it is in. This is required when there are dependencies that depend on the execution path.</maml:para>
 				</maml:description>
 				<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
 			</command:parameter>
 			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
 				<maml:name>WhatIf</maml:name>
 				<maml:description>
-					<maml:para />
+					<maml:para>A variable &#39;whatif = True&#39; will be inserted at the start of the python script which can be used programmatically in the .py script</maml:para>
+				</maml:description>
+				<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>ShowScriptOnly</maml:name>
+				<maml:description>
+					<maml:para>If present the script will NOT run the script but only print the result source code on the screen.</maml:para>
 				</maml:description>
 				<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
 			</command:parameter>
@@ -4954,33 +4968,9 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
 			<dev:defaultValue></dev:defaultValue>
 		</command:parameter>
 		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
-			<maml:name>PrefixToObject</maml:name>
-			<maml:description>
-				<maml:para />
-			</maml:description>
-			<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-			<dev:type>
-				<maml:name>String</maml:name>
-				<maml:uri/>
-			</dev:type>
-			<dev:defaultValue></dev:defaultValue>
-		</command:parameter>
-		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
-			<maml:name>DelimiterToObject</maml:name>
-			<maml:description>
-				<maml:para />
-			</maml:description>
-			<command:parameterValue required="true" variableLength="false">Char</command:parameterValue>
-			<dev:type>
-				<maml:name>Char</maml:name>
-				<maml:uri/>
-			</dev:type>
-			<dev:defaultValue></dev:defaultValue>
-		</command:parameter>
-		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
 			<maml:name>PassThru</maml:name>
 			<maml:description>
-				<maml:para />
+				<maml:para>Ignores any attempt to format the output. Shows the raw output in the Result attribute.</maml:para>
 			</maml:description>
 			<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
 			<dev:type>
@@ -4992,7 +4982,7 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
 		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
 			<maml:name>CurrentBaseDir</maml:name>
 			<maml:description>
-				<maml:para />
+				<maml:para>Forces the script to run in the current directory it is in. This is required when there are dependencies that depend on the execution path.</maml:para>
 			</maml:description>
 			<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
 			<dev:type>
@@ -5016,14 +5006,14 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
 		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
 			<maml:name>WhatIf</maml:name>
 			<maml:description>
-				<maml:para />
+				<maml:para>A variable &#39;whatif = True&#39; will be inserted at the start of the python script which can be used programmatically in the .py script</maml:para>
 			</maml:description>
 			<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
 			<dev:type>
 				<maml:name>SwitchParameter</maml:name>
 				<maml:uri/>
 			</dev:type>
-			<dev:defaultValue></dev:defaultValue>
+			<dev:defaultValue>False</dev:defaultValue>
 		</command:parameter>
 		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
 			<maml:name>BuiltInScript</maml:name>
@@ -5033,6 +5023,42 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
 			<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
 			<dev:type>
 				<maml:name>String</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>ObjectPrefix</maml:name>
+			<maml:description>
+				<maml:para>Defines which prefix will be used to filter the output that will be converted from the CSV format to psCustomObject.</maml:para>
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+			<dev:type>
+				<maml:name>String</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>ObjectDelimiter</maml:name>
+			<maml:description>
+				<maml:para>Defines the delimiter for the results of the filter performed with the ObjectPrefix parameter. Outputs will be converted from a CSV format to Object.</maml:para>
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">Char</command:parameterValue>
+			<dev:type>
+				<maml:name>Char</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue>,</dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>ShowScriptOnly</maml:name>
+			<maml:description>
+				<maml:para>If present the script will NOT run the script but only print the result source code on the screen.</maml:para>
+			</maml:description>
+			<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+			<dev:type>
+				<maml:name>SwitchParameter</maml:name>
 				<maml:uri/>
 			</dev:type>
 			<dev:defaultValue></dev:defaultValue>
@@ -5071,6 +5097,141 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
 		</maml:alert>
 	</maml:alertSet>
 	<command:examples>
+		<command:example>
+			<maml:title>--------------------------  Example 1  --------------------------</maml:title>
+			<maml:introduction>
+				<maml:paragraph>PS C:\&gt;</maml:paragraph>
+			</maml:introduction>
+			<dev:code>Get-WLDomain -AdminServer wls-infra.tjrs.local.com | Invoke-WlstScript -BuiltInScript Get-JavaVersion.py -ShowScriptOnly
+</dev:code>
+			<dev:remarks>
+				<maml:para>The -ShowScriptOnly NOT run the script but only print the result source code on the screen.
+</maml:para>
+				<maml:para />
+				<maml:para />
+				<maml:para>whatif = False
+domain_hashtable={&quot;Name&quot;:&quot;DEV-INFRA&quot;,&quot;AdminServer&quot;:&quot;wls-infra.dev.tjrs.local.com&quot;,&quot;AdminTcpPort&quot;:7340,&quot;AdminTcpPortSec&quot;:&quot;443&quot;,&quot;Version&quot;:&quot;12.2.1.2&quot;,&quot;En
+vironment&quot;:&quot;DEV&quot;,&quot;ServiceName&quot;:&quot;AdminServer_DEV-INFRA&quot;,&quot;MW_HOME&quot;:&quot;O:\\Oracle\\WLS_12.2.1\\DEV-INFRA\\MW_HOME&quot;,&quot;Description&quot;:&quot;DEV JEE Equipe de Infr
+aestrutura.&quot;,&quot;ResourceType&quot;:&quot;Domain&quot;}
+def getServerInfo():
+    domainConfig()
+    serverNames = cmo.getServers()
+    domainRuntime()
+    print &apos;==&gt;AdminServer,Name,JavaVersion&apos;
+    for name in serverNames:
+        try:
+            serverName = name.getName()
+            cd(&apos;/ServerLifeCycleRuntimes/&apos; + serverName)
+            state = cmo.getState()
+            if state == &quot;SHUTDOWN&quot;:
+                print  &apos;==&gt;&apos; + domain_hashtable[&apos;AdminServer&apos;] + &apos;,&apos; + serverName + &apos;,&apos; + &apos;SHUTDOWN&apos;
+            else:                
+                cd(&quot;/ServerRuntimes/&quot; + serverName + &quot;/JVMRuntime/&quot; + serverName)
+                print  &apos;==&gt;&apos; + domain_hashtable[&apos;AdminServer&apos;] + &apos;,&apos; + serverName + &apos;,&apos; + cmo.getJavaVersion()
+        except Exception, e:
+            print  &apos;==&gt;&apos; + domain_hashtable[&apos;AdminServer&apos;] + &apos;,&apos; + serverName + &apos;,&apos; + e
+            pass
+
+try:
+    connect(&apos;user01&apos;,&apos;**********&apos;,&apos;t3://wls-infra.dev.tjrs.local.com:7340&apos;)
+    getServerInfo()
+finally:
+    disconnect()
+    exit(defaultAnswer=&apos;y&apos;)</maml:para>
+			</dev:remarks>
+			<command:commandLines>
+				<command:commandLine>
+					<command:commandText>
+						<maml:para />
+					</command:commandText>
+				</command:commandLine>
+			</command:commandLines>
+		</command:example>
+		<command:example>
+			<maml:title>--------------------------  Example 2  --------------------------</maml:title>
+			<maml:introduction>
+				<maml:paragraph>PS C:\&gt;</maml:paragraph>
+			</maml:introduction>
+			<dev:code>Get-WLDomain -AdminServer wls-infra.tjrs.local.com | Invoke-WlstScript -BuiltInScript Get-JavaVersion.py | Select-Object -ExpandProperty Result</dev:code>
+			<dev:remarks>
+				<maml:para />
+				<maml:para />
+				<maml:para />
+				<maml:para>AdminServer                         Name                               JavaVersion
+-----------                              ----                                   -----------
+wls-infra.dev.tjrs.local.com       AdminServer                     1.8.0_121  
+wls-infra.dev.tjrs.local.com      infra-core-01.infra.tj.rs       1.7.0_67
+wls-infra.dev.tjrs.local.com      infra-dev-21.tjrs.local.com      1.8.0_112  
+</maml:para>
+			</dev:remarks>
+			<command:commandLines>
+				<command:commandLine>
+					<command:commandText>
+						<maml:para />
+					</command:commandText>
+				</command:commandLine>
+			</command:commandLines>
+		</command:example>
+		<command:example>
+			<maml:title>--------------------------  Example 3  --------------------------</maml:title>
+			<maml:introduction>
+				<maml:paragraph>PS C:\&gt;</maml:paragraph>
+			</maml:introduction>
+			<dev:code>Get-WLDomain -AdminServer wls-domain01.local.com | Invoke-WlstScript -ScriptPath c:\WebLogic\InvokeByPowershell\Set-DsProperties.py -WhatIf -Arguments &apos;jdbc/d&apos; | fl</dev:code>
+			<dev:remarks>
+				<maml:para>The -whatIf parameter inserts a variable into the python code that can be used to simulate execution.
+The -Arguments parameter passes the arguments to the python script in the order they were entered.</maml:para>
+				<maml:para />
+				<maml:para />
+				<maml:para>AdminServer : wls-domain01.tjrs.local.com
+Result      : 
+              Initializing WebLogic Scripting Tool (WLST) ...
+              
+              Welcome to WebLogic Server Administration Scripting Shell
+              
+              Type help() for help on available commands
+              
+              Connecting to t3://wls-fin.desenv.tjrs.local.com:7307 with userid leonardorz ...
+              Successfully connected to Admin Server &quot;AdminServer&quot; that belongs to domain &quot;DES-FIN&quot;.
+              
+              Warning: An insecure protocol was used to connect to the server. 
+              To ensure on-the-wire security, the SSL port or Admin port should be used instead.
+              
+              Location changed to edit tree.   
+              This is a writable tree with DomainMBean as the root.   
+              To make changes you will need to start an edit session via startEdit(). 
+              For more help, use help(&apos;edit&apos;).
+              
+              Starting an edit session ...
+              Started edit session, be sure to save and activate your changes once you are done.
+              
+              ==&gt; WhatIf is present: 1
+              ==&gt; Argument match: jdbc/d 
+              
+              jdbc/docs
+               Set StatementTimeout -1 to 300
+               Set ConnectionCreationRetryFrequencySeconds 0 to 120
+               Set InactiveConnectionTimeoutSeconds 0 to 10
+               Set HighestNumWaiters 2147483647 to 90
+              jdbc/docs_back
+               Set StatementTimeout -1 to 300
+               Set ConnectionCreationRetryFrequencySeconds 0 to 120
+               Set InactiveConnectionTimeoutSeconds 0 to 10
+               Set HighestNumWaiters 2147483647 to 90
+              
+              ==&gt; ToChange 2 datasources
+              
+              Edit session is cancelled successfully.
+              Exiting WebLogic Scripting Tool.</maml:para>
+			</dev:remarks>
+			<command:commandLines>
+				<command:commandLine>
+					<command:commandText>
+						<maml:para />
+					</command:commandText>
+				</command:commandLine>
+			</command:commandLines>
+		</command:example>
 	</command:examples>
 	<maml:relatedLinks>
 		<maml:navigationLink>
@@ -5339,38 +5500,18 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
 	</maml:alertSet>
 	<command:examples>
 		<command:example>
-			<maml:title>--------------------------    --------------------------</maml:title>
+			<maml:title>--------------------------  Example 1  --------------------------</maml:title>
 			<maml:introduction>
 				<maml:paragraph>PS C:\&gt;</maml:paragraph>
 			</maml:introduction>
-			<dev:code>New-WLDeployment -AdminServer wls01.prd.tjrs.gov.br -Targets cluster01 -InFile D:\_work\temp\jax-rs-2.0.war</dev:code>
-			<dev:remarks>
-				<maml:para />
-				<maml:para />
-				<maml:para />
-				<maml:para></maml:para>
-			</dev:remarks>
-			<command:commandLines>
-				<command:commandLine>
-					<command:commandText>
-						<maml:para />
-					</command:commandText>
-				</command:commandLine>
-			</command:commandLines>
-		</command:example>
-		<command:example>
-			<maml:title>--------------------------  InFile  --------------------------</maml:title>
-			<maml:introduction>
-				<maml:paragraph>PS C:\&gt;</maml:paragraph>
-			</maml:introduction>
-			<dev:code>New-WLDeployment -AdminServer wls01.tjrs.gov.br  -Targets cluster01 -InFile D:\_work\temp\jax-rs-2.0.war
+			<dev:code>New-WLDeployment -AdminServer wls01.tjrs.local.com  -Targets cluster01 -InFile D:\_work\temp\jax-rs-2.0.war
 </dev:code>
 			<dev:remarks>
 				<maml:para />
 				<maml:para />
 				<maml:para />
 				<maml:para>messages : {@{message=Deployed the application &apos;jax-rs-2.0&apos;.; severity=SUCCESS}}
-item     : @{name=ADTR-1; id=1; type=deployment; description=[Deployer:149026]deploy application jax-rs-2.0 on infra-dev-21.tjrs.gov.br.; 
+item     : @{name=ADTR-1; id=1; type=deployment; description=[Deployer:149026]deploy application jax-rs-2.0 on infra-dev-21.tjrs.local.com.; 
            operation=deploy; targets=System.Object[]; beginTime=1510854853119; endTime=1510854856119; status=completed; deploymentName=jax-rs-2.0}</maml:para>
 			</dev:remarks>
 			<command:commandLines>

@@ -34,8 +34,8 @@
           <Description />
           <Output>Uri                                                                        ValidTo             FullName                                  
 ---                                                                        -------             --------                                  
-https://wls-infra.tjrs.gov.br:443/management/wls/latest/servers     02/03/2016 10:03:54 C:\Users\user01\AppData\Local\Temp\w...
-https://wls-infra.tjrs.gov.br:443/management/wls/latest/datasources 02/03/2016 10:04:12 C:\Users\user01\AppData\Local\Temp\w...</Output>
+https://wls-infra.tjrs.local.com:443/management/wls/latest/servers     02/03/2016 10:03:54 C:\Users\user01\AppData\Local\Temp\w...
+https://wls-infra.tjrs.local.com:443/management/wls/latest/datasources 02/03/2016 10:04:12 C:\Users\user01\AppData\Local\Temp\w...</Output>
         </Example>
       </Examples>
       <RelatedLinks>
@@ -154,15 +154,15 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
       <Examples>
         <Example>
           <Name>Example 1</Name>
-          <Cmd>Get-WLCluster -AdminServer wls.desenv.tjrs.gov.br -Credential (Get-WLCredential -Alias myCred)
+          <Cmd>Get-WLCluster -AdminServer wls.desenv.tjrs.local.com -Credential (Get-WLCredential -Alias myCred)
 
 </Cmd>
           <Description>Return monitoring data.
 This example use alternative stored credential.</Description>
           <Output>Name            Servers                                                             AdminServer                 
 ----            -------                                                             -----------                 
-infra-desenv-01 {@{name=infra-des-31.tjrs.gov.br; state=RUNNING; health=HEALTH_OK}} wls-infra.desenv.tjrs.gov.br
-infra-desenv-02 {@{name=infra-des-32.tjrs.gov.br; state=RUNNING; health=HEALTH_OK}} wls-infra.desenv.tjrs.gov.br</Output>
+infra-desenv-01 {@{name=infra-des-31.tjrs.local.com; state=RUNNING; health=HEALTH_OK}} wls-infra.desenv.tjrs.local.com
+infra-desenv-02 {@{name=infra-des-32.tjrs.local.com; state=RUNNING; health=HEALTH_OK}} wls-infra.desenv.tjrs.local.com</Output>
         </Example>
         <Example>
           <Name>Example 2</Name>
@@ -171,8 +171,8 @@ infra-desenv-02 {@{name=infra-des-32.tjrs.gov.br; state=RUNNING; health=HEALTH_O
 This example use adminserver information from pipe and default credential previously stored with 'default' alias name.</Description>
           <Output>Name            Servers                                                             AdminServer                 
 ----            -------                                                             -----------                 
-infra-desenv-01 {@{name=infra-des-31.tjrs.gov.br; state=RUNNING; health=HEALTH_OK}} wls-infra.desenv.tjrs.gov.br
-infra-desenv-02 {@{name=infra-des-32.tjrs.gov.br; state=RUNNING; health=HEALTH_OK}} wls-infra.desenv.tjrs.gov.br</Output>
+infra-desenv-01 {@{name=infra-des-31.tjrs.local.com; state=RUNNING; health=HEALTH_OK}} wls-infra.desenv.tjrs.local.com
+infra-desenv-02 {@{name=infra-des-32.tjrs.local.com; state=RUNNING; health=HEALTH_OK}} wls-infra.desenv.tjrs.local.com</Output>
         </Example>
       </Examples>
       <RelatedLinks>
@@ -301,7 +301,7 @@ With this parameter the result will be more informative objects and lifecycle me
       <Examples>
         <Example>
           <Name>Example 1</Name>
-          <Cmd>Get-WLDatasource -AdminServer wls01.desenv.tjrs.gov.br -Management</Cmd>
+          <Cmd>Get-WLDatasource -AdminServer wls01.desenv.tjrs.local.com -Management</Cmd>
           <Description>Get management objects of all datasources from a domain.
 This example use default credential previously stored with 'default' alias name.</Description>
           <Output>Name        Targets                           
@@ -311,7 +311,7 @@ jdbc/ds2   {infra-desenv-01}</Output>
         </Example>
         <Example>
           <Name>Example 2</Name>
-          <Cmd>Get-WLDomain -AdminServer wls01.desenv.tjrs.gov.br | Get-WLDatasource
+          <Cmd>Get-WLDomain -AdminServer wls01.desenv.tjrs.local.com | Get-WLDatasource
 This example use adminserver information from pipe and default credential previously stored with 'default' alias name.</Cmd>
           <Description />
           <Output>Name        Type   
@@ -456,14 +456,14 @@ With this parameter the result will be more informative objects and lifecycle me
       <Examples>
         <Example>
           <Name>Example 1</Name>
-          <Cmd>Get-WLDeployment -AdminServer wls01.desenv.tjrs.gov.br -Management</Cmd>
+          <Cmd>Get-WLDeployment -AdminServer wls01.desenv.tjrs.local.com -Management</Cmd>
           <Description>Get management objects of all deployments from a domain.
 This example use default credential previously stored with 'default' alias name.</Description>
           <Output />
         </Example>
         <Example>
           <Name>Example 2</Name>
-          <Cmd>Get-WLDatasource -AdminServer wls01.prod.tjrs.gov.br -Management | % {$_.test()} | select -ExpandProperty messages</Cmd>
+          <Cmd>Get-WLDatasource -AdminServer wls01.prod.tjrs.local.com -Management | % {$_.test()} | select -ExpandProperty messages</Cmd>
           <Description>Rua a test of all datasoucers in a domain.</Description>
           <Output>message                                                                                    severity
 -------                                                                                    --------
@@ -473,7 +473,7 @@ Data Source 'jdbc/ds03'. The remote server returned an error: (400) Bad Request.
         </Example>
         <Example>
           <Name>Example 3</Name>
-          <Cmd>Get-WLDatasource -AdminServer wls01.tjrs.gov.br -Management | % {$_.Reset()} | select -ExpandProperty messages</Cmd>
+          <Cmd>Get-WLDatasource -AdminServer wls01.tjrs.local.com -Management | % {$_.Reset()} | select -ExpandProperty messages</Cmd>
           <Description>Restarts all datasouces a domain.</Description>
           <Output>message                                                  severity
 -------                                                  --------
@@ -580,7 +580,7 @@ This parameter is the environment field registered in the inventory.</Descriptio
           <Cmd>Get-WLDomain | select -First 2</Cmd>
           <Description />
           <Output>Name            : wls01
-AdminServer     : wls01.desenv.tjrs.gov.br
+AdminServer     : wls01.desenv.tjrs.local.com
 AdminTcpPort    : 7304
 AdminTcpPortSec : 443
 Version         : 12.1.3
@@ -588,7 +588,7 @@ Environment      : Desenv
 ResourceType    : domain
 
 Name            : wls01
-AdminServer     : wls01.desenv.tjrs.gov.br
+AdminServer     : wls01.desenv.tjrs.local.com
 AdminTcpPort    : 7304
 AdminTcpPortSec : 443
 Version         : 12.1.3
@@ -602,8 +602,8 @@ ResourceType    : domain</Output>
           <Description />
           <Output>Name             AdminServer                    AdminTcpPort AdminTcpPortSec Version Environment ResourceType
 ----             -----------                    ------------ --------------- ------- ---------- ------------
-wls01         wls01.desenv.tjrs.gov.br           7304 443             12.1.3  Desenv     domain      
-wls02         wls02.desenv.tjrs.gov.br           7304 443             12.1.3  Desenv     domain      </Output>
+wls01         wls01.desenv.tjrs.local.com           7304 443             12.1.3  Desenv     domain      
+wls02         wls02.desenv.tjrs.local.com           7304 443             12.1.3  Desenv     domain      </Output>
         </Example>
       </Examples>
       <RelatedLinks>
@@ -1309,14 +1309,14 @@ To use Get-WLCredential you need run New-WLCredentials command to secure and sto
       <Examples>
         <Example>
           <Name>Example 1</Name>
-          <Cmd>Get-WLServer -AdminServer wls01.tjrs.gov.br | Start-WLServer -Throttling 2</Cmd>
-          <Description>Start  managed servers on wls01.tjrs.gov.br domain. Two at a time.
+          <Cmd>Get-WLServer -AdminServer wls01.tjrs.local.com | Start-WLServer -Throttling 2</Cmd>
+          <Description>Start  managed servers on wls01.tjrs.local.com domain. Two at a time.
 This example use adminserver information from pipe and default credential previously stored with 'default' alias name.</Description>
           <Output />
         </Example>
         <Example>
           <Name>Example 2</Name>
-          <Cmd>Get-WLCluster -AdminServer wls01.tjrs.gov.br -Name cluster01 | Start-WLServer</Cmd>
+          <Cmd>Get-WLCluster -AdminServer wls01.tjrs.local.com -Name cluster01 | Start-WLServer</Cmd>
           <Description>Start all managed servers on weblogic cluster 'cluster01'.
 This example use adminserver information from pipe and default credential previously stored with 'default' alias name.</Description>
           <Output />
@@ -1444,14 +1444,14 @@ If using this parameter the server will wait for the closing of all the active s
       <Examples>
         <Example>
           <Name>Example 1</Name>
-          <Cmd>Get-WLServer -AdminServer wls01.tjrs.gov.br | Stop-WLServer -Throttling 2</Cmd>
-          <Description>Stop  managed servers on wls01.tjrs.gov.br domain. Two at a time.
+          <Cmd>Get-WLServer -AdminServer wls01.tjrs.local.com | Stop-WLServer -Throttling 2</Cmd>
+          <Description>Stop  managed servers on wls01.tjrs.local.com domain. Two at a time.
 This example use adminserver information from pipe and default credential previously stored with 'default' alias name.</Description>
           <Output />
         </Example>
         <Example>
           <Name>Example 2</Name>
-          <Cmd>Get-WLCluster -AdminServer wls01.tjrs.gov.br -Name cluster01 | Stop-WLServer</Cmd>
+          <Cmd>Get-WLCluster -AdminServer wls01.tjrs.local.com -Name cluster01 | Stop-WLServer</Cmd>
           <Description>Stop all managed servers on weblogic cluster 'cluster01'.
 This example use adminserver information from pipe and default credential previously stored with 'default' alias name.</Description>
           <Output />
@@ -1787,9 +1787,9 @@ That is, at a minimum the attributes name=&lt;datasource name&gt; and password=&
       <Examples>
         <Example>
           <Name>Example 1</Name>
-          <Cmd>$dsTemplate = Get-WLDatasource -AdminServer wls01.desenv.tjrs.gov.br -Management -Name jdbc/ds01
+          <Cmd>$dsTemplate = Get-WLDatasource -AdminServer wls01.desenv.tjrs.local.com -Management -Name jdbc/ds01
 $dsTemplate.targets = @("server01","cluster02")
-$dsTemplate | New-WLDatasource -AdminServer wls02.desenv.tjrs.gov.br</Cmd>
+$dsTemplate | New-WLDatasource -AdminServer wls02.desenv.tjrs.local.com</Cmd>
           <Description>Takes a datasource as a model.
 Changes targets property. 
 </Description>
@@ -1948,14 +1948,14 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
       <Examples>
         <Example>
           <Name>Example 1</Name>
-          <Cmd>Get-WLServer -AdminServer wls01.tjrs.gov.br | Restart-WLServer -Throttling 2</Cmd>
-          <Description>Restart  managed servers on wls01.tjrs.gov.br domain. Two at a time.
+          <Cmd>Get-WLServer -AdminServer wls01.tjrs.local.com | Restart-WLServer -Throttling 2</Cmd>
+          <Description>Restart  managed servers on wls01.tjrs.local.com domain. Two at a time.
 This example use adminserver information from pipe and default credential previously stored with 'default' alias name.</Description>
           <Output />
         </Example>
         <Example>
           <Name>Example 2</Name>
-          <Cmd>Get-WLCluster -AdminServer wls01.tjrs.gov.br -Name cluster01 | Restart-WLServer</Cmd>
+          <Cmd>Get-WLCluster -AdminServer wls01.tjrs.local.com -Name cluster01 | Restart-WLServer</Cmd>
           <Description>Restart all managed servers on weblogic cluster 'cluster01'
 This example use adminserver information from pipe and default credential previously stored with 'default' alias name.
 </Description>
@@ -2102,13 +2102,12 @@ The input from the pipe is the same as this parameter.</Description>
     <CmdletObject verb="Invoke" noun="WlstScript">
       <Name>Invoke-WlstScript</Name>
       <Syntax>
-        <string>Invoke-WlstScript [-InputObject &lt;PSObject&gt;] [-Credential &lt;PSCredential&gt;] [-SecureConnection] [-ScriptPath &lt;String&gt;] [-PrefixToObject &lt;String&gt;] [-DelimiterToObject &lt;Char&gt;] [-PassThru] [-CurrentBaseDir] [-WhatIf] [-Arguments &lt;String[]&gt;]</string>
-        <string>Invoke-WlstScript [-InputObject &lt;PSObject&gt;] [-Credential &lt;PSCredential&gt;] [-SecureConnection] [-PrefixToObject &lt;String&gt;] [-DelimiterToObject &lt;Char&gt;] [-PassThru] [-CurrentBaseDir] [-WhatIf] [-Arguments &lt;String[]&gt;] [-BuiltInScript &lt;String&gt; {Get-JavaVersion.py | Get-ServerStart.py | Get-UserMemberOf.py | New-Domain.py | Set-DatasourceTarget.py} ]</string>
+        <string>Invoke-WlstScript [-InputObject &lt;PSObject&gt;] [-Credential &lt;PSCredential&gt;] [-SecureConnection] [-ScriptPath &lt;String&gt;] [-ObjectPrefix &lt;String&gt;] [-ObjectDelimiter &lt;Char&gt;] [-PassThru] [-CurrentBaseDir] [-WhatIf] [-ShowScriptOnly] [-Arguments &lt;String[]&gt;]</string>
+        <string>Invoke-WlstScript [-InputObject &lt;PSObject&gt;] [-Credential &lt;PSCredential&gt;] [-SecureConnection] [-ObjectPrefix &lt;String&gt;] [-ObjectDelimiter &lt;Char&gt;] [-PassThru] [-CurrentBaseDir] [-WhatIf] [-ShowScriptOnly] [-Arguments &lt;String[]&gt;] [-BuiltInScript &lt;String&gt; {Get-JavaVersion.py | Get-Server.py | Get-ServerStart.py | Get-UserMemberOf.py | New-Domain.py | Set-DatasourceTarget.py} ]</string>
       </Syntax>
       <GeneralHelp>
-        <Synopsis>Run python scripts </Synopsis>
+        <Synopsis>Run jython scripts </Synopsis>
         <Description>Create your scripts normally and, if you use the connect method, use it empty in the original position - "connect ()" - without quotes. Enter the path of the python script in the ScriptPath parameter.
-
 CMDLET will use either the pipe or InputObjet domain informations and the credentials of the Credential parameter.</Description>
         <Notes />
         <InputType />
@@ -2119,8 +2118,8 @@ CMDLET will use either the pipe or InputObjet domain informations and the creden
         <ReturnTypeDescription />
       </GeneralHelp>
       <ParamSets>
-        <CommandParameterSetInfo2 Name="ScriptPath" Params="InputObject Credential SecureConnection ScriptPath PrefixToObject DelimiterToObject PassThru CurrentBaseDir WhatIf Arguments Verbose Debug ErrorAction WarningAction InformationAction ErrorVariable WarningVariable InformationVariable OutVariable OutBuffer PipelineVariable" />
-        <CommandParameterSetInfo2 Name="BuildinScript" Params="InputObject Credential SecureConnection PrefixToObject DelimiterToObject PassThru CurrentBaseDir WhatIf Arguments Verbose Debug ErrorAction WarningAction InformationAction ErrorVariable WarningVariable InformationVariable OutVariable OutBuffer PipelineVariable BuiltInScript" />
+        <CommandParameterSetInfo2 Name="ScriptPath" Params="InputObject Credential SecureConnection ScriptPath ObjectPrefix ObjectDelimiter PassThru CurrentBaseDir WhatIf ShowScriptOnly Arguments Verbose Debug ErrorAction WarningAction InformationAction ErrorVariable WarningVariable InformationVariable OutVariable OutBuffer PipelineVariable" />
+        <CommandParameterSetInfo2 Name="BuildinScript" Params="InputObject Credential SecureConnection ObjectPrefix ObjectDelimiter PassThru CurrentBaseDir WhatIf ShowScriptOnly Arguments Verbose Debug ErrorAction WarningAction InformationAction ErrorVariable WarningVariable InformationVariable OutVariable OutBuffer PipelineVariable BuiltInScript" />
       </ParamSets>
       <Parameters>
         <ParameterDescription type="PSObject" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="true" pipeProp="false" isPos="false" pos="named" globbing="false">
@@ -2168,26 +2167,6 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
           <Description>The path to the python script.</Description>
           <DefaultValue />
         </ParameterDescription>
-        <ParameterDescription type="String" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="false" pos="named" globbing="false">
-          <Name>PrefixToObject</Name>
-          <Attributes>
-            <string>System.Management.Automation.ParameterAttribute</string>
-            <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
-          </Attributes>
-          <Aliases />
-          <Description />
-          <DefaultValue />
-        </ParameterDescription>
-        <ParameterDescription type="Char" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="false" pos="named" globbing="false">
-          <Name>DelimiterToObject</Name>
-          <Attributes>
-            <string>System.Management.Automation.ParameterAttribute</string>
-            <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
-          </Attributes>
-          <Aliases />
-          <Description />
-          <DefaultValue />
-        </ParameterDescription>
         <ParameterDescription type="SwitchParameter" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="false" pos="named" globbing="false">
           <Name>PassThru</Name>
           <Attributes>
@@ -2195,7 +2174,7 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
             <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
           </Attributes>
           <Aliases />
-          <Description />
+          <Description>Ignores any attempt to format the output. Shows the raw output in the Result attribute.</Description>
           <DefaultValue />
         </ParameterDescription>
         <ParameterDescription type="SwitchParameter" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="false" pos="named" globbing="false">
@@ -2205,7 +2184,7 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
             <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
           </Attributes>
           <Aliases />
-          <Description />
+          <Description>Forces the script to run in the current directory it is in. This is required when there are dependencies that depend on the execution path.</Description>
           <DefaultValue />
         </ParameterDescription>
         <ParameterDescription type="String[]" varLen="true" required="false" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="false" pos="named" globbing="false">
@@ -2225,8 +2204,8 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
             <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
           </Attributes>
           <Aliases />
-          <Description />
-          <DefaultValue />
+          <Description>A variable 'whatif = True' will be inserted at the start of the python script which can be used programmatically in the .py script</Description>
+          <DefaultValue>False</DefaultValue>
         </ParameterDescription>
         <ParameterDescription type="String" varLen="false" required="false" dynamic="true" pipeRemaining="false" pipe="false" pipeProp="false" isPos="false" pos="named" globbing="false">
           <Name>BuiltInScript</Name>
@@ -2238,8 +2217,132 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
           <Description>Predefined generic scripts.</Description>
           <DefaultValue />
         </ParameterDescription>
+        <ParameterDescription type="String" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="false" pos="named" globbing="false">
+          <Name>ObjectPrefix</Name>
+          <Attributes>
+            <string>System.Management.Automation.ParameterAttribute</string>
+            <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
+          </Attributes>
+          <Aliases />
+          <Description>Defines which prefix will be used to filter the output that will be converted from the CSV format to psCustomObject.</Description>
+          <DefaultValue />
+        </ParameterDescription>
+        <ParameterDescription type="Char" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="false" pos="named" globbing="false">
+          <Name>ObjectDelimiter</Name>
+          <Attributes>
+            <string>System.Management.Automation.ParameterAttribute</string>
+            <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
+          </Attributes>
+          <Aliases />
+          <Description>Defines the delimiter for the results of the filter performed with the ObjectPrefix parameter. Outputs will be converted from a CSV format to Object.</Description>
+          <DefaultValue>,</DefaultValue>
+        </ParameterDescription>
+        <ParameterDescription type="SwitchParameter" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="false" pos="named" globbing="false">
+          <Name>ShowScriptOnly</Name>
+          <Attributes>
+            <string>System.Management.Automation.ParameterAttribute</string>
+            <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
+          </Attributes>
+          <Aliases />
+          <Description>If present the script will NOT run the script but only print the result source code on the screen.</Description>
+          <DefaultValue />
+        </ParameterDescription>
       </Parameters>
-      <Examples />
+      <Examples>
+        <Example>
+          <Name>Example 1</Name>
+          <Cmd>Get-WLDomain -AdminServer wls-infra.tjrs.local.com | Invoke-WlstScript -BuiltInScript Get-JavaVersion.py -ShowScriptOnly
+</Cmd>
+          <Description>The -ShowScriptOnly NOT run the script but only print the result source code on the screen.
+</Description>
+          <Output>whatif = False
+domain_hashtable={"Name":"DEV-INFRA","AdminServer":"wls-infra.dev.tjrs.local.com","AdminTcpPort":7340,"AdminTcpPortSec":"443","Version":"12.2.1.2","En
+vironment":"DEV","ServiceName":"AdminServer_DEV-INFRA","MW_HOME":"O:\\Oracle\\WLS_12.2.1\\DEV-INFRA\\MW_HOME","Description":"DEV JEE Equipe de Infr
+aestrutura.","ResourceType":"Domain"}
+def getServerInfo():
+    domainConfig()
+    serverNames = cmo.getServers()
+    domainRuntime()
+    print '==&gt;AdminServer,Name,JavaVersion'
+    for name in serverNames:
+        try:
+            serverName = name.getName()
+            cd('/ServerLifeCycleRuntimes/' + serverName)
+            state = cmo.getState()
+            if state == "SHUTDOWN":
+                print  '==&gt;' + domain_hashtable['AdminServer'] + ',' + serverName + ',' + 'SHUTDOWN'
+            else:                
+                cd("/ServerRuntimes/" + serverName + "/JVMRuntime/" + serverName)
+                print  '==&gt;' + domain_hashtable['AdminServer'] + ',' + serverName + ',' + cmo.getJavaVersion()
+        except Exception, e:
+            print  '==&gt;' + domain_hashtable['AdminServer'] + ',' + serverName + ',' + e
+            pass
+
+try:
+    connect('user01','**********','t3://wls-infra.dev.tjrs.local.com:7340')
+    getServerInfo()
+finally:
+    disconnect()
+    exit(defaultAnswer='y')</Output>
+        </Example>
+        <Example>
+          <Name>Example 2</Name>
+          <Cmd>Get-WLDomain -AdminServer wls-infra.tjrs.local.com | Invoke-WlstScript -BuiltInScript Get-JavaVersion.py | Select-Object -ExpandProperty Result</Cmd>
+          <Description />
+          <Output>AdminServer                         Name                               JavaVersion
+-----------                              ----                                   -----------
+wls-infra.dev.tjrs.local.com       AdminServer                     1.8.0_121  
+wls-infra.dev.tjrs.local.com      infra-core-01.infra.tj.rs       1.7.0_67
+wls-infra.dev.tjrs.local.com      infra-dev-21.tjrs.local.com      1.8.0_112  
+</Output>
+        </Example>
+        <Example>
+          <Name>Example 3</Name>
+          <Cmd>Get-WLDomain -AdminServer wls-domain01.local.com | Invoke-WlstScript -ScriptPath c:\WebLogic\InvokeByPowershell\Set-DsProperties.py -WhatIf -Arguments 'jdbc/d' | fl</Cmd>
+          <Description>The -whatIf parameter inserts a variable into the python code that can be used to simulate execution.
+The -Arguments parameter passes the arguments to the python script in the order they were entered.</Description>
+          <Output>AdminServer : wls-domain01.tjrs.local.com
+Result      : 
+              Initializing WebLogic Scripting Tool (WLST) ...
+              
+              Welcome to WebLogic Server Administration Scripting Shell
+              
+              Type help() for help on available commands
+              
+              Connecting to t3://wls-fin.desenv.tjrs.local.com:7307 with userid leonardorz ...
+              Successfully connected to Admin Server "AdminServer" that belongs to domain "DES-FIN".
+              
+              Warning: An insecure protocol was used to connect to the server. 
+              To ensure on-the-wire security, the SSL port or Admin port should be used instead.
+              
+              Location changed to edit tree.   
+              This is a writable tree with DomainMBean as the root.   
+              To make changes you will need to start an edit session via startEdit(). 
+              For more help, use help('edit').
+              
+              Starting an edit session ...
+              Started edit session, be sure to save and activate your changes once you are done.
+              
+              ==&gt; WhatIf is present: 1
+              ==&gt; Argument match: jdbc/d 
+              
+              jdbc/docs
+               Set StatementTimeout -1 to 300
+               Set ConnectionCreationRetryFrequencySeconds 0 to 120
+               Set InactiveConnectionTimeoutSeconds 0 to 10
+               Set HighestNumWaiters 2147483647 to 90
+              jdbc/docs_back
+               Set StatementTimeout -1 to 300
+               Set ConnectionCreationRetryFrequencySeconds 0 to 120
+               Set InactiveConnectionTimeoutSeconds 0 to 10
+               Set HighestNumWaiters 2147483647 to 90
+              
+              ==&gt; ToChange 2 datasources
+              
+              Edit session is cancelled successfully.
+              Exiting WebLogic Scripting Tool.</Output>
+        </Example>
+      </Examples>
       <RelatedLinks>
         <RelatedLink>
           <LinkText>Invoke-WlstScript</LinkText>
@@ -2381,11 +2484,11 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
       <Examples>
         <Example>
           <Name>Example 1</Name>
-          <Cmd>New-WLDeployment -AdminServer wls01.tjrs.gov.br  -Targets cluster01 -InFile D:\_work\temp\jax-rs-2.0.war
+          <Cmd>New-WLDeployment -AdminServer wls01.tjrs.local.com  -Targets cluster01 -InFile D:\_work\temp\jax-rs-2.0.war
 </Cmd>
           <Description />
           <Output>messages : {@{message=Deployed the application 'jax-rs-2.0'.; severity=SUCCESS}}
-item     : @{name=ADTR-1; id=1; type=deployment; description=[Deployer:149026]deploy application jax-rs-2.0 on infra-dev-21.tjrs.gov.br.; 
+item     : @{name=ADTR-1; id=1; type=deployment; description=[Deployer:149026]deploy application jax-rs-2.0 on infra-dev-21.tjrs.local.com.; 
            operation=deploy; targets=System.Object[]; beginTime=1510854853119; endTime=1510854856119; status=completed; deploymentName=jax-rs-2.0}</Output>
         </Example>
       </Examples>
