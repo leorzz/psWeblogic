@@ -20,13 +20,13 @@ function Invoke-WlstScript
             [string]$ScriptPath,
 
         [Parameter(Mandatory=$false, HelpMessage="Looks for a prefix at the beginning of the output lines and converts it from csv to object format.")]
-            [string]$PrefixToObject='==>',
+            [string]$ObjectPrefix,
 
         [Parameter(Mandatory=$false, HelpMessage="Looks for a prefix at the beginning of the output lines and converts it from csv to object format.")]
-            [Char]$DelimiterToObject=',',
+            [Char]$ObjectDelimiter=',',
 
         [Parameter(Mandatory=$false)]
-            [Switch]$PassThru=$True,
+            [Switch]$PassThru,
 
         [Parameter(Mandatory=$false)]
             [Switch]$CurrentBaseDir,
@@ -78,6 +78,7 @@ function Invoke-WlstScript
             {
                 $scriptbase = (Join-Path -Path $Script:mInfo.ModuleBase -ChildPath script\python)
                 $ScriptPath = Join-Path $scriptbase $PsBoundParameters[$ParameterName]
+                $ObjectPrefix = "==>"
             }
 
             if ( -not (Test-Path $ScriptPath -PathType Leaf) )
@@ -151,30 +152,33 @@ function Invoke-WlstScript
 
                     $scriptContent = Get-Content -LiteralPath $ScriptPath
 
-                    
+                    $scriptContentNew = New-Object -TypeName System.Collections.ArrayList
+
                     foreach ($line in $scriptContent)
                     {
                         if ($scriptContent.indexOf($line) -eq 0)
                         {
                             if ($WhatIf.IsPresent)
                             {
-                                $scriptContent[$scriptContent.indexOf($line)] = "whatif = True`r`n" + $line
+                                $scriptContentNew.Add("whatif = True") | Out-Null
+                                #$scriptContent[$scriptContent.indexOf($line)] = "whatif = True`r`n" + $line
                             }
                             else
                             {
-                                $scriptContent[$scriptContent.indexOf($line)] = "`nwhatif = False`r`n" + $line
+                                $scriptContentNew.Add("whatif = False") | Out-Null
+                                #$scriptContent[$scriptContent.indexOf($line)] = "`nwhatif = False`r`n" + $line
                             }
                         }
+                        
                         if ($line -match "^#@domain_hashtable")
                         {
                             $obj_tmp = $obj | select *
                             $obj_tmp.Version = $obj.Version.ToString()
                             $domain_hashtable = $obj_tmp | ConvertTo-Json -Depth 2 -Compress
-                            #$domain_hashtable = $obj | select Name,AdminServer,AdminTcpPort,@{E={($_.Version).toString()};L='Version'},Environment,MW_HOME  | ConvertTo-Json -Depth 1 -Compress
-                            $scriptContent[$scriptContent.indexOf($line)] = "domain_hashtable=$($domain_hashtable)"
+                            #$scriptContent[$scriptContent.indexOf($line)] = "domain_hashtable=$($domain_hashtable)"
+                            $scriptContentNew.Add("domain_hashtable=$($domain_hashtable)") | Out-Null
                         }
-
-                        if ($line -match "(^|\s)connect\(\)")
+                        elseif ($line -match "(^|\s)connect\(\)")
                         {
                             if (-not $Credential)
                             {
@@ -203,8 +207,8 @@ function Invoke-WlstScript
                                 $indexOf = $line.IndexOf('c')
                                 $connect = $connect.PadLeft(($connect.Length + $indexOf), ' ')
 
-                                #$scriptContent[$scriptContent.indexOf($line)] = $line -replace "(^|\s)connect\(\)",$connect
-                                $scriptContent[$scriptContent.indexOf($line)] = $connect
+                                #$scriptContent[$scriptContent.indexOf($line)] = $connect
+                                $scriptContentNew.Add($connect) | Out-Null
                                 $connEnable = $true
                             }
                             else
@@ -212,6 +216,10 @@ function Invoke-WlstScript
                                 Write-Host "Credentials to $($obj.AdminServer) not found." -ForegroundColor Red
                             }
                             $user, $pass = $null
+                        }
+                        else
+                        {
+                            $scriptContentNew.Add($line) | Out-Null
                         }
                     }# foreach ($line in $scriptContent)
 
@@ -225,7 +233,7 @@ function Invoke-WlstScript
                         $tmpScript = [System.IO.Path]::GetTempFileName()
                     }
 
-                    Set-Content -LiteralPath $tmpScript -Value $scriptContent -Force
+                    Set-Content -LiteralPath $tmpScript -Value $scriptContentNew -Force
                     #$targetServer = "$($obj.AdminServer):$($obj.AdminTcpPort)"
                     #Invoke-Command -ComputerName $obj.AdminServer -ScriptBlock $cmd -InputObject $pyFile,$pyContent,$obj,$ScriptParameters
                     
@@ -246,16 +254,16 @@ function Invoke-WlstScript
                             $result  = Invoke-Expression -Command $cmd -ErrorAction SilentlyContinue
                             $obj | Add-Member -MemberType NoteProperty -Name Result -Value $($result | Out-String) -Force
                             Set-StandardMembers -MyObject $obj -DefaultProperties AdminServer,Result
-                            if ($PrefixToObject)
+
+                            if ($ObjectPrefix)
                             {
                                 try
                                 {
-                                    #"(?<=($($PrefixToObject))).*"
-
-                                    $matchLines = $obj.Result -split "`r`n" | ? {$_ -match "^$($PrefixToObject)"}
-                                    if ($matchLines.Count -gt 0)
+                                    $resultLines = $obj.Result -split "`r`n"
+                                    $matchLines = $resultLines | ? {$_ -match "^$($ObjectPrefix)"}
+                                    if ($matchLines.Count -gt  0)
                                     {
-                                        $oMatchLines = $matchLines | % {$_ -replace "^$($PrefixToObject)",""} | select -Unique | ConvertFrom-Csv -Delimiter $DelimiterToObject -ErrorAction Stop
+                                        $oMatchLines = $matchLines | % {$_ -replace "^$($ObjectPrefix)",""} | select -Unique | ConvertFrom-Csv -Delimiter $ObjectDelimiter -ErrorAction Stop
                                         if ($oMatchLines)
                                         {
                                             $obj.Result = $oMatchLines
@@ -268,7 +276,7 @@ function Invoke-WlstScript
                                     }
                                     else
                                     {
-                                        Write-Host "$($obj.AdminServer):No prefix '$($PrefixToObject)' match found in lines. Use <prefix><csv format delimited with commas>" -ForegroundColor Red
+                                        Write-Host "$($obj.AdminServer):No prefix '$($ObjectPrefix)' match found in lines. Use <prefix><csv format delimited with commas>" -ForegroundColor Red
                                         Write-Output $obj
                                     }
 

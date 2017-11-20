@@ -2380,13 +2380,7 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
       </Parameters>
       <Examples>
         <Example>
-          <Name />
-          <Cmd>New-WLDeployment -AdminServer wls01.prd.tjrs.gov.br -Targets cluster01 -InFile D:\_work\temp\jax-rs-2.0.war</Cmd>
-          <Description />
-          <Output />
-        </Example>
-        <Example>
-          <Name>InFile</Name>
+          <Name>Example 1</Name>
           <Cmd>New-WLDeployment -AdminServer wls01.tjrs.gov.br  -Targets cluster01 -InFile D:\_work\temp\jax-rs-2.0.war
 </Cmd>
           <Description />
