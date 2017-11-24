@@ -2174,7 +2174,7 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
             <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
           </Attributes>
           <Aliases />
-          <Description>Ignores any attempt to format the output. Shows the raw output in the Result attribute.</Description>
+          <Description>Shows the raw output</Description>
           <DefaultValue />
         </ParameterDescription>
         <ParameterDescription type="SwitchParameter" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="false" pos="named" globbing="false">
@@ -2235,7 +2235,7 @@ The TCP port should be returning in AdminTcpPortSec property of the Get-WLDomain
           </Attributes>
           <Aliases />
           <Description>Defines the delimiter for the results of the filter performed with the ObjectPrefix parameter. Outputs will be converted from a CSV format to Object.</Description>
-          <DefaultValue>,</DefaultValue>
+          <DefaultValue />
         </ParameterDescription>
         <ParameterDescription type="SwitchParameter" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="false" pos="named" globbing="false">
           <Name>ShowScriptOnly</Name>

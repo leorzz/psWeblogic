@@ -23,7 +23,7 @@ function Invoke-WlstScript
             [string]$ObjectPrefix,
 
         [Parameter(Mandatory=$false, HelpMessage="Looks for a prefix at the beginning of the output lines and converts it from csv to object format.")]
-            [Char]$ObjectDelimiter=',',
+            [Char]$ObjectDelimiter,
 
         [Parameter(Mandatory=$false)]
             [Switch]$PassThru,
@@ -275,20 +275,28 @@ function Invoke-WlstScript
                                     $matchLines = $resultLines | ? {$_ -match "^$($ObjectPrefix)"}
                                     if ($matchLines.Count -gt  0)
                                     {
-                                        $oMatchLines = $matchLines | % {$_ -replace "^$($ObjectPrefix)",""} | select -Unique | ConvertFrom-Csv -Delimiter $ObjectDelimiter -ErrorAction Stop
-                                        if ($oMatchLines)
+                                        if ($ObjectDelimiter)
                                         {
-                                            $obj.Result = $oMatchLines
-                                            Write-Output $obj
+                                            $oMatchLines = $matchLines | % {$_ -replace "^$($ObjectPrefix)",""} | select -Unique | ConvertFrom-Csv -Delimiter $ObjectDelimiter -ErrorAction Stop
+                                            if ($oMatchLines)
+                                            {
+                                                $obj.Result = $oMatchLines
+                                                Write-Output $obj
+                                            }
+                                            else
+                                            {
+                                                Write-Host "$($obj.AdminServer):No object can be converted. Use <prefix><csv format delimited with commas>" -ForegroundColor Red
+                                            }
                                         }
                                         else
                                         {
-                                            Write-Host "$($obj.AdminServer):No object can be converted. Use <prefix><csv format delimited with commas>" -ForegroundColor Red
+                                            $obj.Result = $matchLines -join "`r`n"
+                                            Write-Output $obj
                                         }
                                     }
                                     else
                                     {
-                                        Write-Host "$($obj.AdminServer):No prefix '$($ObjectPrefix)' match found in lines. Use <prefix><csv format delimited with commas>" -ForegroundColor Red
+                                        $obj.Result = $null
                                         Write-Output $obj
                                     }
 

@@ -82,6 +82,7 @@ function Invoke-WLResource
             Write-Host "Resource '$($Resource)' is not available on $($wl_domain.AdminServer) version:$($wl_domain.Version.ToString())." -ForegroundColor Cyan
             return $false
         }
+        #Write-Debug -Message "Target uri: $($Uri)"
     }
     catch [Exception]
     {
