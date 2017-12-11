@@ -1,7 +1,6 @@
 # psWeblogic
 
-This powershell module is a Wrapper around KeePassLib
-
+This powershell module is a client for Weblogic RESTful Administration Interface.
 ## Installation
 If you have a version that is less than 3, then you need to update your PowerShell. To update to version 3 or more, you must download the Windows Management Framework 3: http://www.microsoft.com/en-us/download/details.aspx?id=34595 or 5 https://www.microsoft.com/en-us/download/details.aspx?id=50395, then choose either the x86 or the x64 files depending on your system. For x64.
 
